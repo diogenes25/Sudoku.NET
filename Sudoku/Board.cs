@@ -416,7 +416,7 @@ namespace de.onnen.Sudoku
 
 		private void LoadSolveTechnics()
 		{
-			List<string> files = new List<string>(Directory.GetFiles("D:\\Develop\\SolveTechnics", "*.dll"));
+			List<string> files = new List<string>(Directory.GetFiles("f:\\Develop\\SolveTechnics", "*.dll"));
 			foreach (string file in files)
 			{
 				ASolveTechnic st = SudokuSolveTechnicLoader.LoadSolveTechnic(file, this);
