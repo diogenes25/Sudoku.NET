@@ -1,14 +1,14 @@
-﻿namespace de.onnen.Sudoku.SudokuExternal.SolveTechnics
+﻿namespace de.onnen.Sudoku.SudokuExternal.SolveTechniques
 {
-	public abstract class ASolveTechnic : ISolveTechnic
+	public abstract class ASolveTechnique : ISolveTechnique
 	{
 		private bool isActive = true;
 		private ISudokuHost host;
 		protected IBoard board;
 
-		public ASolveTechnic()
+		public ASolveTechnique()
 		{
-			this.Info = new SolveTechnicInfo()
+			this.Info = new SolveTechniqueInfo()
 			{
 				Caption = "Not Defined"
 			};
@@ -23,7 +23,7 @@
 
 		public abstract void SolveHouse(IHouse house, SudokuResult sudokuResult);
 
-		public SolveTechnicInfo Info
+		public SolveTechniqueInfo Info
 		{
 			get;
 			set;

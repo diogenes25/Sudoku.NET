@@ -40,15 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ASolveTechnic.cs" />
+    <Compile Include="ASolveTechnique.cs" />
     <Compile Include="IBoard.cs" />
     <Compile Include="ICell.cs" />
     <Compile Include="ICellBase.cs" />
     <Compile Include="IHouse.cs" />
-    <Compile Include="ISolveTechnic.cs" />
+    <Compile Include="ISolveTechnique.cs" />
     <Compile Include="ISudokuHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SolveTechnicInfo.cs" />
+    <Compile Include="SolveTechniqueInfo.cs" />
     <Compile Include="SudokuEvent.cs" />
     <Compile Include="SudokuResult.cs" />
   </ItemGroup>

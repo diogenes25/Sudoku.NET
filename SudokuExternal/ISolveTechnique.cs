@@ -1,8 +1,8 @@
-﻿namespace de.onnen.Sudoku.SudokuExternal.SolveTechnics
+﻿namespace de.onnen.Sudoku.SudokuExternal.SolveTechniques
 {
-	public interface ISolveTechnic
+	public interface ISolveTechnique
 	{
-		SolveTechnicInfo Info { get; set; }
+		SolveTechniqueInfo Info { get; set; }
 
 		ISudokuHost Host { get; set; }
 

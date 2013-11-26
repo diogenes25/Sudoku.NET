@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using System.Reflection;
 using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechnics;
+using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 
 namespace de.onnen.Sudoku
 {
-	public static class SudokuSolveTechnicLoader
+	public static class SudokuSolveTechniqueLoader
 	{
-		public static SolveTechnicInfo GetSolveTechnicInfo(string filename)
+		public static SolveTechniqueInfo GetSolveTechnicInfo(string filename)
 		{
-			ASolveTechnic solveTechnic = LoadSolveTechnic(filename, null);
-			SolveTechnicInfo info = new SolveTechnicInfo();
-			if (solveTechnic is ISolveTechnic)
+			ASolveTechnique solveTechnic = LoadSolveTechnic(filename, null);
+			SolveTechniqueInfo info = new SolveTechniqueInfo();
+			if (solveTechnic is ISolveTechnique)
 			{
-				info = ((ISolveTechnic)solveTechnic).Info;
+				info = ((ISolveTechnique)solveTechnic).Info;
 			}
 			else
 			{
-				throw new NotImplementedException(string.Format("The type {0} is not implemented in file {1}", typeof(ASolveTechnic).ToString(), filename));
+				throw new NotImplementedException(string.Format("The type {0} is not implemented in file {1}", typeof(ASolveTechnique).ToString(), filename));
 			}
 			return info;
 		}
 
-		public static ASolveTechnic LoadSolveTechnic(string filename, ISudokuHost host)
+		public static ASolveTechnique LoadSolveTechnic(string filename, ISudokuHost host)
 		{
 			if (filename == null)
 			{
@@ -31,7 +31,7 @@ namespace de.onnen.Sudoku
 			}
 
 			Assembly solvetechnic = Assembly.LoadFrom(filename);
-			string typeName = typeof(ASolveTechnic).ToString();
+			string typeName = typeof(ASolveTechnique).ToString();
 			Type[] types = solvetechnic.GetTypes();
 			List<Type> mytype = new List<Type>();
 			bool typeFound = false;
@@ -49,11 +49,11 @@ namespace de.onnen.Sudoku
 				throw new NotImplementedException(string.Format("The type {0} is not implemented in file{1}", typeName, filename));
 			}
 
-			List<ASolveTechnic> result = new List<ASolveTechnic>();
+			List<ASolveTechnique> result = new List<ASolveTechnique>();
 			foreach (Type type in mytype)
 			{
 				object obj = Activator.CreateInstance(type);
-				result.Add((ASolveTechnic)obj);
+				result.Add((ASolveTechnique)obj);
 			}
 			if (result != null && result.Count > 0)
 			{

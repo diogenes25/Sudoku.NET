@@ -1,15 +1,23 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechnics;
+using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 
-namespace de.onnen.Sudoku.SolveTechnics
+namespace de.onnen.Sudoku.SolveTechniques
 {
-	public class TwinTripleQuad : ASolveTechnic
+	/// <summary>
+	/// Naked Pair, Triplet, Quad (Locked Set, Naked Subset, Disjoint Subset)
+	/// <remarks>
+	/// If two cells in the same house (row, column or block) have only the same two candidates, 
+	/// then those candidates can be removed from other cells in that house (row, column or block).
+	/// This technique is known as "naked pair" if two candidates are involved, "naked triplet" if three, or "naked quad" if four.
+	/// </remarks>
+	/// </summary>
+	public class NakedPairTrippleQuad : ASolveTechnique
 	{
-		public TwinTripleQuad()
+		public NakedPairTrippleQuad()
 		{
-			this.Info.Caption = "TwinTripleQuad";
+			this.Info.Caption = "Naked PairTripleQuad";
 		}
 
 		public override void SolveHouse(IHouse house, SudokuResult sudokuResult)
@@ -31,13 +39,7 @@ namespace de.onnen.Sudoku.SolveTechnics
 				int count = kv.Value.First().Candidates.Count;
 				if (kv.Value.Count == count)
 				{
-					string st = "Naked2";
-					switch (count)
-					{
-						case 2: st = "Naked2"; break;
-						case 3: st = "Naked3"; break;
-						case 4: st = "Naked4"; break;
-					}
+					string st = "Naked" + count;
 					SudokuResult cresult = sudokuResult.CreateChildResult();
 					cresult.EventInfoInResult = new SudokuEvent()
 					{

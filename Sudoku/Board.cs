@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechnics;
+using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 using System.Threading;
 
 namespace de.onnen.Sudoku
@@ -26,9 +26,9 @@ namespace de.onnen.Sudoku
 		private Cell[] cells = new Cell[Consts.DimensionSquare * Consts.DimensionSquare];
 		private House[][] container = new House[Consts.DimensionSquare][];
 		private double solvePercentBase = 0;
-		private IList<ASolveTechnic> solveTechnics = new List<ASolveTechnic>();
+		private IList<ASolveTechnique> solveTechniques = new List<ASolveTechnique>();
 
-		public IList<ISolveTechnic> SolveTechnics { get { return this.solveTechnics.Select(x => (ISolveTechnic)x).ToList<ISolveTechnic>(); } }
+		public IList<ISolveTechnique> SolveTechniques { get { return this.solveTechniques.Select(x => (ISolveTechnique)x).ToList<ISolveTechnique>(); } }
 
 		public IHouse GetHouse(HouseType houseType, int idx)
 		{
@@ -38,8 +38,6 @@ namespace de.onnen.Sudoku
 		public delegate void BoardChanged(IBoard board, SudokuEvent sudokuEvent);
 
 		public event BoardChanged boardChangeEvent;
-
-		// Die Larve - Harry Hole
 
 		public double SolvePercent()
 		{
@@ -257,7 +255,7 @@ namespace de.onnen.Sudoku
 						//if (container[containerIdx][containerType].Complete || (!container[containerIdx][containerType].ReCheck && !forceSolve))
 						if (container[containerIdx][containerType].Complete)
 							continue;
-						foreach (ASolveTechnic st in solveTechnics)
+						foreach (ASolveTechnique st in solveTechniques)
 						{
 							if (st.IsActive)
 							{
@@ -416,18 +414,18 @@ namespace de.onnen.Sudoku
 
 		private void LoadSolveTechnics()
 		{
-			List<string> files = new List<string>(Directory.GetFiles("f:\\Develop\\SolveTechnics", "*.dll"));
+			List<string> files = new List<string>(Directory.GetFiles("d:\\Develop\\SolveTechniques", "*.dll"));
 			foreach (string file in files)
 			{
-				ASolveTechnic st = SudokuSolveTechnicLoader.LoadSolveTechnic(file, this);
-				solveTechnics.Add(st);
+				ASolveTechnique st = SudokuSolveTechniqueLoader.LoadSolveTechnic(file, this);
+				solveTechniques.Add(st);
 				st.SetBoard(this);
 			}
 		}
 
 		#region ISudokuHost Members
 
-		public void Register(ISolveTechnic solveTechnic)
+		public void Register(ISolveTechnique solveTechnic)
 		{
 		}
 

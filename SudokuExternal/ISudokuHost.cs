@@ -2,6 +2,6 @@
 {
 	public interface ISudokuHost
 	{
-		void Register(SolveTechnics.ISolveTechnic solveTechnic);
+		void Register(SolveTechniques.ISolveTechnique solveTechnic);
 	}
 }

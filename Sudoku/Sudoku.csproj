@@ -59,7 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SudokuHelper.cs" />
     <Compile Include="SudokuHistoryItem.cs" />
-    <Compile Include="SudokuSolveTechnicLoader.cs" />
+    <Compile Include="SudokuSolveTechniqueLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\app.manifest" />

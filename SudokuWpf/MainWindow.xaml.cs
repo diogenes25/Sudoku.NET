@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechnics;
+using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -75,8 +75,8 @@ namespace de.onnen.Sudoku.SudokuWpf
 				}
 			}
 
-			IList<ISolveTechnic> sts = board.SolveTechnics;
-			foreach (ISolveTechnic st in sts)
+			IList<ISolveTechnique> sts = board.SolveTechniques;
+			foreach (ISolveTechnique st in sts)
 			{
 				//this.MainRibbon.UseLayoutRoundingdd
 				rbnTabSolve.Items.Add(new RibbonGroupSolveTechnic(st));

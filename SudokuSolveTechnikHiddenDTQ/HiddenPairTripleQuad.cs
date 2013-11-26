@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechnics;
+using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 
-namespace de.onnen.Sudoku.SolveTechnics
+namespace de.onnen.Sudoku.SolveTechniques
 {
-	public class HiddenTwinTripleQuad : ASolveTechnic
+	/// <summary>
+	/// This technique is very similar to naked subsets, but instead of affecting other cells with the same row, column or block, candidates are eliminated from the cells that hold the subset. If there are N cells, with N candidates between them that don't appear elsewhere in the same row, column or block, then any other candidates for those cells can be eliminated.
+	/// </summary>
+	public class HiddenPairTripleQuad : ASolveTechnique
 	{
-		public HiddenTwinTripleQuad()
+		public HiddenPairTripleQuad()
 		{
 			this.Info.Caption = "Hidden TwinTripleQuad";
 		}

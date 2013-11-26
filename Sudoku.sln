@@ -18,11 +18,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuMvc4", "SudokuMvc4\Su
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuExternal", "SudokuExternal\SudokuExternal.csproj", "{6F9BD1D8-1883-4479-850B-518593FF6FAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuSolveTechnicHiddenDTQ", "SudokuSolveTechnikHiddenDTQ\SudokuSolveTechnicHiddenDTQ.csproj", "{A07C29DC-BADC-4D80-9542-D7588D2903DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveTechniqueHiddenPTQ", "SudokuSolveTechnikHiddenDTQ\SolveTechniqueHiddenPTQ.csproj", "{A07C29DC-BADC-4D80-9542-D7588D2903DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuSolveTechnicLockedCandidates", "SudokuSolveTechnicLockedCandidates\SudokuSolveTechnicLockedCandidates.csproj", "{44BD4E5D-6EE6-4A96-B55A-38342C9C5465}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveTechniqueLockedCandidates", "SudokuSolveTechnicLockedCandidates\SolveTechniqueLockedCandidates.csproj", "{44BD4E5D-6EE6-4A96-B55A-38342C9C5465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuSolveTechnicDTQ", "SudokuSolveTechnicDTQ\SudokuSolveTechnicDTQ.csproj", "{1F0608DC-2CA9-4AFB-92A4-A68CF37A8DB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveTechniqueNakedPTQ", "SudokuSolveTechnicDTQ\SolveTechniqueNakedPTQ.csproj", "{1F0608DC-2CA9-4AFB-92A4-A68CF37A8DB2}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution

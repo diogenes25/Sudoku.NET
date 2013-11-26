@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Windows.Controls.Ribbon;
-using de.onnen.Sudoku.SudokuExternal.SolveTechnics;
+using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 using System.Windows;
 
 namespace de.onnen.Sudoku.SudokuWpf
@@ -11,8 +11,8 @@ namespace de.onnen.Sudoku.SudokuWpf
     public
         class RibbonGroupSolveTechnic : RibbonGroup
     {
-        private ISolveTechnic solveTechnic;
-        public RibbonGroupSolveTechnic(ISolveTechnic solveTechnic)
+        private ISolveTechnique solveTechnic;
+        public RibbonGroupSolveTechnic(ISolveTechnique solveTechnic)
             : base()
         {
             this.solveTechnic = solveTechnic;
@@ -22,7 +22,7 @@ namespace de.onnen.Sudoku.SudokuWpf
             this.Items.Add(eb);
             RibbonCheckBox rcb = new RibbonCheckBox()
             {
-                Label = "Aktive",
+                Label = "Active",
                 IsChecked = solveTechnic.IsActive,
             };
             rcb.Checked += new RoutedEventHandler(rcb_Checked);
@@ -45,7 +45,7 @@ namespace de.onnen.Sudoku.SudokuWpf
 
         void eb_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("XXX");
+            MessageBox.Show(this.solveTechnic.Info.Caption);
         }
 
     }

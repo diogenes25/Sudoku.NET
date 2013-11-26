@@ -4,7 +4,7 @@ namespace de.onnen.Sudoku
 {
 	public abstract class CellBase : ICellBase
 	{
-		public HouseType ContainerType { get { return this.houseType; } }
+		public HouseType HType { get { return this.houseType; } }
 
 		public int ID { get { return this.id; } }
 

@@ -1,9 +1,9 @@
 ﻿using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechnics;
+using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 
-namespace de.onnen.Sudoku.SolveTechnics
+namespace de.onnen.Sudoku.SolveTechniques
 {
-	public class LockedCandidates : ASolveTechnic
+	public class LockedCandidates : ASolveTechnique
 	{
 		public LockedCandidates()
 		{
@@ -13,7 +13,7 @@ namespace de.onnen.Sudoku.SolveTechnics
 		public override void SolveHouse(IHouse house, SudokuResult sudokuResult)
 		{
 			DigitInBlock(house, sudokuResult);
-			if (house.ContainerType == HouseType.Box)
+			if (house.HType == HouseType.Box)
 				DigitInBlock(house, sudokuResult, true);
 		}
 
@@ -25,9 +25,9 @@ namespace de.onnen.Sudoku.SolveTechnics
 				if (valueOnlyInOnePart[x] > 0)
 				{
 					int houseIdx = 0;
-					HouseType cellInContainertype = house.ContainerType;
+					HouseType cellInContainertype = house.HType;
 					string st = "LockedCandidatesClaiming";
-					switch (house.ContainerType)
+					switch (house.HType)
 					{
 						case HouseType.Row:
 							houseIdx = ((int)(house.ID / Consts.Dimension)) * 3 + x;
@@ -50,11 +50,11 @@ namespace de.onnen.Sudoku.SolveTechnics
 					foreach (ICell c in board.GetHouse(cellInContainertype, houseIdx).Peers) // Cells des Row
 					{
 						pos++;
-						if (((house.ContainerType == HouseType.Row)
+						if (((house.HType == HouseType.Row)
 										&& (house.ID % Consts.Dimension) == (pos / Consts.Dimension)) ||
-								 ((house.ContainerType == HouseType.Col)
+								 ((house.HType == HouseType.Col)
 										&& (house.ID % Consts.Dimension) == (pos % Consts.Dimension)) ||
-								 ((house.ContainerType == HouseType.Box)
+								 ((house.HType == HouseType.Box)
 										&& ((!verticalBlock
 												&& (house.ID % Consts.Dimension) == (pos / Consts.Dimension)) ||
 										 (verticalBlock
