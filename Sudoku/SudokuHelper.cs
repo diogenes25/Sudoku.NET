@@ -41,7 +41,7 @@ namespace de.onnen.Sudoku
 					char currChar = line[x];
 					if (!currChar.Equals('.'))
 					{
-						SudokuResult result = board.SetDigit(x, Convert.ToInt32(currChar) - 48);
+						SudokuLog result = board.SetDigit(x, Convert.ToInt32(currChar) - 48);
 						if (!result.Successful)
 						{
 							Debug.WriteLine(x);
@@ -75,7 +75,7 @@ namespace de.onnen.Sudoku
 						char currChar = line[x];
 						if (currChar.Equals('0'))
 							continue;
-						SudokuResult result = board.SetDigit(y - 1, x, Convert.ToInt32(currChar) - 48);
+						SudokuLog result = board.SetDigit(y - 1, x, Convert.ToInt32(currChar) - 48);
 						if (!result.Successful)
 						{
 							Debug.WriteLine(y + " " + x);
@@ -86,7 +86,7 @@ namespace de.onnen.Sudoku
 			}
 		}
 
-		public static string PrintSudokuResult(SudokuResult sudokuResult)
+		public static string PrintSudokuResult(SudokuLog sudokuResult)
 		{
 			StringBuilder sb = new StringBuilder();
 			PrintSudokuResult(sudokuResult, sb, "");
@@ -94,11 +94,11 @@ namespace de.onnen.Sudoku
 			return sb.ToString();
 		}
 
-		private static void PrintSudokuResult(SudokuResult sudokuResult, StringBuilder sb, string cap)
+		private static void PrintSudokuResult(SudokuLog sudokuResult, StringBuilder sb, string cap)
 		{
 			sb.Append(cap);
 			sb.Append(sudokuResult.ToString());
-			foreach (SudokuResult sr in sudokuResult.ChildSudokuResult)
+			foreach (SudokuLog sr in sudokuResult.ChildSudokuResult)
 			{
 				PrintSudokuResult(sr, sb, cap + " ");
 			}

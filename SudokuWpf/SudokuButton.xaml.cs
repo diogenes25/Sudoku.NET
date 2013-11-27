@@ -66,7 +66,7 @@ namespace de.onnen.Sudoku.SudokuWpf
 
 		private void SudokuButton_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
-			SudokuResult result = this.board.SetDigit(this.cell.ID, cellInt[((Button)sender)] + 1, true);
+			SudokuLog result = this.board.SetDigit(this.cell.ID, cellInt[((Button)sender)] + 1, true);
 			if (result.Successful)
 			{
 				mwin.AddLastCell(this.cell);

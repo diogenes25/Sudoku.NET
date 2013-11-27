@@ -6,7 +6,7 @@ using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 namespace de.onnen.Sudoku.SolveTechniques
 {
 	/// <summary>
-	/// Naked Pair, Triplet, Quad (Locked Set, Naked Subset, Disjoint Subset)
+	/// Naked Pair, Triplet, Quad (aka Locked Set, Naked Subset, Disjoint Subset)
 	/// <remarks>
 	/// If two cells in the same house (row, column or block) have only the same two candidates,
 	/// then those candidates can be removed from other cells in that house (row, column or block).
@@ -20,7 +20,7 @@ namespace de.onnen.Sudoku.SolveTechniques
 			this.Info.Caption = "Naked PairTripleQuad";
 		}
 
-		public override void SolveHouse(IHouse house, SudokuResult sudokuResult)
+		public override void SolveHouse(IHouse house, SudokuLog sudokuResult)
 		{
 			// Key = BaseValue, Anz Possible
 			Dictionary<int, List<ICell>> nakedMore = new Dictionary<int, List<ICell>>();
@@ -40,7 +40,7 @@ namespace de.onnen.Sudoku.SolveTechniques
 				if (kv.Value.Count == count)
 				{
 					string st = "Naked" + count;
-					SudokuResult cresult = sudokuResult.CreateChildResult();
+					SudokuLog cresult = sudokuResult.CreateChildResult();
 					cresult.EventInfoInResult = new SudokuEvent()
 					{
 						value = 0,

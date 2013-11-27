@@ -30,7 +30,7 @@ namespace de.onnen.Sudoku
 			//board.Show(true);
 			Console.WriteLine("Start solving");
 			//board.CellEvent += new Board.CellEventHandler(BoardEvent);
-			SudokuResult result = new SudokuResult();
+			SudokuLog result = new SudokuLog();
 			//board.Solve(result);
 			//Console.WriteLine(result.ToString());
 			//board.Show(true);
@@ -87,7 +87,7 @@ namespace de.onnen.Sudoku
 					char currChar = line[x];
 					if (currChar.Equals('0'))
 						continue;
-					SudokuResult result = board.SetDigit(y, x, Convert.ToInt32(currChar) - 48);
+					SudokuLog result = board.SetDigit(y, x, Convert.ToInt32(currChar) - 48);
 					SudokuHelper.PrintSudokuResult(result);
 				}
 			}
@@ -112,7 +112,7 @@ namespace de.onnen.Sudoku
 				}
 				else
 				{
-					SudokuResult result = new SudokuResult();
+					SudokuLog result = new SudokuLog();
 					board.Solve(result);
 					if (board.IsComplete)
 					{
@@ -227,7 +227,7 @@ namespace de.onnen.Sudoku
 			board.SetDigit(7, 1, 4);
 			board.SetDigit(7, 5, 9);
 			board.SetDigit(7, 6, 5);
-			SudokuResult result = board.SetDigit(7, 8, 7);
+			SudokuLog result = board.SetDigit(7, 8, 7);
 			SudokuHelper.PrintSudokuResult(result);
 			//board.SetDigit(0, 0, 6);
 			//board.SetDigit(1, 1, 8); // Fehler wird erst bei BruceForce gefunden!!
@@ -235,7 +235,7 @@ namespace de.onnen.Sudoku
 
 		private static void LeftInLine(Board board)
 		{
-			SudokuResult result = board.SetDigit(0, 0, 9);
+			SudokuLog result = board.SetDigit(0, 0, 9);
 			SudokuHelper.PrintSudokuResult(result);
 			board.SetDigit(0, 1, 8);
 			board.SetDigit(0, 2, 7);
@@ -249,7 +249,7 @@ namespace de.onnen.Sudoku
 
 		private static void OnlyInBlock(Board board)
 		{
-			SudokuResult result = board.SetDigit(1, 3, 1);
+			SudokuLog result = board.SetDigit(1, 3, 1);
 			SudokuHelper.PrintSudokuResult(result);
 			board.SetDigit(0, 6, 2);
 			board.SetDigit(0, 7, 3);

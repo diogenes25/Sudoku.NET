@@ -186,7 +186,7 @@ namespace Sudoku
 			//board.SetDigit(1, 2, 6);
 			board.SetDigit(1, 3, 7);
 			board.SetDigit(1, 4, 8);
-			SudokuResult result = board.SetDigit(1, 5, 9);
+			SudokuLog result = board.SetDigit(1, 5, 9);
 			Assert.AreEqual(6, board.Cells[11].Digit);
 			int block0Value = (1 << 6) | (1 << 7) | (1 << 8);
 			Assert.AreEqual(block0Value, board.Cells[18].BaseValue);
@@ -211,7 +211,7 @@ namespace Sudoku
 			board.SetDigit(1, 4, 1);
 			board.SetDigit(0, 6, 2);
 			board.SetDigit(0, 7, 3);
-			SudokuResult result = board.SetDigit(0, 8, 4);
+			SudokuLog result = board.SetDigit(0, 8, 4);
 			board.Solve(result);
 			int block1r2Value = (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5) | (1 << 6) | (1 << 7) | (1 << 8);
 			Assert.AreEqual(block1r2Value, board.Cells[18].BaseValue);
@@ -227,7 +227,7 @@ namespace Sudoku
 			board.SetDigit(4, 1, 1);
 			board.SetDigit(6, 0, 2);
 			board.SetDigit(7, 0, 3);
-			SudokuResult result = board.SetDigit(8, 0, 4);
+			SudokuLog result = board.SetDigit(8, 0, 4);
 			board.Solve(result);
 			int block1r2Value = (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5) | (1 << 6) | (1 << 7) | (1 << 8);
 			Assert.AreEqual(block1r2Value, board.Cells[2].BaseValue);
@@ -269,7 +269,7 @@ namespace Sudoku
 			board.SetDigit(7, 6, 5);
 			board.SetDigit(7, 8, 7);
 
-			SudokuResult result = board.SetDigit(0, 0, 6);
+			SudokuLog result = board.SetDigit(0, 0, 6);
 			board.Solve(result);
 			Assert.AreEqual(2, board.Cells[80].Digit);
 		}

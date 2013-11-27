@@ -21,7 +21,7 @@
 
 		#region ISolveTechnic Members
 
-		public abstract void SolveHouse(IHouse house, SudokuResult sudokuResult);
+		public abstract void SolveHouse(IHouse house, SudokuLog sudokuResult);
 
 		public SolveTechniqueInfo Info
 		{

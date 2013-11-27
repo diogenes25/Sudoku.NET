@@ -3,7 +3,7 @@ using System.Text;
 
 namespace de.onnen.Sudoku.SudokuExternal
 {
-	public class SudokuResult
+	public class SudokuLog
 	{
 		private bool successful = true;
 
@@ -14,7 +14,7 @@ namespace de.onnen.Sudoku.SudokuExternal
 			get
 			{
 				bool result = this.successful;
-				foreach (SudokuResult sr in ChildSudokuResult)
+				foreach (SudokuLog sr in ChildSudokuResult)
 				{
 					result &= sr.Successful;
 				}
@@ -25,18 +25,18 @@ namespace de.onnen.Sudoku.SudokuExternal
 
 		public string ErrorMessage { get; set; }
 
-		public SudokuResult ParentSudokuResult { get; set; }
+		public SudokuLog ParentSudokuResult { get; set; }
 
-		public List<SudokuResult> ChildSudokuResult { get; set; }
+		public List<SudokuLog> ChildSudokuResult { get; set; }
 
-		public SudokuResult()
+		public SudokuLog()
 		{
-			ChildSudokuResult = new List<SudokuResult>();
+			ChildSudokuResult = new List<SudokuLog>();
 		}
 
-		public SudokuResult CreateChildResult()
+		public SudokuLog CreateChildResult()
 		{
-			SudokuResult child = new SudokuResult();
+			SudokuLog child = new SudokuLog();
 			child.ParentSudokuResult = this;
 			ChildSudokuResult.Add(child);
 			return child;

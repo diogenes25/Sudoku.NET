@@ -89,9 +89,16 @@ namespace de.onnen.Sudoku
 		}
 
 		private bool reCheck = false;
+		private string filepath;
 
 		public Board()
+			: this(null)
 		{
+		}
+
+		public Board(string filepath)
+		{
+			this.filepath = filepath;
 			this.Givens = new List<Cell>();
 			this.history = new List<SudokuHistoryItem>();
 			this.solvePercentBase = Math.Pow(Consts.DimensionSquare, 3.0);
@@ -151,7 +158,7 @@ namespace de.onnen.Sudoku
 		/// <param name="row">Row</param>
 		/// <param name="col">Column</param>
 		/// <param name="digit">Digit</param>
-		public SudokuResult SetDigit(int row, int col, int digit)
+		public SudokuLog SetDigit(int row, int col, int digit)
 		{
 			int cellid = (row * 9) + col;
 			return this.SetDigit(cellid, digit);
@@ -162,9 +169,9 @@ namespace de.onnen.Sudoku
 		/// </summary>
 		/// <param name="cell">ID of cell</param>
 		/// <param name="digit">Digit</param>
-		public SudokuResult SetDigit(int cellid, int digit, bool withSolve = false)
+		public SudokuLog SetDigit(int cellid, int digit, bool withSolve = false)
 		{
-			SudokuResult sudokuResult = new SudokuResult();
+			SudokuLog sudokuResult = new SudokuLog();
 			sudokuResult.EventInfoInResult = new SudokuEvent()
 			{
 				ChangedCellBase = null,
@@ -249,7 +256,7 @@ namespace de.onnen.Sudoku
 			//this.Solve(new SudokuResult());
 		}
 
-		public void Solve(SudokuResult sudokuResult, bool forceSolve = false)
+		public void Solve(SudokuLog sudokuResult, bool forceSolve = false)
 		{
 			do
 			{
@@ -278,10 +285,10 @@ namespace de.onnen.Sudoku
 
 		public void Backtracking()
 		{
-			this.Backtracking(new SudokuResult());
+			this.Backtracking(new SudokuLog());
 		}
 
-		public void Backtracking(SudokuResult sudokuResult)
+		public void Backtracking(SudokuLog sudokuResult)
 		{
 			if (!BacktrackingContinue((Board)this.Clone()))
 			{
@@ -322,7 +329,7 @@ namespace de.onnen.Sudoku
 					foreach (int x in posDigit)
 					{
 						Board newBoard = (Board)board.Clone();
-						SudokuResult result = newBoard.SetDigit(i, x, true);
+						SudokuLog result = newBoard.SetDigit(i, x, true);
 						if (boardChangeEvent != null)
 							boardChangeEvent(newBoard, new SudokuEvent() { Action = CellAction.SetDigitInt, ChangedCellBase = newBoard.Cells[i] });
 						Thread.Sleep(300);
@@ -419,7 +426,11 @@ namespace de.onnen.Sudoku
 
 		private void LoadSolveTechnics()
 		{
-			List<string> files = new List<string>(Directory.GetFiles("d:\\Develop\\SolveTechniques", "*.dll"));
+			//"d:\\Develop\\SolveTechniques"
+			if (String.IsNullOrWhiteSpace(this.filepath))
+				return;
+
+			List<string> files = new List<string>(Directory.GetFiles(this.filepath, "*.dll"));
 			foreach (string file in files)
 			{
 				ASolveTechnique st = SudokuSolveTechniqueLoader.LoadSolveTechnic(file, this);

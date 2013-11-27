@@ -10,14 +10,14 @@ namespace de.onnen.Sudoku.SolveTechniques
 			this.Info.Caption = "LockedCandidates";
 		}
 
-		public override void SolveHouse(IHouse house, SudokuResult sudokuResult)
+		public override void SolveHouse(IHouse house, SudokuLog sudokuResult)
 		{
 			DigitInBlock(house, sudokuResult);
 			if (house.HType == HouseType.Box)
 				DigitInBlock(house, sudokuResult, true);
 		}
 
-		private void DigitInBlock(IHouse house, SudokuResult sudokuResult, bool verticalBlock = false)
+		private void DigitInBlock(IHouse house, SudokuLog sudokuResult, bool verticalBlock = false)
 		{
 			int[] valueOnlyInOnePart = CheckInBlockpartOfRowCol(house, verticalBlock);
 			for (int x = 0; x < 3; x++)
@@ -71,7 +71,7 @@ namespace de.onnen.Sudoku.SolveTechniques
 			}
 		}
 
-		private bool RemoveMultiValue(ICell c, int removeValue, SudokuResult sudokuResult, ICellBase resultContainer, string solveTechnik)
+		private bool RemoveMultiValue(ICell c, int removeValue, SudokuLog sudokuResult, ICellBase resultContainer, string solveTechnik)
 		{
 			for (int dc = 0; dc < Consts.DimensionSquare; dc++)
 			{
@@ -79,7 +79,7 @@ namespace de.onnen.Sudoku.SolveTechniques
 				{
 					if ((c.BaseValue & (1 << dc)) > 0)
 					{
-						SudokuResult child = sudokuResult.CreateChildResult();
+						SudokuLog child = sudokuResult.CreateChildResult();
 						if (c.RemovePossibleDigit(dc + 1, child))
 						{
 							child.EventInfoInResult = new SudokuEvent()

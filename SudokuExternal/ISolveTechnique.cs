@@ -12,6 +12,6 @@
 
 		void Deactivate();
 
-		void SolveHouse(IHouse house, SudokuResult sudokuResult);
+		void SolveHouse(IHouse house, SudokuLog sudokuResult);
 	}
 }

@@ -15,6 +15,6 @@ namespace de.onnen.Sudoku
 
 		internal int baseValue = 0;
 
-		public abstract bool SetDigit(int digit, SudokuResult sudokuResult);
+		public abstract bool SetDigit(int digit, SudokuLog sudokuResult);
 	}
 }

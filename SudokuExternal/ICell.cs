@@ -40,7 +40,7 @@
 		/// </summary>
 		int Digit { get; }
 
-		bool SetDigit(int digit, SudokuResult sudokuResult);
+		bool SetDigit(int digit, SudokuLog sudokuResult);
 
 		/// <summary>
 		/// Removing a candidate from the grid, by means of logical deduction.
@@ -51,6 +51,6 @@
 		/// <param name="candidate">Candidate to be removed</param>
 		/// <param name="child"></param>
 		/// <returns></returns>
-		bool RemovePossibleDigit(int candidate, SudokuResult child);
+		bool RemovePossibleDigit(int candidate, SudokuLog child);
 	}
 }

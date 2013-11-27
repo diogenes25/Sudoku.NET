@@ -11,11 +11,11 @@ namespace de.onnen.Sudoku
 
 		public int Digit { get; private set; }
 
-		public SudokuResult SudokuResults { get; private set; }
+		public SudokuLog SudokuResults { get; private set; }
 
 		public double Percent { get; private set; }
 
-		public SudokuHistoryItem(Board board, Cell cell, SudokuResult sudokuResult)
+		public SudokuHistoryItem(Board board, Cell cell, SudokuLog sudokuResult)
 		{
 			this.BoardInt = SudokuHelper.CreateSimpleBoard(board);
 			this.CellID = cell.ID;

@@ -26,7 +26,7 @@ namespace de.onnen.Sudoku.SudokuWpf
 		public MainWindow()
 		{
 			InitializeComponent();
-			board = new Board();
+			board = new Board("SolveTechniques");
 			Grid[] block = new Grid[9];
 			int c = 0;
 			for (int y = 0; y < 3; y++)
@@ -122,7 +122,7 @@ namespace de.onnen.Sudoku.SudokuWpf
 
 			//txtblockInfo.Text = SudokuHelper.PrintSudokuResult(lastHist.SudokuResult);
 			treeviewResult.Items.Clear();
-			foreach (SudokuResult sre in lastHist.SudokuResults.ChildSudokuResult)
+			foreach (SudokuLog sre in lastHist.SudokuResults.ChildSudokuResult)
 			{
 				TreeViewItem cc = new TreeViewItem()
 				{
@@ -133,12 +133,12 @@ namespace de.onnen.Sudoku.SudokuWpf
 			}
 		}
 
-		private void SetTreeViewValue(SudokuResult sudokuReslt, TreeViewItem tvi)
+		private void SetTreeViewValue(SudokuLog sudokuReslt, TreeViewItem tvi)
 		{
 			tvi.Header = sudokuReslt.ToString();
 			if (sudokuReslt.ChildSudokuResult != null && sudokuReslt.ChildSudokuResult.Count > 0)
 			{
-				foreach (SudokuResult sre in sudokuReslt.ChildSudokuResult)
+				foreach (SudokuLog sre in sudokuReslt.ChildSudokuResult)
 				{
 					TreeViewItem cc = new TreeViewItem()
 					{
@@ -224,7 +224,7 @@ namespace de.onnen.Sudoku.SudokuWpf
 				if (File.Exists(filename))
 				{
 					board.Reset();
-					SudokuResult result = null;
+					SudokuLog result = null;
 					TextReader tr = new StreamReader(filename);
 					string line;
 					int y = 0;
@@ -262,7 +262,7 @@ namespace de.onnen.Sudoku.SudokuWpf
 
 		private void btnBacktrack_Click(object sender, RoutedEventArgs e)
 		{
-			SudokuResult sresult = new SudokuResult();
+			SudokuLog sresult = new SudokuLog();
 			//ParameterizedThreadStart pts = new ParameterizedThreadStart(board.Backtracking);
 			//Thread thread = new Thread(pts);
 			//thread.Start(sresult);
@@ -276,7 +276,7 @@ namespace de.onnen.Sudoku.SudokuWpf
 
 		private void btnReduce_Click(object sender, RoutedEventArgs e)
 		{
-			SudokuResult sresult = new SudokuResult();
+			SudokuLog sresult = new SudokuLog();
 			board.Solve(sresult, true);
 		}
 	}

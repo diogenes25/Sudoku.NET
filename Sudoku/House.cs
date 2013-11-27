@@ -48,7 +48,7 @@ namespace de.onnen.Sudoku
 		/// Removes the digit as a possible digit in every cell in this container.
 		/// </summary>
 		/// <param name="digit"></param>
-		public override bool SetDigit(int digit, SudokuResult sudokuResult)
+		public override bool SetDigit(int digit, SudokuLog sudokuResult)
 		{
 			SudokuEvent sudokuEvent = new SudokuEvent()
 							{
@@ -60,7 +60,7 @@ namespace de.onnen.Sudoku
 
 			if ((this.baseValue & (1 << (digit - 1))) != (1 << (digit - 1)))
 			{
-				SudokuResult resultError = sudokuResult.CreateChildResult();
+				SudokuLog resultError = sudokuResult.CreateChildResult();
 				resultError.EventInfoInResult = sudokuEvent;
 				resultError.Successful = false;
 				resultError.ErrorMessage = "Digit " + digit + " is in CellContainer not possible";
@@ -74,7 +74,7 @@ namespace de.onnen.Sudoku
 				return false;
 			this.baseValue = newBaseValue;
 
-			SudokuResult result = sudokuResult.CreateChildResult();
+			SudokuLog result = sudokuResult.CreateChildResult();
 			result.EventInfoInResult = new SudokuEvent()
 			{
 				ChangedCellBase = this,

@@ -39,7 +39,7 @@ namespace de.onnen.Sudoku
 			return this.id == ((Cell)obj).id;
 		}
 
-		public bool RemovePossibleDigit(int digit, SudokuResult sudokuResult)
+		public bool RemovePossibleDigit(int digit, SudokuLog sudokuResult)
 		{
 			//if (((1 << (digit - 1)) & this.baseValue) == 0)
 			// 0110101 Abziehen
@@ -63,7 +63,7 @@ namespace de.onnen.Sudoku
 				SolveTechnik = "SetDigit",
 				value = digit,
 			};
-			SudokuResult nakeResult = sudokuResult.CreateChildResult();
+			SudokuLog nakeResult = sudokuResult.CreateChildResult();
 			nakeResult.EventInfoInResult = eventInfoInResult;
 
 			CheckLastDigit(sudokuResult);
@@ -88,7 +88,7 @@ namespace de.onnen.Sudoku
 		/// <summary>
 		/// Check if there is only one possible Digit to choose left.
 		/// </summary>
-		private bool CheckLastDigit(SudokuResult sudokuResult)
+		private bool CheckLastDigit(SudokuLog sudokuResult)
 		{
 			int ret = -1;
 			for (int i = 0; i < Consts.DimensionSquare; i++)
@@ -100,7 +100,7 @@ namespace de.onnen.Sudoku
 					ret = i;
 				}
 			}
-			SudokuResult sresult = sudokuResult.CreateChildResult();
+			SudokuLog sresult = sudokuResult.CreateChildResult();
 			sresult.EventInfoInResult = new SudokuEvent()
 			{
 				value = ret + 1,
@@ -116,12 +116,12 @@ namespace de.onnen.Sudoku
 		/// Set digit in cell.
 		/// </summary>
 		/// <param name="digit"></param>
-		public override bool SetDigit(int digit, SudokuResult sudokuResult)
+		public override bool SetDigit(int digit, SudokuLog sudokuResult)
 		{
 			if (this.digit == digit)
 				return false; ;
 
-			SudokuResult result = sudokuResult.CreateChildResult();
+			SudokuLog result = sudokuResult.CreateChildResult();
 			result.EventInfoInResult = new SudokuEvent()
 			{
 				ChangedCellBase = this,

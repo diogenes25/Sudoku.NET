@@ -15,7 +15,7 @@ namespace de.onnen.Sudoku.SolveTechniques
 			this.Info.Caption = "Hidden TwinTripleQuad";
 		}
 
-		public override void SolveHouse(IHouse house, SudokuResult sudokuResult)
+		public override void SolveHouse(IHouse house, SudokuLog sudokuResult)
 		{
 			// Digit 1:n Cell (contains Digit)
 			// Key = Digit - Value = Alle Zellen die dieses Enthalten
@@ -44,7 +44,7 @@ namespace de.onnen.Sudoku.SolveTechniques
 				// Wenn ein Key/Digit nur in eine einzigen Zelle enthalten ist, muss dieses Digit gesetzt werden.
 				if (kv.Value.Count == 1 && kv.Value.First().BaseValue > 0)
 				{
-					SudokuResult cresult = sudokuResult.CreateChildResult();
+					SudokuLog cresult = sudokuResult.CreateChildResult();
 					cresult.EventInfoInResult = new SudokuEvent()
 					{
 						value = kv.Key,
@@ -105,7 +105,7 @@ namespace de.onnen.Sudoku.SolveTechniques
 
 				if (eq)
 				{
-					SudokuResult cresult = sudokuResult.CreateChildResult();
+					SudokuLog cresult = sudokuResult.CreateChildResult();
 					cresult.EventInfoInResult = new SudokuEvent()
 					{
 						ChangedCellBase = house,
