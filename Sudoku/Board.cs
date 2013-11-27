@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using de.onnen.Sudoku.SudokuExternal;
 using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
-using System.Threading;
 
 namespace de.onnen.Sudoku
 {
 	/// <summary>
+	/// https://github.com/diogenes25/Sudoku
+	/// http://diogenes25.github.io/Sudoku/
 	/// http://sudoku-solutions.com/
 	/// http://hodoku.sourceforge.net/de/index.php
 	/// http://forum.enjoysudoku.com/
+	/// http://www.sadmansoftware.com/sudoku/solvingtechniques.htm
+	/// http://www.setbb.com/phpbb/viewtopic.php?t=379&mforum=sudoku
+	/// http://www.playr.co.uk/sudoku/dictionary.php
+	/// http://www.sudocue.net/glossary.php
 	/// </summary>
 	public class Board : ICloneable, IBoard, ISudokuHost
 	{
@@ -282,7 +288,6 @@ namespace de.onnen.Sudoku
 				sudokuResult.Successful = false;
 				sudokuResult.ErrorMessage = "Sudoku hat keine Lösung";
 			}
-		
 		}
 
 		public void Reset()

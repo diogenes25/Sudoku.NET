@@ -8,7 +8,7 @@ namespace de.onnen.Sudoku.SolveTechniques
 	/// <summary>
 	/// Naked Pair, Triplet, Quad (Locked Set, Naked Subset, Disjoint Subset)
 	/// <remarks>
-	/// If two cells in the same house (row, column or block) have only the same two candidates, 
+	/// If two cells in the same house (row, column or block) have only the same two candidates,
 	/// then those candidates can be removed from other cells in that house (row, column or block).
 	/// This technique is known as "naked pair" if two candidates are involved, "naked triplet" if three, or "naked quad" if four.
 	/// </remarks>

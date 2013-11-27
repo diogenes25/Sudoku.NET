@@ -1,10 +1,9 @@
 ﻿namespace de.onnen.Sudoku.SudokuExternal
 {
-	
 	/// <summary>
 	/// A group of 9 cells.
 	/// <remarks>
-	/// Each cell must contain a different digit in the solution. 
+	/// Each cell must contain a different digit in the solution.
 	/// In standard sudoku, a house can be a row, a column or a box. There are 27 houses in a standard sudoku grid.
 	/// </remarks>
 	/// </summary>
@@ -40,6 +39,7 @@
 		/// Box (or Block)
 		/// </summary>
 		Box = 2,
+
 		Cell = 3,
 	}
 }

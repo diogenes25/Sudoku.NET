@@ -1,7 +1,7 @@
 ﻿namespace de.onnen.Sudoku.SudokuExternal
 {
 	/// <summary>
-	/// sudoku puzzle. 
+	/// sudoku puzzle.
 	/// <remarks>
 	/// It contains the 81 constituent cells, lined up in 9 rows and 9 columns, with a distinct border around the boxes.
 	/// </remarks>
