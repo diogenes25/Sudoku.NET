@@ -39,15 +39,30 @@
           <h1>
 <a name="sudoku" class="anchor" href="#sudoku"><span class="octicon octicon-link"></span></a>Sudoku</h1>
 
-<h1></h1>
+<p>Sudoku Solver (with plugable solvetechniques)</p>
 
-<p>Sudoku Solver (with plugable Solving Techniques)</p>
+<p>To create your "own" solvetechnique you just have to:</p>
+
+<ol>
+<li>
+<p>derive from ASolveTechnique:</p>
+
+<pre><code>public class OwnSolveTechnique : ASolveTechnique
+</code></pre>
+</li>
+<li>
+<p>Implement the "SolveHouse" method:</p>
+
+<pre><code>public override void SolveHouse(IHouse house, SudokuResult sudokuResult)
+</code></pre>
+</li>
+</ol>
         </article>
       </div>
     </div>
     <footer>
       <div class="owner">
-      <p><a href="https://github.com/diogenes25" class="avatar"><img src="https://1.gravatar.com/avatar/c7d1f7c778c424b5af0689976cde8c72?d=https%3A%2F%2Fidenticons.github.com%2F0d3f84ebbe341b4ffac7027c720d8a43.png&amp;r=x&amp;s=60" width="48" height="48"/></a> <a href="https://github.com/diogenes25">diogenes25</a> maintains <a href="https://github.com/diogenes25/Sudoku">Sudoku</a></p>
+      <p><a href="https://github.com/diogenes25" class="avatar"><img src="https://2.gravatar.com/avatar/c7d1f7c778c424b5af0689976cde8c72?d=https%3A%2F%2Fidenticons.github.com%2F0d3f84ebbe341b4ffac7027c720d8a43.png&amp;r=x&amp;s=60" width="48" height="48"/></a> <a href="https://github.com/diogenes25">diogenes25</a> maintains <a href="https://github.com/diogenes25/Sudoku">Sudoku</a></p>
 
 
       </div>
