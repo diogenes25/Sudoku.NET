@@ -66,6 +66,8 @@ namespace de.onnen.Sudoku.SudokuWpf
 
 		private void SudokuButton_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
+			//SudokuLog result = new SudokuLog();
+			//this.cell.SetDigit(cellInt[((Button)sender)] + 1, result);
 			SudokuLog result = this.board.SetDigit(this.cell.ID, cellInt[((Button)sender)] + 1, true);
 			if (result.Successful)
 			{
@@ -74,7 +76,7 @@ namespace de.onnen.Sudoku.SudokuWpf
 			else
 			{
 				MessageBox.Show("AAAAARG2");
-								mwin.ReloadBoard();
+				mwin.ReloadBoard();
 			}
 
 		}

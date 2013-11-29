@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using de.onnen.Sudoku.SudokuExternal;
+using System.ComponentModel;
 
 namespace de.onnen.Sudoku
 {
@@ -140,6 +141,8 @@ namespace de.onnen.Sudoku
 			this.board.ReCheck();
 			this.baseValue = 0;
 			this.digit = digit;
+			RaisePropertyChanged("Digit");
+
 			for (int i = 0; i < 3; i++)
 			{
 				this.Fieldcontainters[i].ReCheck = true;
@@ -182,5 +185,17 @@ namespace de.onnen.Sudoku
 		}
 
 		public int ID { get { return this.id; } }
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		private void RaisePropertyChanged(string propertyName)
+		{
+			// take a copy to prevent thread issues
+			PropertyChangedEventHandler handler = PropertyChanged;
+			if (handler != null)
+			{
+				handler(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
 	}
 }

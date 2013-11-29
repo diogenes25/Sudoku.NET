@@ -1,4 +1,5 @@
-﻿namespace de.onnen.Sudoku.SudokuExternal
+﻿using System.ComponentModel;
+namespace de.onnen.Sudoku.SudokuExternal
 {
 	/// <summary>
 	/// Smallest element in a sudoku grid, capable of containing a single digit.
@@ -7,7 +8,7 @@
 	/// There are 81 cells in a standard sudoku grid.
 	/// </remarks>
 	/// </summary>
-	public interface ICell : ICellBase
+	public interface ICell : ICellBase, INotifyPropertyChanged
 	{
 		/// <summary>
 		/// A bitmask of every possible solution.
