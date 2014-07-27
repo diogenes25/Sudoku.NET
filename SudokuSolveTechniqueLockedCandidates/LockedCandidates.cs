@@ -8,6 +8,7 @@ namespace de.onnen.Sudoku.SolveTechniques
         public LockedCandidates()
         {
             this.Info.Caption = "LockedCandidates";
+            this.Info.Description = "";
         }
 
         public override void SolveHouse(IHouse house, SudokuLog sudokuResult)

@@ -5,7 +5,6 @@ namespace de.onnen.Sudoku
     public class House : CellBase, IHouse
     {
         private ICell[] peers;
-        private Board board;
 
         public ICell[] Peers { get { return peers; } }
 
@@ -24,14 +23,22 @@ namespace de.onnen.Sudoku
             }
         }
 
-        internal House(Board board, Cell[] cells, HouseType containerType, int containerIdx)
+        internal House(ICell[] cells, HouseType containerType, int containerIdx)
         {
             this.BaseValue = Consts.BaseStart;
-            this.board = board;
             this.peers = cells;
             this.houseType = containerType;
             this.ID = containerIdx;
             this.ReCheck = false;
+            foreach (ICell c in cells)
+            {
+                c.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Cell_PropertyChanged);
+            }
+        }
+
+        private void Cell_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            this.ReCheck = true;
         }
 
         internal void RecalcBaseValue()
@@ -92,6 +99,7 @@ namespace de.onnen.Sudoku
             {
                 cell.RemovePossibleDigit(digit, result);
             }
+            this.ReCheck = true;
             return true;
         }
 

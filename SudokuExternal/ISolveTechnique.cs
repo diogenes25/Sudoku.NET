@@ -13,5 +13,7 @@
         void Deactivate();
 
         void SolveHouse(IHouse house, SudokuLog sudokuResult);
+
+        ECellView CellView { get; }
     }
 }

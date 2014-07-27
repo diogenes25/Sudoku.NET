@@ -65,7 +65,7 @@ namespace de.onnen.Sudoku
                 {
                     for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
                     {
-                        ready &= container[containerIdx][containerType].Complete;
+                        ready &= this.container[containerIdx][containerType].Complete;
                     }
                 }
                 return ready;
@@ -114,7 +114,8 @@ namespace de.onnen.Sudoku
             this.solvePercentBase = Math.Pow(Consts.DimensionSquare, 3.0);
             for (int i = 0; i < Consts.DimensionSquare * Consts.DimensionSquare; i++)
             {
-                cells[i] = new Cell(this, i);
+                cells[i] = new Cell(i);
+                cells[i].PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Cell_PropertyChanged);
             }
 
             Cell[][][] fieldcontainer;
@@ -148,16 +149,22 @@ namespace de.onnen.Sudoku
                     }
                 }
 
-                container[containerIdx] = new House[3];
+                this.container[containerIdx] = new House[3];
                 for (int containerType = 0; containerType < 3; containerType++)
                 {
-                    container[containerIdx][containerType] = new House(this, fieldcontainer[containerType][containerIdx], (HouseType)containerType, containerIdx);
+                    this.container[containerIdx][containerType] = new House(fieldcontainer[containerType][containerIdx], (HouseType)containerType, containerIdx);
                     foreach (Cell f in fieldcontainer[containerType][containerIdx])
                     {
                         f.fieldcontainters[containerType] = container[containerIdx][containerType];
+                        //container[containerIdx][containerType].PropertyChanged;
                     }
                 }
             }
+        }
+
+        private void Cell_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            this.ReCheck();
         }
 
         /// <summary>
@@ -225,8 +232,14 @@ namespace de.onnen.Sudoku
         {
             for (int i = 0; i < otherBoard.Cells.Length; i++)
             {
-                this.cells[i].Digit = otherBoard.Cells[i].Digit;
-                this.cells[i].BaseValue = otherBoard.Cells[i].BaseValue;
+                if (otherBoard.Cells[i].Digit > 0)
+                {
+                    this.cells[i].Digit = otherBoard.Cells[i].Digit;
+                }
+                else
+                {
+                    this.cells[i].BaseValue = otherBoard.Cells[i].BaseValue;
+                }
             }
             for (int containerType = 0; containerType < 3; containerType++)
             {
@@ -246,12 +259,12 @@ namespace de.onnen.Sudoku
                 if (this.history[historyId].BoardInt[i] < 0)
                 {
                     this.cells[i].Digit = this.history[historyId].BoardInt[i] * -1;
-                    this.cells[i].BaseValue = 0;
+                    //this.cells[i].BaseValue = 0;
                 }
                 else
                 {
+                    //this.cells[i].Digit = 0;
                     this.cells[i].BaseValue = this.history[historyId].BoardInt[i];
-                    this.cells[i].Digit = 0;
                 }
             }
             for (int containerType = 0; containerType < 3; containerType++)
@@ -273,13 +286,14 @@ namespace de.onnen.Sudoku
                 {
                     for (int containerType = 0; containerType < 3; containerType++)
                     {
-                        //if (container[containerIdx][containerType].Complete || (!container[containerIdx][containerType].ReCheck && !forceSolve))
                         if (container[containerIdx][containerType].Complete)
                             continue;
                         foreach (ASolveTechnique st in solveTechniques)
                         {
                             if (st.IsActive)
                             {
+                                if (!container[containerIdx][containerType].ReCheck && st.CellView == ECellView.OnlyHouse)
+                                    continue;
                                 st.SolveHouse(container[containerIdx][containerType], sudokuResult);
                                 if (!sudokuResult.Successful)
                                     return;
@@ -312,14 +326,14 @@ namespace de.onnen.Sudoku
             for (int i = 0; i < Consts.DimensionSquare * Consts.DimensionSquare; i++)
             {
                 cells[i].Digit = 0;
-                cells[i].BaseValue = Consts.BaseStart;
+                //cells[i].BaseValue = Consts.BaseStart;
             }
 
             for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
             {
                 for (int containerType = 0; containerType < 3; containerType++)
                 {
-                    container[containerIdx][containerType].BaseValue = (1 << Consts.DimensionSquare) - 1;
+                    this.container[containerIdx][containerType].BaseValue = (1 << Consts.DimensionSquare) - 1;
                 }
             }
         }

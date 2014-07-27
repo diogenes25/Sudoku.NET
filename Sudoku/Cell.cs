@@ -7,24 +7,47 @@ namespace de.onnen.Sudoku
     [DebuggerDisplay("Cell-ID {id}")]
     public class Cell : CellBase, ICell
     {
-        private Board board;
-
         private int digit = 0;
 
         internal House[] fieldcontainters = new House[3];
 
         public event de.onnen.Sudoku.SudokuExternal.CellEventHandler CellEvent;
 
+        public new int BaseValue
+        {
+            get { return base.BaseValue; }
+            internal set
+            {
+                base.BaseValue = value;
+                if (base.BaseValue > 0 && this.Digit > 0 && value > 0)
+                    this.Digit = 0;
+            }
+        }
+
         public int Digit
         {
             get { return this.digit; }
-            internal set { SetField(ref this.digit, value, "Digit"); }
+            internal set
+            {
+                if (value == 0)
+                {
+                    if (SetField(ref this.digit, value, "Digit"))
+                        this.BaseValue = Consts.BaseStart;
+                }
+                else
+                {
+                    if (value > 0 && value <= Consts.DimensionSquare && this.digit < 1 && (this.BaseValue & (1 << (value - 1))) == (1 << (value - 1)))
+                    {
+                        if (SetField(ref this.digit, value, "Digit"))
+                            this.BaseValue = 0;
+                    }
+                }
+            }
         }
 
-        internal Cell(Board board, int id)
+        internal Cell(int id)
         {
             this.houseType = HouseType.Cell;
-            this.board = board;
             this.ID = id;
             this.BaseValue = Consts.BaseStart;
         }
@@ -78,11 +101,12 @@ namespace de.onnen.Sudoku
                 nakeResult.ErrorMessage = "RemovePossibleBaseValue";
                 return true;
             }
-            this.board.ReCheck();
-            for (int i = 0; i < 3; i++)
-            {
-                this.fieldcontainters[i].ReCheck = true;
-            }
+
+            //this.board.ReCheck();
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    this.fieldcontainters[i].ReCheck = true;
+            //}
 
             FireEvent(nakeResult.EventInfoInResult);
 
@@ -141,20 +165,25 @@ namespace de.onnen.Sudoku
                 value = digitFromOutside,
             };
 
-            if (digitFromOutside < 1 || digitFromOutside > Consts.DimensionSquare || this.digit > 0 || (this.BaseValue & (1 << (digitFromOutside - 1))) != (1 << (digitFromOutside - 1)))
+            //if (digitFromOutside < 1 || digitFromOutside > Consts.DimensionSquare || this.digit > 0 || (this.BaseValue & (1 << (digitFromOutside - 1))) != (1 << (digitFromOutside - 1)))
+            //{
+            //    sudokuResult.Successful = false;
+            //    sudokuResult.ErrorMessage = string.Format("Digit {0} is in Cell {1}" + this.ID + " not possible", digitFromOutside, this.ID);
+            //    return true;
+            //}
+
+            //this.board.ReCheck();
+            this.Digit = digitFromOutside;
+            if (this.Digit != digitFromOutside)
             {
                 sudokuResult.Successful = false;
                 sudokuResult.ErrorMessage = string.Format("Digit {0} is in Cell {1}" + this.ID + " not possible", digitFromOutside, this.ID);
                 return true;
             }
 
-            this.board.ReCheck();
-            this.BaseValue = 0;
-            this.digit = digitFromOutside;
-
             for (int i = 0; i < 3; i++)
             {
-                this.fieldcontainters[i].ReCheck = true;
+                //this.fieldcontainters[i].ReCheck = true;
                 this.fieldcontainters[i].SetDigit(digitFromOutside, sudokuResult);
                 if (!sudokuResult.Successful)
                 {

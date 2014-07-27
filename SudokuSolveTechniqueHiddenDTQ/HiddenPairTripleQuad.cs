@@ -133,5 +133,10 @@ namespace de.onnen.Sudoku.SolveTechniques
                 }
             }
         }
+
+        public new ECellView CellView
+        {
+            get { return ECellView.OnlyHouse; }
+        }
     }
 }

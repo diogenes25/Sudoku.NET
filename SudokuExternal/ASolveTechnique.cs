@@ -58,6 +58,17 @@
             }
         }
 
+        public virtual ECellView CellView
+        {
+            get { return ECellView.GlobalView; }
+        }
+
         #endregion ISolveTechnic Members
+    }
+
+    public enum ECellView
+    {
+        OnlyHouse,
+        GlobalView,
     }
 }
