@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Windows.Controls.Ribbon;
+﻿using System.Windows;
 using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
-using System.Windows;
+using Microsoft.Windows.Controls.Ribbon;
 
 namespace de.onnen.Sudoku.SudokuWpf
 {
@@ -12,6 +8,7 @@ namespace de.onnen.Sudoku.SudokuWpf
         class RibbonGroupSolveTechnic : RibbonGroup
     {
         private ISolveTechnique solveTechnic;
+
         public RibbonGroupSolveTechnic(ISolveTechnique solveTechnic)
             : base()
         {
@@ -29,24 +26,22 @@ namespace de.onnen.Sudoku.SudokuWpf
             rcb.Unchecked += new RoutedEventHandler(rcb_UnChecked);
             this.Items.Add(rcb);
 
-
             //this.board.boardChangeEvent += new Board.BoardChanged(board_boardChangeEvent);
         }
 
-        void rcb_UnChecked(object sender, RoutedEventArgs e)
+        private void rcb_UnChecked(object sender, RoutedEventArgs e)
         {
             this.solveTechnic.Deactivate();
         }
 
-        void rcb_Checked(object sender, RoutedEventArgs e)
+        private void rcb_Checked(object sender, RoutedEventArgs e)
         {
             this.solveTechnic.Activate();
         }
 
-        void eb_Click(object sender, RoutedEventArgs e)
+        private void eb_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(this.solveTechnic.Info.Caption);
         }
-
     }
 }

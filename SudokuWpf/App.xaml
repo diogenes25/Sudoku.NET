@@ -3,46 +3,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style x:Key="myStyle" TargetType="Button">
+        <Style x:Key="whiteTextItem" TargetType="TreeViewItem">
+            <Setter Property="Foreground" Value="WhiteSmoke" />
+            <Setter Property="FontFamily" Value="11px" />
+        </Style>
+        <Style x:Key="whiteText" TargetType="TreeView">
+            <Setter Property="Background" Value="{x:Null}" />
+        </Style>
+        <Style x:Key="smallButtonStyle" TargetType="Button">
             <!--<Setter Property="BorderThickness" Value="1px" />
             <Setter Property="Background" Value="Orange" />
             <Setter Property="FontStyle" Value="Normal" />
             <Setter Property="Padding" Value="0" />
             <Setter Property="Margin" Value="0" />-->
-            <Setter Property="OverridesDefaultStyle" Value="True"/>
-            <Setter Property="Margin" Value="2"/>
-            <Setter Property="FocusVisualStyle" Value="{DynamicResource MyFocusVisual}"/>
-            <Setter Property="Background" Value="#FF6DB4EF"/>
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="FocusVisualStyle" Value="{DynamicResource MyFocusVisual}" />
+            <Setter Property="Background" Value="#FF6DB4EF" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid>
-                            <Ellipse Fill="{TemplateBinding Background}"/>
+                            <Ellipse Fill="{TemplateBinding Background}" />
                             <Ellipse x:Name="highlightCircle">
                                 <Ellipse.Fill>
                                     <RadialGradientBrush>
-                                        <GradientStop Offset="0" Color="#00000000"/>
-                                        <GradientStop Offset="0.88" Color="#00000000"/>
-                                        <GradientStop Offset="1" Color="#80000000"/>
+                                        <GradientStop Offset="0" Color="#00000000" />
+                                        <GradientStop Offset="0.88" Color="#00000000" />
+                                        <GradientStop Offset="1" Color="#80000000" />
                                     </RadialGradientBrush>
                                 </Ellipse.Fill>
                             </Ellipse>
-                            <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter TargetName="highlightCircle" Property="Fill">
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
-                                            <GradientStop Offset="0" Color="#50FFFFFF"/>
-                                            <GradientStop Offset="0.5" Color="#00FFFFFF"/>
-                                            <GradientStop Offset="1" Color="#50FFFFFF"/>
+                                            <GradientStop Offset="0" Color="#50FFFFFF" />
+                                            <GradientStop Offset="0.5" Color="#00FFFFFF" />
+                                            <GradientStop Offset="1" Color="#50FFFFFF" />
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
                                 <Setter TargetName="content" Property="RenderTransform">
                                     <Setter.Value>
-                                        <TranslateTransform Y="0.5" X="0.5"/>
+                                        <TranslateTransform Y="0.5" X="0.5" />
                                     </Setter.Value>
                                 </Setter>
                             </Trigger>

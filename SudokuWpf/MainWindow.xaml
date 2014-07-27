@@ -5,12 +5,11 @@
     <Window.Background>
         <ImageBrush ImageSource="/SudokuWpf;component/Resources/img/blue-xray-brain-medium.jpg" />
     </Window.Background>
-    <DockPanel  Name="dockPnlBase" LastChildFill="True" >
+    <DockPanel  Name="dockPnlBase" LastChildFill="True">
         <my:Ribbon DockPanel.Dock="Top" Name="MainRibbon">
-            <my:RibbonTab Header="Datei" >
+            <my:RibbonTab Header="Datei">
                 <my:RibbonGroup Header="Datei" Name="Datei">
                     <my:RibbonButton Label="Neu"  Click="BtnNew_Click" Name="btnNew"  SmallImageSource="/SudokuWpf;component/Resources/img/new.ico" MinWidth="100" LargeImageSource="/SudokuWpf;component/Resources/img/new.ico" Foreground="WhiteSmoke">
-
                     </my:RibbonButton>
                     <my:RibbonButton Label="Laden" Click="BtnLoad_Click" Name="btnLoad" SmallImageSource="/SudokuWpf;component/Resources/img/open.ico" MinWidth="100" LargeImageSource="/SudokuWpf;component/Resources/img/open.ico" Foreground="WhiteSmoke" />
                     <my:RibbonButton Label="Speichern"  Click="BtnSave_Click" Name="btnSave" SmallImageSource="/SudokuWpf;component/Resources/img/disk.ico" MinWidth="100" LargeImageSource="/SudokuWpf;component/Resources/img/disk.ico" Foreground="WhiteSmoke" />
@@ -24,7 +23,7 @@
             <my:RibbonTab Header="Solve" Name="rbnTabSolve">
                 <my:RibbonGroup Header="Group" Name="Techniken">
                     <my:RibbonButton Label="Aktualisieren" Name="btnReduce"  Click="btnReduce_Click" Foreground="WhiteSmoke" LargeImageSource="/SudokuWpf;component/Resources/img/reload2.ico" />
-                    <my:RibbonCheckBox Label="Nach Klick"  Name="chkbxAutoReduce" Foreground="WhiteSmoke"/>
+                    <my:RibbonCheckBox Label="Nach Klick"  Name="chkbxAutoReduce" Foreground="WhiteSmoke" />
                     <my:RibbonButton Label="Lösen" Name="btnBacktrack" Click="btnBacktrack_Click" Foreground="WhiteSmoke" LargeImageSource="/SudokuWpf;component/Resources/img/top.ico" />
                 </my:RibbonGroup>
             </my:RibbonTab>
@@ -35,17 +34,17 @@
                 </LinearGradientBrush>
             </my:Ribbon.Background>
         </my:Ribbon>
-        <StatusBar Height="33" Name="statusBar1"   DockPanel.Dock="Bottom" Background="{x:Null}" >
+        <StatusBar Height="33" Name="statusBar1"   DockPanel.Dock="Bottom" Background="{x:Null}">
             <StatusBar.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </ItemsPanelTemplate>
@@ -62,7 +61,6 @@
         </StatusBar>
         <DockPanel  Name="dockPanel1" LastChildFill="True" DockPanel.Dock="Left">
 
-
             <ListBox Name="lstbxHistory" SelectionChanged="lstbxHistory_SelectionChanged" Margin="2" Background="{x:Null}" Foreground="WhiteSmoke" DockPanel.Dock="Left" Width="200" BorderBrush="{x:Null}" FontSize="11">
             </ListBox>
             <Grid  Name="gridBlock" VerticalAlignment="Top" Margin="5" IsManipulationEnabled="False" Height="500" Width="500" DockPanel.Dock="Right" Background="#72000000">
@@ -76,13 +74,10 @@
                     <RowDefinition Height="33*" />
                     <RowDefinition Height="33*" />
                 </Grid.RowDefinitions>
-
             </Grid>
         </DockPanel>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-            <TreeView Name="treeviewResult" Background="{x:Null}" Foreground="WhiteSmoke" BorderBrush="{x:Null}" FontSize="11">
-
-            </TreeView>
+            <TreeView Name="treeviewResult" FontSize="11" Style="{StaticResource whiteText}" ItemContainerStyle="{StaticResource whiteTextItem}"></TreeView>
         </ScrollViewer>
     </DockPanel>
 </Window>

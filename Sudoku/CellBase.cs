@@ -1,20 +1,52 @@
-﻿using de.onnen.Sudoku.SudokuExternal;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using de.onnen.Sudoku.SudokuExternal;
 
 namespace de.onnen.Sudoku
 {
-	public abstract class CellBase : ICellBase
-	{
-		public HouseType HType { get { return this.houseType; } }
+    public abstract class CellBase : ICellBase, INotifyPropertyChanged
+    {
+        private int baseValue = 0;
 
-		public int ID { get { return this.id; } }
+        private int id;
 
-		protected int id;
-		internal HouseType houseType;
+        internal HouseType houseType;
 
-		public int BaseValue { get { return this.baseValue; } }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-		internal int baseValue = 0;
+        public HouseType HType
+        {
+            get { return this.houseType; }
+        }
 
-		public abstract bool SetDigit(int digit, SudokuLog sudokuResult);
-	}
+        public int ID
+        {
+            get { return this.id; }
+            protected set { this.id = value; }
+        }
+
+        public int BaseValue
+        {
+            get { return this.baseValue; }
+            internal set { SetField(ref this.baseValue, value, "BaseValue"); }
+        }
+
+        internal abstract bool SetDigit(int digit, SudokuLog sudokuResult);
+
+        public abstract SudokuLog SetDigit(int digit);
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected bool SetField<T>(ref T field, T value, string propertyName)
+        {
+            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+            field = value;
+            OnPropertyChanged(propertyName);
+            return true;
+        }
+    }
 }
