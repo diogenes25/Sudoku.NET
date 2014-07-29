@@ -32,7 +32,7 @@ namespace de.onnen.Sudoku.SudokuExternal
         /// </summary>
         System.Collections.Generic.List<int> Candidates { get; }
 
-        event de.onnen.Sudoku.SudokuExternal.CellEventHandler CellEvent;
+        //event de.onnen.Sudoku.SudokuExternal.CellEventHandler CellEvent;
 
         /// <summary>
         /// A numerical value between 1 and 9, which must be placed in the cells in order to complete the puzzle.

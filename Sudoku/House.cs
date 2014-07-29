@@ -1,4 +1,5 @@
-﻿using de.onnen.Sudoku.SudokuExternal;
+﻿using System.Collections.Generic;
+using de.onnen.Sudoku.SudokuExternal;
 
 namespace de.onnen.Sudoku
 {
@@ -38,18 +39,19 @@ namespace de.onnen.Sudoku
 
         private void Cell_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            this.ReCheck = true;
+            if (e.PropertyName.Equals("Digit"))
+                this.ReCheck = true;
         }
 
-        internal void RecalcBaseValue()
-        {
-            this.BaseValue = (1 << Consts.DimensionSquare) - 1;
-            foreach (Cell c in this.peers)
-            {
-                if (c.Digit > 0)
-                    this.BaseValue -= (1 << (c.Digit - 1));
-            }
-        }
+        //internal void RecalcBaseValue()
+        //{
+        //    this.BaseValue = (1 << Consts.DimensionSquare) - 1;
+        //    foreach (Cell c in this.peers)
+        //    {
+        //        if (c.Digit > 0)
+        //            this.BaseValue -= (1 << (c.Digit - 1));
+        //    }
+        //}
 
         /// <summary>
         /// Removes the digit as a possible digit in every cell in this container.
@@ -69,8 +71,28 @@ namespace de.onnen.Sudoku
                                 ChangedCellBase = this,
                                 Action = CellAction.SetDigitInt
                             };
+            bool ok = true;
+            int newBaseValue = Consts.BaseStart;
+            HashSet<int> m = new HashSet<int>();
+            foreach (ICell cell in this.peers)
+            {
+                if (cell.Digit > 0)
+                {
+                    if (m.Contains(cell.Digit))
+                    {
+                        ok = false;
+                        break;
+                    }
+                    else
+                    {
+                        m.Add(cell.Digit);
+                        newBaseValue -= (1 << (cell.Digit - 1));
+                    }
+                }
+            }
 
-            if ((this.BaseValue & (1 << (digit - 1))) != (1 << (digit - 1)))
+            //if ((newBaseValue & (1 << (digit - 1))) != (1 << (digit - 1)))
+            if (!ok)
             {
                 SudokuLog resultError = sudokuResult.CreateChildResult();
                 resultError.EventInfoInResult = sudokuEvent;
@@ -79,12 +101,13 @@ namespace de.onnen.Sudoku
                 return true;
             }
 
-            int tmpBaseValue = (1 << (digit - 1));
-            int tmp = this.BaseValue ^ tmpBaseValue;
-            int newBaseValue = this.BaseValue & tmp;
-            if (newBaseValue == this.BaseValue)
-                return false;
             this.BaseValue = newBaseValue;
+            //int tmpBaseValue = (1 << (digit - 1));
+            //int tmp = this.BaseValue ^ tmpBaseValue;
+            //int newBaseValue = this.BaseValue & tmp;
+            //if (newBaseValue == this.BaseValue)
+            //    return false;
+            //this.BaseValue = newBaseValue;
 
             SudokuLog result = sudokuResult.CreateChildResult();
             result.EventInfoInResult = new SudokuEvent()
@@ -99,7 +122,7 @@ namespace de.onnen.Sudoku
             {
                 cell.RemovePossibleDigit(digit, result);
             }
-            this.ReCheck = true;
+            //this.ReCheck = true;
             return true;
         }
 

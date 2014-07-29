@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using de.onnen.Sudoku.SudokuExternal;
 using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 
@@ -241,13 +240,13 @@ namespace de.onnen.Sudoku
                     this.cells[i].BaseValue = otherBoard.Cells[i].BaseValue;
                 }
             }
-            for (int containerType = 0; containerType < 3; containerType++)
-            {
-                for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
-                {
-                    this.container[containerIdx][containerType].RecalcBaseValue();
-                }
-            }
+            //for (int containerType = 0; containerType < 3; containerType++)
+            //{
+            //    for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
+            //    {
+            //        this.container[containerIdx][containerType].RecalcBaseValue();
+            //    }
+            //}
         }
 
         public void SetHistory(int historyId)
@@ -267,13 +266,13 @@ namespace de.onnen.Sudoku
                     this.cells[i].BaseValue = this.history[historyId].BoardInt[i];
                 }
             }
-            for (int containerType = 0; containerType < 3; containerType++)
-            {
-                for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
-                {
-                    this.container[containerIdx][containerType].RecalcBaseValue();
-                }
-            }
+            //for (int containerType = 0; containerType < 3; containerType++)
+            //{
+            //    for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
+            //    {
+            //        this.container[containerIdx][containerType].RecalcBaseValue();
+            //    }
+            //}
             //this.Solve(new SudokuResult());
         }
 
@@ -354,7 +353,7 @@ namespace de.onnen.Sudoku
                         SudokuLog result = newBoard.SetDigit(i, x, true);
                         if (boardChangeEvent != null)
                             boardChangeEvent(newBoard, new SudokuEvent() { Action = CellAction.SetDigitInt, ChangedCellBase = newBoard.Cells[i] });
-                        Thread.Sleep(300);
+                        //Thread.Sleep(300);
                         if (!result.Successful)
                         {
                             //Console.WriteLine(board.Cells[i].ToString() + " X SetDigit " + x);
@@ -366,7 +365,7 @@ namespace de.onnen.Sudoku
                             for (int s = 0; s < cells.Length; s++)
                             {
                                 this.cells[s].Digit = newBoard.cells[s].Digit;
-                                this.cells[s].BaseValue = 0;
+                                //this.cells[s].BaseValue = 0;
                             }
                             return true;
                         }
@@ -433,17 +432,19 @@ namespace de.onnen.Sudoku
 
             for (int i = 0; i < cells.Length; i++)
             {
-                cloneboard.cells[i].Digit = cells[i].Digit;
-                cloneboard.cells[i].BaseValue = cells[i].BaseValue;
+                if (cells[i].Digit > 0)
+                    cloneboard.cells[i].Digit = cells[i].Digit;
+                else
+                    cloneboard.cells[i].BaseValue = cells[i].BaseValue;
             }
 
-            for (int containerType = 0; containerType < 3; containerType++)
-            {
-                for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
-                {
-                    cloneboard.container[containerIdx][containerType].RecalcBaseValue();
-                }
-            }
+            //for (int containerType = 0; containerType < 3; containerType++)
+            //{
+            //    for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
+            //    {
+            //        cloneboard.container[containerIdx][containerType].RecalcBaseValue();
+            //    }
+            //}
             return cloneboard;
         }
 

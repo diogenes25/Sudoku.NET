@@ -24,7 +24,7 @@ namespace de.onnen.Sudoku.SudokuWpf
         {
             this.cell = cell;
             this.board = board;
-            this.cell.CellEvent += this.BoardEvent;
+            this.cell.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(cell_PropertyChanged);
             this.mwin = mwin;
             routingEvent = new System.Windows.RoutedEventHandler(SudokuButton_Click);
             lbl = new Label()
@@ -63,6 +63,29 @@ namespace de.onnen.Sudoku.SudokuWpf
             }
         }
 
+        private void cell_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Digit")
+            {
+                return;
+            }
+
+            if (((ICell)sender).Digit == 0)
+            {
+                List<int> c = ((ICell)sender).Candidates;
+                for (int v = 0; v < Consts.DimensionSquare; v++)
+                {
+                    buttons[v].Visibility = c.Contains(v + 1) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                }
+            }
+            else
+            {
+                lbl.Content = ((ICell)sender).Digit;
+                this.borderMain.Child = lbl;
+            }
+            mwin.progressbarBoard.Value = board.SolvePercent();
+        }
+
         private void SudokuButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             //SudokuLog result = new SudokuLog();
@@ -84,32 +107,11 @@ namespace de.onnen.Sudoku.SudokuWpf
             if (eventInfo.Action == CellAction.RemPoss)
             {
                 buttons[eventInfo.value - 1].Visibility = System.Windows.Visibility.Hidden;
-                //for (int i = 0; i < Consts.DimensionSquare; i++)
-                //{
-                //    if (((1 << i) & eventInfo.value) > 0)
-                //        buttons[i].Visibility = System.Windows.Visibility.Hidden;
-                //}
             }
             else
             {
                 lbl.Content = eventInfo.value;
-                //this.Content = lbl;
-                //if (eventInfo.cell != this.cell)
-                //  lbl.Foreground = Brushes.Aqua;
                 this.borderMain.Child = lbl;
-
-                //for (int i = 0; i < Consts.DimensionSquare; i++)
-                //{
-                //  if (eventInfo.value - 1 == i)
-                //  {
-                //    //buttons[i].IsEnabled = false;
-                //    buttons[i].Background = Brushes.Red;
-                //  }
-                //  else
-                //  {
-                //    buttons[i].Visibility = System.Windows.Visibility.Hidden;
-                //  }
-                //}
             }
             mwin.progressbarBoard.Value = board.SolvePercent();
         }

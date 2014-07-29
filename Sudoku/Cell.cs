@@ -1,17 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using de.onnen.Sudoku.SudokuExternal;
 
 namespace de.onnen.Sudoku
 {
-    [DebuggerDisplay("Cell-ID {id}")]
+    [DebuggerDisplay("Cell-ID {id} {digit} / {BaseValue}")]
     public class Cell : CellBase, ICell
     {
         private int digit = 0;
 
         internal House[] fieldcontainters = new House[3];
 
-        public event de.onnen.Sudoku.SudokuExternal.CellEventHandler CellEvent;
+        //public event de.onnen.Sudoku.SudokuExternal.CellEventHandler CellEvent;
 
         public new int BaseValue
         {
@@ -20,7 +21,7 @@ namespace de.onnen.Sudoku
             {
                 base.BaseValue = value;
                 if (base.BaseValue > 0 && this.Digit > 0 && value > 0)
-                    this.Digit = 0;
+                    this.digit = 0;
             }
         }
 
@@ -31,15 +32,24 @@ namespace de.onnen.Sudoku
             {
                 if (value == 0)
                 {
-                    if (SetField(ref this.digit, value, "Digit"))
-                        this.BaseValue = Consts.BaseStart;
+                    //if (SetField(ref this.digit, value, "Digit"))
+                    this.digit = 0;
+                    this.BaseValue = Consts.BaseStart;
                 }
                 else
                 {
+                    if (this.digit == value)
+                        return;
                     if (value > 0 && value <= Consts.DimensionSquare && this.digit < 1 && (this.BaseValue & (1 << (value - 1))) == (1 << (value - 1)))
                     {
+                        //this.digit = value;
                         if (SetField(ref this.digit, value, "Digit"))
                             this.BaseValue = 0;
+                    }
+                    else
+                    {
+                        throw new Exception("Digit " + value + " is in Cell" + this.ID + " not possible");
+                        //Console.WriteLine("xx");
                     }
                 }
             }
@@ -52,13 +62,13 @@ namespace de.onnen.Sudoku
             this.BaseValue = Consts.BaseStart;
         }
 
-        internal void FireEvent(SudokuEvent eventInfo)
-        {
-            if (this.CellEvent != null)
-            {
-                this.CellEvent(eventInfo);
-            }
-        }
+        //internal void FireEvent(SudokuEvent eventInfo)
+        //{
+        //    if (this.CellEvent != null)
+        //    {
+        //        this.CellEvent(eventInfo);
+        //    }
+        //}
 
         public override bool Equals(object obj)
         {
@@ -108,7 +118,7 @@ namespace de.onnen.Sudoku
             //    this.fieldcontainters[i].ReCheck = true;
             //}
 
-            FireEvent(nakeResult.EventInfoInResult);
+            //FireEvent(nakeResult.EventInfoInResult);
 
             return true;
         }
@@ -173,12 +183,18 @@ namespace de.onnen.Sudoku
             //}
 
             //this.board.ReCheck();
-            this.Digit = digitFromOutside;
-            if (this.Digit != digitFromOutside)
+            try
             {
+                this.Digit = digitFromOutside;
+            }
+            catch (Exception e)
+            {
+                //if (this.Digit != digitFromOutside)
+                //{
                 sudokuResult.Successful = false;
-                sudokuResult.ErrorMessage = string.Format("Digit {0} is in Cell {1}" + this.ID + " not possible", digitFromOutside, this.ID);
+                sudokuResult.ErrorMessage = e.Message;
                 return true;
+                //}
             }
 
             for (int i = 0; i < 3; i++)
@@ -187,13 +203,12 @@ namespace de.onnen.Sudoku
                 this.fieldcontainters[i].SetDigit(digitFromOutside, sudokuResult);
                 if (!sudokuResult.Successful)
                 {
-                    sudokuResult.Successful = false;
                     sudokuResult.ErrorMessage = "Digit " + digitFromOutside + " is in Cell (FieldContainer) " + this.ID + " not possible";
                     return true;
                 }
             }
 
-            FireEvent(result.EventInfoInResult);
+            //FireEvent(result.EventInfoInResult);
 
             return true;
         }
