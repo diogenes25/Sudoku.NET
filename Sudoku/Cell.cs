@@ -48,7 +48,7 @@ namespace de.onnen.Sudoku
                     }
                     else
                     {
-                        throw new Exception("Digit " + value + " is in Cell" + this.ID + " not possible");
+                        throw new Exception("Digit " + value + " is in Cell " + this.ID + " not possible");
                         //Console.WriteLine("xx");
                     }
                 }
@@ -57,7 +57,7 @@ namespace de.onnen.Sudoku
 
         internal Cell(int id)
         {
-            this.houseType = HouseType.Cell;
+            this.HType = HouseType.Cell;
             this.ID = id;
             this.BaseValue = Consts.BaseStart;
         }
@@ -72,6 +72,8 @@ namespace de.onnen.Sudoku
 
         public override bool Equals(object obj)
         {
+            if (obj == null || !(obj is ICell))
+                return false;
             return this.ID == ((Cell)obj).ID;
         }
 
@@ -87,7 +89,7 @@ namespace de.onnen.Sudoku
             // int newBaseValue = this.baseValue & tmp;
             // if (newBaseValue == this.baseValue)
             //    return false;
-            if ((this.BaseValue & (1 << (digit - 1))) == 0)
+            if (digit < 1 || digit > Consts.DimensionSquare || (this.BaseValue & (1 << (digit - 1))) == 0)
                 return false;
 
             this.BaseValue -= (1 << (digit - 1));
@@ -124,8 +126,10 @@ namespace de.onnen.Sudoku
         }
 
         /// <summary>
-        /// Check if there is only one possible Digit to choose left.
+        /// Check if there is only one candidate left.
         /// </summary>
+        /// <param name="sudokuResult"></param>
+        /// <returns>true = Only one candidate was left and will be set</returns>
         private bool CheckLastDigit(SudokuLog sudokuResult)
         {
             int ret = -1;
@@ -144,7 +148,7 @@ namespace de.onnen.Sudoku
                 value = ret + 1,
                 ChangedCellBase = this,
                 Action = CellAction.RemPoss,
-                SolveTechnik = "LastdDigit",
+                SolveTechnik = "LastCandidate",
             };
 
             return SetDigit(ret + 1, sresult);
@@ -154,7 +158,7 @@ namespace de.onnen.Sudoku
         /// Set digit in cell.
         /// </summary>
         /// <param name="digit"></param>
-        public override SudokuLog SetDigit(int digit)
+        public SudokuLog SetDigit(int digit)
         {
             SudokuLog sudokuLog = new SudokuLog();
             SetDigit(digit, sudokuLog);
@@ -215,12 +219,12 @@ namespace de.onnen.Sudoku
 
         public override string ToString()
         {
-            return this.houseType + "(" + this.ID + ") [" + ((char)(int)((this.ID / Consts.DimensionSquare) + 65)) + "" + ((this.ID % Consts.DimensionSquare) + 1) + "] " + this.digit;
+            return this.HType + "(" + this.ID + ") [" + ((char)(int)((this.ID / Consts.DimensionSquare) + 65)) + "" + ((this.ID % Consts.DimensionSquare) + 1) + "] " + this.digit;
         }
 
         public override int GetHashCode()
         {
-            return this.ID;
+            return (this.digit == 0) ? (this.BaseValue + ((1 << Consts.Dimension) + this.ID) * -1) : (this.digit + ((1 << Consts.Dimension) + this.ID));
         }
 
         public List<int> Candidates

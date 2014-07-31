@@ -257,7 +257,15 @@ namespace de.onnen.Sudoku
             {
                 if (this.history[historyId].BoardInt[i] < 0)
                 {
-                    this.cells[i].Digit = this.history[historyId].BoardInt[i] * -1;
+                    try
+                    {
+                        this.cells[i].Digit = this.history[historyId].BoardInt[i] * -1;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        continue;
+                    }
                     //this.cells[i].BaseValue = 0;
                 }
                 else

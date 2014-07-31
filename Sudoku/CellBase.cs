@@ -6,17 +6,18 @@ namespace de.onnen.Sudoku
 {
     public abstract class CellBase : ICellBase, INotifyPropertyChanged
     {
-        private int baseValue = 0;
+        protected int baseValue = 0;
 
         private int id;
 
-        internal HouseType houseType;
+        //private HouseType houseType;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public HouseType HType
         {
-            get { return this.houseType; }
+            get;
+            protected set;
         }
 
         public int ID
@@ -33,7 +34,7 @@ namespace de.onnen.Sudoku
 
         internal abstract bool SetDigit(int digit, SudokuLog sudokuResult);
 
-        public abstract SudokuLog SetDigit(int digit);
+        //public abstract SudokuLog SetDigit(int digit);
 
         protected virtual void OnPropertyChanged(string propertyName)
         {

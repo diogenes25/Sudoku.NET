@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoardTest.cs" />
+    <Compile Include="CellTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +64,9 @@
     <Content Include="TestData\HardestDatabase110626.txt" />
     <Content Include="TestData\sudoku.txt" />
     <Content Include="TestData\top95.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Shadow Include="Test References\Sudoku.accessor" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
