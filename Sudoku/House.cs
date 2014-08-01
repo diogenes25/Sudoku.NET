@@ -18,7 +18,7 @@ namespace de.onnen.Sudoku
                 int retval = 0;
                 foreach (Cell c in this.peers)
                 {
-                    retval |= c.BaseValue;
+                    retval |= c.CandidateValue;
                 }
                 return retval == 0;
             }
@@ -26,7 +26,7 @@ namespace de.onnen.Sudoku
 
         internal House(ICell[] cells, HouseType containerType, int containerIdx)
         {
-            this.BaseValue = Consts.BaseStart;
+            this.CandidateValue = Consts.BaseStart;
             this.peers = cells;
             this.HType = containerType;
             this.ID = containerIdx;
@@ -82,7 +82,7 @@ namespace de.onnen.Sudoku
                 return true;
             }
 
-            this.baseValue = newBaseValue;
+            this.candidateValue = newBaseValue;
             //int tmpBaseValue = (1 << (digit - 1));
             //int tmp = this.BaseValue ^ tmpBaseValue;
             //int newBaseValue = this.BaseValue & tmp;
@@ -101,14 +101,14 @@ namespace de.onnen.Sudoku
 
             foreach (Cell cell in peers)
             {
-                cell.RemovePossibleDigit(digit, result);
+                cell.RemoveCandidate(digit, result);
             }
             return true;
         }
 
         public override string ToString()
         {
-            return this.HType + "(" + this.ID + ") " + this.BaseValue;
+            return this.HType + "(" + this.ID + ") " + this.CandidateValue;
         }
     }
 }

@@ -26,7 +26,7 @@ namespace de.onnen.Sudoku.SolveTechniques
             Dictionary<int, List<ICell>> nakedMore = new Dictionary<int, List<ICell>>();
             foreach (ICell c in house.Peers)
             {
-                int val = c.BaseValue;
+                int val = c.CandidateValue;
                 if (!nakedMore.ContainsKey(val))
                     nakedMore.Add(val, new List<ICell>());
                 nakedMore[val].Add(c);
@@ -58,7 +58,7 @@ namespace de.onnen.Sudoku.SolveTechniques
                         ICell kvc = kv.Value.First();
                         foreach (int d in kvc.Candidates)
                         {
-                            found |= c.RemovePossibleDigit(d, cresult);
+                            found |= c.RemoveCandidate(d, cresult);
                         }
                     }
                     if (!found)

@@ -20,7 +20,7 @@ namespace de.onnen.Sudoku
                 }
                 else
                 {
-                    retLst[i] = board.Cells[i].BaseValue;
+                    retLst[i] = board.Cells[i].CandidateValue;
                 }
             }
             return retLst;

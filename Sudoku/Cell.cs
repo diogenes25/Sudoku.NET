@@ -14,13 +14,13 @@ namespace de.onnen.Sudoku
 
         //public event de.onnen.Sudoku.SudokuExternal.CellEventHandler CellEvent;
 
-        public new int BaseValue
+        public new int CandidateValue
         {
-            get { return base.BaseValue; }
+            get { return base.CandidateValue; }
             internal set
             {
-                base.BaseValue = value;
-                if (base.BaseValue > 0 && this.Digit > 0 && value > 0)
+                base.CandidateValue = value;
+                if (base.CandidateValue > 0 && this.Digit > 0 && value > 0)
                     this.digit = 0;
             }
         }
@@ -34,21 +34,21 @@ namespace de.onnen.Sudoku
                 {
                     //if (SetField(ref this.digit, value, "Digit"))
                     this.digit = 0;
-                    this.BaseValue = Consts.BaseStart;
+                    this.CandidateValue = Consts.BaseStart;
                 }
                 else
                 {
                     if (this.digit == value)
                         return;
-                    if (value > 0 && value <= Consts.DimensionSquare && this.digit < 1 && (this.BaseValue & (1 << (value - 1))) == (1 << (value - 1)))
+                    if (value > 0 && value <= Consts.DimensionSquare && this.digit < 1 && (this.CandidateValue & (1 << (value - 1))) == (1 << (value - 1)))
                     {
                         //this.digit = value;
                         if (SetField(ref this.digit, value, "Digit"))
-                            this.BaseValue = 0;
+                            this.CandidateValue = 0;
                     }
                     else
                     {
-                        throw new Exception("Digit " + value + " is in Cell " + this.ID + " not possible");
+                        throw new Exception("Digit " + value + " is in " + this.ToString() + " not possible");
                         //Console.WriteLine("xx");
                     }
                 }
@@ -59,7 +59,7 @@ namespace de.onnen.Sudoku
         {
             this.HType = HouseType.Cell;
             this.ID = id;
-            this.BaseValue = Consts.BaseStart;
+            this.CandidateValue = Consts.BaseStart;
         }
 
         //internal void FireEvent(SudokuEvent eventInfo)
@@ -77,7 +77,7 @@ namespace de.onnen.Sudoku
             return this.ID == ((Cell)obj).ID;
         }
 
-        public bool RemovePossibleDigit(int digit, SudokuLog sudokuResult)
+        public bool RemoveCandidate(int digit, SudokuLog sudokuResult)
         {
             // if (((1 << (digit - 1)) & this.baseValue) == 0)
             // 0110101 Abziehen
@@ -89,10 +89,10 @@ namespace de.onnen.Sudoku
             // int newBaseValue = this.baseValue & tmp;
             // if (newBaseValue == this.baseValue)
             //    return false;
-            if (digit < 1 || digit > Consts.DimensionSquare || (this.BaseValue & (1 << (digit - 1))) == 0)
+            if (digit < 1 || digit > Consts.DimensionSquare || (this.CandidateValue & (1 << (digit - 1))) == 0)
                 return false;
 
-            this.BaseValue -= (1 << (digit - 1));
+            this.CandidateValue -= (1 << (digit - 1));
 
             SudokuEvent eventInfoInResult = new SudokuEvent()
             {
@@ -110,7 +110,7 @@ namespace de.onnen.Sudoku
             if (!sudokuResult.Successful)
             {
                 nakeResult.Successful = false;
-                nakeResult.ErrorMessage = "RemovePossibleBaseValue";
+                nakeResult.ErrorMessage = "RemoveCandidateValue";
                 return true;
             }
 
@@ -135,7 +135,7 @@ namespace de.onnen.Sudoku
             int ret = -1;
             for (int i = 0; i < Consts.DimensionSquare; i++)
             {
-                if (((1 << (i)) & this.BaseValue) > 0)
+                if (((1 << (i)) & this.CandidateValue) > 0)
                 {
                     if (ret > -1)
                         return false;
@@ -157,6 +157,9 @@ namespace de.onnen.Sudoku
         /// <summary>
         /// Set digit in cell.
         /// </summary>
+        /// <remarks>
+        /// Set Digit, removes candidates in nested Houses (col, row and box).
+        /// </remarks>
         /// <param name="digit"></param>
         public SudokuLog SetDigit(int digit)
         {
@@ -203,7 +206,10 @@ namespace de.onnen.Sudoku
 
             for (int i = 0; i < 3; i++)
             {
-                //this.fieldcontainters[i].ReCheck = true;
+                if (this.fieldcontainters[i] == null)
+                {
+                    continue;
+                }
                 this.fieldcontainters[i].SetDigit(digitFromOutside, sudokuResult);
                 if (!sudokuResult.Successful)
                 {
@@ -211,8 +217,6 @@ namespace de.onnen.Sudoku
                     return true;
                 }
             }
-
-            //FireEvent(result.EventInfoInResult);
 
             return true;
         }
@@ -224,7 +228,7 @@ namespace de.onnen.Sudoku
 
         public override int GetHashCode()
         {
-            return (this.digit == 0) ? (this.BaseValue + ((1 << Consts.Dimension) + this.ID) * -1) : (this.digit + ((1 << Consts.Dimension) + this.ID));
+            return (this.digit == 0) ? (this.CandidateValue + ((1 << Consts.Dimension) + this.ID) * -1) : (this.digit + ((1 << Consts.Dimension) + this.ID));
         }
 
         public List<int> Candidates
@@ -234,7 +238,7 @@ namespace de.onnen.Sudoku
                 List<int> retInt = new List<int>();
                 for (int i = 0; i < Consts.DimensionSquare; i++)
                 {
-                    if (((1 << i) & this.BaseValue) > 0)
+                    if (((1 << i) & this.CandidateValue) > 0)
                         retInt.Add(i + 1);
                 }
                 return retInt;

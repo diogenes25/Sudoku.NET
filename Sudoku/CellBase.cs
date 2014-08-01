@@ -6,7 +6,7 @@ namespace de.onnen.Sudoku
 {
     public abstract class CellBase : ICellBase, INotifyPropertyChanged
     {
-        protected int baseValue = 0;
+        protected int candidateValue = 0;
 
         private int id;
 
@@ -26,10 +26,10 @@ namespace de.onnen.Sudoku
             protected set { this.id = value; }
         }
 
-        public int BaseValue
+        public int CandidateValue
         {
-            get { return this.baseValue; }
-            internal set { SetField(ref this.baseValue, value, "BaseValue"); }
+            get { return this.candidateValue; }
+            internal set { SetField(ref this.candidateValue, value, "CandidateValue"); }
         }
 
         internal abstract bool SetDigit(int digit, SudokuLog sudokuResult);

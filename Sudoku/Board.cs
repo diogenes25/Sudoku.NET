@@ -218,7 +218,7 @@ namespace de.onnen.Sudoku
             else
             {
                 SetHistory(this.history.Count - 1);
-                this.cells[cellid].RemovePossibleDigit(digit, sudokuResult);
+                this.cells[cellid].RemoveCandidate(digit, sudokuResult);
                 //if (withSolve)
                 //{
                 //    this.Solve(sudokuResult);
@@ -237,7 +237,7 @@ namespace de.onnen.Sudoku
                 }
                 else
                 {
-                    this.cells[i].BaseValue = otherBoard.Cells[i].BaseValue;
+                    this.cells[i].CandidateValue = otherBoard.Cells[i].CandidateValue;
                 }
             }
             //for (int containerType = 0; containerType < 3; containerType++)
@@ -271,7 +271,7 @@ namespace de.onnen.Sudoku
                 else
                 {
                     //this.cells[i].Digit = 0;
-                    this.cells[i].BaseValue = this.history[historyId].BoardInt[i];
+                    this.cells[i].CandidateValue = this.history[historyId].BoardInt[i];
                 }
             }
             //for (int containerType = 0; containerType < 3; containerType++)
@@ -340,7 +340,7 @@ namespace de.onnen.Sudoku
             {
                 for (int containerType = 0; containerType < 3; containerType++)
                 {
-                    this.container[containerIdx][containerType].BaseValue = (1 << Consts.DimensionSquare) - 1;
+                    this.container[containerIdx][containerType].CandidateValue = (1 << Consts.DimensionSquare) - 1;
                 }
             }
         }
@@ -443,7 +443,7 @@ namespace de.onnen.Sudoku
                 if (cells[i].Digit > 0)
                     cloneboard.cells[i].Digit = cells[i].Digit;
                 else
-                    cloneboard.cells[i].BaseValue = cells[i].BaseValue;
+                    cloneboard.cells[i].CandidateValue = cells[i].CandidateValue;
             }
 
             //for (int containerType = 0; containerType < 3; containerType++)

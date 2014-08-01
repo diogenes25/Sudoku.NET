@@ -40,6 +40,6 @@ namespace de.onnen.Sudoku.SudokuExternal
         /// <param name="candidate">Candidate to be removed</param>
         /// <param name="child"></param>
         /// <returns></returns>
-        bool RemovePossibleDigit(int candidate, SudokuLog child);
+        bool RemoveCandidate(int candidate, SudokuLog child);
     }
 }

@@ -42,7 +42,7 @@ namespace de.onnen.Sudoku.SolveTechniques
             foreach (KeyValuePair<int, List<ICell>> kv in digitInCell)
             {
                 // Wenn ein Key/Digit nur in eine einzigen Zelle enthalten ist, muss dieses Digit gesetzt werden.
-                if (kv.Value.Count == 1 && kv.Value.First().BaseValue > 0)
+                if (kv.Value.Count == 1 && kv.Value.First().CandidateValue > 0)
                 {
                     //SudokuLog cresult = sudokuResult.CreateChildResult();
                     //cresult.EventInfoInResult = new SudokuEvent()
@@ -123,7 +123,7 @@ namespace de.onnen.Sudoku.SolveTechniques
                         {
                             if (kv.Value.Keys.Contains(i))
                                 continue;
-                            found |= c.RemovePossibleDigit(i, cresult);
+                            found |= c.RemoveCandidate(i, cresult);
                         }
                     }
                     if (!found)

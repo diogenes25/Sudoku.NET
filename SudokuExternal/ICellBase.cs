@@ -3,7 +3,7 @@
     public interface ICellBase
     {
         /// <summary>
-        /// A bitmask of every possible solution.
+        /// A bitmask of every candidate
         /// </summary>
         /// <remarks>
         /// A possible solution for an unsolved cell.
@@ -13,7 +13,7 @@
         /// In addition, all peers of that cell lose their candidates for that digit, because each house can only contain one instance of each digit.
         /// @see RemovePossibleDigit(int candidate, SudokuResult child)
         /// </remarks>
-        int BaseValue { get; }
+        int CandidateValue { get; }
 
         /// <summary>
         /// The type of house (or cell).

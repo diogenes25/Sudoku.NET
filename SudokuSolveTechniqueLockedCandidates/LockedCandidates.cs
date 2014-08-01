@@ -78,10 +78,10 @@ namespace de.onnen.Sudoku.SolveTechniques
             {
                 if ((removeValue & (1 << dc)) > 0)
                 {
-                    if ((c.BaseValue & (1 << dc)) > 0)
+                    if ((c.CandidateValue & (1 << dc)) > 0)
                     {
                         SudokuLog child = sudokuResult.CreateChildResult();
-                        if (c.RemovePossibleDigit(dc + 1, child))
+                        if (c.RemoveCandidate(dc + 1, child))
                         {
                             child.EventInfoInResult = new SudokuEvent()
                             {
@@ -121,11 +121,11 @@ namespace de.onnen.Sudoku.SolveTechniques
             {
                 if (verticalBlock)
                 {
-                    valueInRow[(p % Consts.Dimension)] |= house.Peers[p].BaseValue;
+                    valueInRow[(p % Consts.Dimension)] |= house.Peers[p].CandidateValue;
                 }
                 else
                 {
-                    valueInRow[p / Consts.Dimension] |= house.Peers[p].BaseValue;
+                    valueInRow[p / Consts.Dimension] |= house.Peers[p].CandidateValue;
                 }
             }
 
