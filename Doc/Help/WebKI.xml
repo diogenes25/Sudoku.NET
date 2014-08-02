@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Backtracking method" Url="html/e7a249ff-dc76-b52a-79ca-3e98f2974f9d.htm" />
+  <HelpKINode Title="Board class">
+    <HelpKINode Title="Board Class" Url="html/4b0fdcf0-6df8-bee2-ee5a-fdcfb0ff7acd.htm" />
+    <HelpKINode Title="about Board class" Url="html/4b0fdcf0-6df8-bee2-ee5a-fdcfb0ff7acd.htm" />
+    <HelpKINode Title="constructor" Url="html/aba6fdaf-2502-ba44-f2a8-759c5e9dcbc2.htm" />
+    <HelpKINode Title="events" Url="html/1917ba4d-c4ed-0ed2-c4f8-a603aa7bba7b.htm" />
+    <HelpKINode Title="methods" Url="html/c9891a85-7719-12be-4a35-a36006817133.htm" />
+    <HelpKINode Title="properties" Url="html/f32f5081-2118-180b-ac15-7223063960c9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Board.Backtracking method" Url="html/e7a249ff-dc76-b52a-79ca-3e98f2974f9d.htm" />
+  <HelpKINode Title="Board.Board constructor" Url="html/aba6fdaf-2502-ba44-f2a8-759c5e9dcbc2.htm" />
+  <HelpKINode Title="Board.BoardChanged delegate" Url="html/b4b3731f-e267-b44e-302e-663a22b82fb3.htm" />
+  <HelpKINode Title="Board.boardChangeEvent event" Url="html/736272b1-1292-2316-aa10-95d803d7b551.htm" />
+  <HelpKINode Title="Board.Cells property" Url="html/c231596a-0a29-915a-651c-671f4a4c13cc.htm" />
+  <HelpKINode Title="Board.Clone method" Url="html/93a28b7f-94f5-2fb9-93b3-0e2176e30db7.htm" />
+  <HelpKINode Title="Board.GetHouse method" Url="html/0df013ab-778d-a204-8e2f-cfd990f605eb.htm" />
+  <HelpKINode Title="Board.Givens property" Url="html/31f8e14e-f575-df6f-0d42-a834baf0ae16.htm" />
+  <HelpKINode Title="Board.History property" Url="html/7f2dde7c-c7d1-a9df-58fc-73e2c1393328.htm" />
+  <HelpKINode Title="Board.IsComplete property" Url="html/c8a50bfd-2b35-82fe-4e1b-851732f14b70.htm" />
+  <HelpKINode Title="Board.Register method" Url="html/5baf815f-89df-45a8-9c1f-2bea2256b400.htm" />
+  <HelpKINode Title="Board.Reset method" Url="html/855a771e-b7d8-c9ba-f81e-b14a87af3f71.htm" />
+  <HelpKINode Title="Board.SetBoard method" Url="html/39d3444f-40c1-46bc-8bc1-6e6d0acecf0b.htm" />
+  <HelpKINode Title="Board.SetDigit method" Url="html/48142d12-58d3-5c5d-6d4c-7c311bbcbeda.htm" />
+  <HelpKINode Title="Board.SetHistory method" Url="html/accdb19e-227e-d0dc-46ba-954265c7da94.htm" />
+  <HelpKINode Title="Board.Show method" Url="html/ff3e4f4e-5476-3282-59c2-edffaad1b755.htm" />
+  <HelpKINode Title="Board.Solve method" Url="html/663bb9a7-2b79-987c-f01a-3a000ec585c7.htm" />
+  <HelpKINode Title="Board.SolvePercent method" Url="html/71f45dd0-4adc-c851-1b8d-f2206364c4cc.htm" />
+  <HelpKINode Title="Board.SolveTechniques property" Url="html/c868aa42-639c-30fd-4291-bc54b36d70ed.htm" />
+  <HelpKINode Title="boardChangeEvent event" Url="html/736272b1-1292-2316-aa10-95d803d7b551.htm" />
+  <HelpKINode Title="BoardEvent method" Url="html/56a6945f-90b9-ca03-bf2b-7d63a286ea70.htm" />
+  <HelpKINode Title="BoardInt property" Url="html/8a515255-f332-8de0-5e22-d8007b365d2c.htm" />
+  <HelpKINode Title="Candidates property" Url="html/542b03c8-84a1-c398-6a70-2680bcacc866.htm" />
+  <HelpKINode Title="candidateValue field" Url="html/9f3f22ef-919c-0b3e-9453-74f625c2b80f.htm" />
+  <HelpKINode Title="CandidateValue property">
+    <HelpKINode Title="Cell.CandidateValue Property " Url="html/725ad105-547d-0d20-be8d-e08494262960.htm" />
+    <HelpKINode Title="CellBase.CandidateValue Property " Url="html/ea4828bb-b0a5-1db4-d686-3ba9625f1f9f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cell class">
+    <HelpKINode Title="Cell Class" Url="html/55421dda-fab1-7211-1932-4ae78d846235.htm" />
+    <HelpKINode Title="about Cell class" Url="html/55421dda-fab1-7211-1932-4ae78d846235.htm" />
+    <HelpKINode Title="events" Url="html/b3d5ab1a-1f35-17df-966c-b85650aa40d2.htm" />
+    <HelpKINode Title="fields" Url="html/8df993aa-5c7d-2020-ac31-547acbaac91e.htm" />
+    <HelpKINode Title="methods" Url="html/ea19a709-983e-3b83-a3bb-90f28e432b15.htm" />
+    <HelpKINode Title="properties" Url="html/15c45625-fea2-64ea-be1a-3d5de0c6cff1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cell.Candidates property" Url="html/542b03c8-84a1-c398-6a70-2680bcacc866.htm" />
+  <HelpKINode Title="Cell.CandidateValue property" Url="html/725ad105-547d-0d20-be8d-e08494262960.htm" />
+  <HelpKINode Title="Cell.Digit property" Url="html/83f4b0bb-b228-168d-c67a-0026c13eab25.htm" />
+  <HelpKINode Title="Cell.Equals method" Url="html/c9d334e9-8f2c-99b3-0fe5-e2c407d4334a.htm" />
+  <HelpKINode Title="Cell.GetHashCode method" Url="html/a27a5066-f480-d466-b599-90561901c740.htm" />
+  <HelpKINode Title="Cell.RemoveCandidate method" Url="html/811ff92f-f6e4-40bd-fbf7-952e0a8503f2.htm" />
+  <HelpKINode Title="Cell.SetDigit method" Url="html/ca0e279d-9d7f-275c-5a23-aaf9fef069ba.htm" />
+  <HelpKINode Title="Cell.ToString method" Url="html/076eb0da-3fd3-cc47-f5d9-a0799bd3e83b.htm" />
+  <HelpKINode Title="CellBase class">
+    <HelpKINode Title="CellBase Class" Url="html/09d3bbd2-86a1-d8ad-3a65-8fdb9e267a10.htm" />
+    <HelpKINode Title="about CellBase class" Url="html/09d3bbd2-86a1-d8ad-3a65-8fdb9e267a10.htm" />
+    <HelpKINode Title="constructor" Url="html/bf45a726-1595-4d7f-6d6d-567e44cfed08.htm" />
+    <HelpKINode Title="events" Url="html/e22ab24e-1811-0e75-b790-3a23dbdde967.htm" />
+    <HelpKINode Title="fields" Url="html/7f1bf856-1669-1878-c04c-eba6852aefef.htm" />
+    <HelpKINode Title="methods" Url="html/70b4d922-02b3-04b2-a430-85704eba975d.htm" />
+    <HelpKINode Title="properties" Url="html/d4843367-aeef-f927-645c-d15eddfe73eb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CellBase.candidateValue field" Url="html/9f3f22ef-919c-0b3e-9453-74f625c2b80f.htm" />
+  <HelpKINode Title="CellBase.CandidateValue property" Url="html/ea4828bb-b0a5-1db4-d686-3ba9625f1f9f.htm" />
+  <HelpKINode Title="CellBase.CellBase constructor" Url="html/bf45a726-1595-4d7f-6d6d-567e44cfed08.htm" />
+  <HelpKINode Title="CellBase.HType property" Url="html/162a997e-bea4-a2a5-6857-acec16873059.htm" />
+  <HelpKINode Title="CellBase.ID property" Url="html/3ae813ea-b866-d1a7-bc1b-e66b220adb9c.htm" />
+  <HelpKINode Title="CellBase.OnPropertyChanged method" Url="html/85e34651-61cf-7817-fb02-ca60deee5fc9.htm" />
+  <HelpKINode Title="CellBase.PropertyChanged event" Url="html/3b5d179f-5abb-7607-fdbc-029b9a1f0319.htm" />
+  <HelpKINode Title="CellBase.SetField(Of T) method" Url="html/be4e79be-92b5-f5de-fa3d-72e2da4e0f07.htm" />
+  <HelpKINode Title="CellBase.SetField&lt;T&gt; method" Url="html/be4e79be-92b5-f5de-fa3d-72e2da4e0f07.htm" />
+  <HelpKINode Title="CellID property" Url="html/d389cc85-5496-c9fa-b6d0-fe1a9461edd7.htm" />
+  <HelpKINode Title="Cells property" Url="html/c231596a-0a29-915a-651c-671f4a4c13cc.htm" />
+  <HelpKINode Title="Clone method" Url="html/93a28b7f-94f5-2fb9-93b3-0e2176e30db7.htm" />
+  <HelpKINode Title="Complete property" Url="html/9046b266-c2a6-1141-bf3e-fdf138ad39aa.htm" />
+  <HelpKINode Title="CreateSimpleBoard method" Url="html/673287ee-bb26-ae72-f37e-ee221748778a.htm" />
+  <HelpKINode Title="de.onnen.Sudoku namespace" Url="html/b9f7e01a-0624-7e8c-afd8-654233e44b5f.htm" />
+  <HelpKINode Title="de.onnen.Sudoku.Board class" Url="html/4b0fdcf0-6df8-bee2-ee5a-fdcfb0ff7acd.htm" />
+  <HelpKINode Title="de.onnen.Sudoku.Board.BoardChanged delegate" Url="html/b4b3731f-e267-b44e-302e-663a22b82fb3.htm" />
+  <HelpKINode Title="de.onnen.Sudoku.Cell class" Url="html/55421dda-fab1-7211-1932-4ae78d846235.htm" />
+  <HelpKINode Title="de.onnen.Sudoku.CellBase class" Url="html/09d3bbd2-86a1-d8ad-3a65-8fdb9e267a10.htm" />
+  <HelpKINode Title="de.onnen.Sudoku.House class" Url="html/1c8c33dd-938f-459d-9949-e245a337c18e.htm" />
+  <HelpKINode Title="de.onnen.Sudoku.Program class" Url="html/a0e5c7d4-29fc-4880-3fbb-fd9d78b10d99.htm" />
+  <HelpKINode Title="de.onnen.Sudoku.SudokuHelper class" Url="html/927f6b1a-a7e1-cb67-e8bf-99c2720e4a6f.htm" />
+  <HelpKINode Title="de.onnen.Sudoku.SudokuHistoryItem class" Url="html/65ea047b-9620-1eec-330b-f4bbad2ca2f4.htm" />
+  <HelpKINode Title="de.onnen.Sudoku.SudokuSolveTechniqueLoader class" Url="html/11adbf1a-c14a-31e0-2cc2-aa265a2cd903.htm" />
+  <HelpKINode Title="Digit property">
+    <HelpKINode Title="Cell.Digit Property " Url="html/83f4b0bb-b228-168d-c67a-0026c13eab25.htm" />
+    <HelpKINode Title="SudokuHistoryItem.Digit Property " Url="html/24c437b9-6bf6-4ff0-9c26-331db26a1c4e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Equals method" Url="html/c9d334e9-8f2c-99b3-0fe5-e2c407d4334a.htm" />
+  <HelpKINode Title="GetHashCode method" Url="html/a27a5066-f480-d466-b599-90561901c740.htm" />
+  <HelpKINode Title="GetHouse method" Url="html/0df013ab-778d-a204-8e2f-cfd990f605eb.htm" />
+  <HelpKINode Title="GetSolveTechnicInfo method" Url="html/cb52c519-bf48-dcf1-c842-6af815d6d835.htm" />
+  <HelpKINode Title="Givens property" Url="html/31f8e14e-f575-df6f-0d42-a834baf0ae16.htm" />
+  <HelpKINode Title="History property" Url="html/7f2dde7c-c7d1-a9df-58fc-73e2c1393328.htm" />
+  <HelpKINode Title="House class">
+    <HelpKINode Title="House Class" Url="html/1c8c33dd-938f-459d-9949-e245a337c18e.htm" />
+    <HelpKINode Title="about House class" Url="html/1c8c33dd-938f-459d-9949-e245a337c18e.htm" />
+    <HelpKINode Title="events" Url="html/2b9b31c1-4cee-c721-cdac-b1735fb96e82.htm" />
+    <HelpKINode Title="fields" Url="html/4835b438-2d46-803e-50d0-e2a42a91d101.htm" />
+    <HelpKINode Title="methods" Url="html/421b351c-a5a3-eae6-d259-0ed3014e57b7.htm" />
+    <HelpKINode Title="properties" Url="html/49fa870d-7526-5cfe-e7ec-cebb6745b35d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="House.Complete property" Url="html/9046b266-c2a6-1141-bf3e-fdf138ad39aa.htm" />
+  <HelpKINode Title="House.Peers property" Url="html/b9f775f0-9115-a49e-3fa7-fccd5b92901e.htm" />
+  <HelpKINode Title="House.ToString method" Url="html/7fa9199d-c9bd-aa7f-976f-2efc0f0bb016.htm" />
+  <HelpKINode Title="HType property" Url="html/162a997e-bea4-a2a5-6857-acec16873059.htm" />
+  <HelpKINode Title="ID property" Url="html/3ae813ea-b866-d1a7-bc1b-e66b220adb9c.htm" />
+  <HelpKINode Title="IsComplete property" Url="html/c8a50bfd-2b35-82fe-4e1b-851732f14b70.htm" />
+  <HelpKINode Title="LoadSolveTechnic method" Url="html/d44e7c6d-b3e3-5d0c-765a-ae6c636726a9.htm" />
+  <HelpKINode Title="OnPropertyChanged method" Url="html/85e34651-61cf-7817-fb02-ca60deee5fc9.htm" />
+  <HelpKINode Title="Peers property" Url="html/b9f775f0-9115-a49e-3fa7-fccd5b92901e.htm" />
+  <HelpKINode Title="Percent property" Url="html/3892f975-54bd-bc4b-abc9-43cdc18d2f29.htm" />
+  <HelpKINode Title="PrintSudokuResult method" Url="html/7f65233d-5f8d-1362-3676-5a6ffdf8ffee.htm" />
+  <HelpKINode Title="Program class">
+    <HelpKINode Title="Program Class" Url="html/a0e5c7d4-29fc-4880-3fbb-fd9d78b10d99.htm" />
+    <HelpKINode Title="about Program class" Url="html/a0e5c7d4-29fc-4880-3fbb-fd9d78b10d99.htm" />
+    <HelpKINode Title="constructor" Url="html/e556728e-a5d3-9c55-f115-2d37b9a14e0f.htm" />
+    <HelpKINode Title="methods" Url="html/2a1387bf-f4b2-a742-9a65-e6ffadb3acca.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Program.BoardEvent method" Url="html/56a6945f-90b9-ca03-bf2b-7d63a286ea70.htm" />
+  <HelpKINode Title="Program.Program constructor" Url="html/e556728e-a5d3-9c55-f115-2d37b9a14e0f.htm" />
+  <HelpKINode Title="PropertyChanged event" Url="html/3b5d179f-5abb-7607-fdbc-029b9a1f0319.htm" />
+  <HelpKINode Title="ReadBoardFromFile method" Url="html/4db7f445-7d12-2b8d-f1e2-dfbc6f70635c.htm" />
+  <HelpKINode Title="ReadBoardFromFileTop method" Url="html/dc321538-58a8-88b0-1251-315013c33586.htm" />
+  <HelpKINode Title="Register method" Url="html/5baf815f-89df-45a8-9c1f-2bea2256b400.htm" />
+  <HelpKINode Title="RemoveCandidate method" Url="html/811ff92f-f6e4-40bd-fbf7-952e0a8503f2.htm" />
+  <HelpKINode Title="Reset method" Url="html/855a771e-b7d8-c9ba-f81e-b14a87af3f71.htm" />
+  <HelpKINode Title="SetBoard method" Url="html/39d3444f-40c1-46bc-8bc1-6e6d0acecf0b.htm" />
+  <HelpKINode Title="SetDigit method">
+    <HelpKINode Title="Board.SetDigit Method " Url="html/48142d12-58d3-5c5d-6d4c-7c311bbcbeda.htm" />
+    <HelpKINode Title="Cell.SetDigit Method " Url="html/ca0e279d-9d7f-275c-5a23-aaf9fef069ba.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetField(Of T) method" Url="html/be4e79be-92b5-f5de-fa3d-72e2da4e0f07.htm" />
+  <HelpKINode Title="SetField&lt;T&gt; method" Url="html/be4e79be-92b5-f5de-fa3d-72e2da4e0f07.htm" />
+  <HelpKINode Title="SetHistory method" Url="html/accdb19e-227e-d0dc-46ba-954265c7da94.htm" />
+  <HelpKINode Title="Show method" Url="html/ff3e4f4e-5476-3282-59c2-edffaad1b755.htm" />
+  <HelpKINode Title="Solve method" Url="html/663bb9a7-2b79-987c-f01a-3a000ec585c7.htm" />
+  <HelpKINode Title="SolvePercent method" Url="html/71f45dd0-4adc-c851-1b8d-f2206364c4cc.htm" />
+  <HelpKINode Title="SolveTechniques property" Url="html/c868aa42-639c-30fd-4291-bc54b36d70ed.htm" />
+  <HelpKINode Title="SudokuHelper class">
+    <HelpKINode Title="SudokuHelper Class" Url="html/927f6b1a-a7e1-cb67-e8bf-99c2720e4a6f.htm" />
+    <HelpKINode Title="about SudokuHelper class" Url="html/927f6b1a-a7e1-cb67-e8bf-99c2720e4a6f.htm" />
+    <HelpKINode Title="methods" Url="html/d653bde9-7354-a3d0-d2ce-e65296c81d48.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SudokuHelper.CreateSimpleBoard method" Url="html/673287ee-bb26-ae72-f37e-ee221748778a.htm" />
+  <HelpKINode Title="SudokuHelper.PrintSudokuResult method" Url="html/7f65233d-5f8d-1362-3676-5a6ffdf8ffee.htm" />
+  <HelpKINode Title="SudokuHelper.ReadBoardFromFile method" Url="html/4db7f445-7d12-2b8d-f1e2-dfbc6f70635c.htm" />
+  <HelpKINode Title="SudokuHelper.ReadBoardFromFileTop method" Url="html/dc321538-58a8-88b0-1251-315013c33586.htm" />
+  <HelpKINode Title="SudokuHistoryItem class">
+    <HelpKINode Title="SudokuHistoryItem Class" Url="html/65ea047b-9620-1eec-330b-f4bbad2ca2f4.htm" />
+    <HelpKINode Title="about SudokuHistoryItem class" Url="html/65ea047b-9620-1eec-330b-f4bbad2ca2f4.htm" />
+    <HelpKINode Title="constructor" Url="html/23e0314f-c755-7678-b1d7-d7f1f7afe286.htm" />
+    <HelpKINode Title="methods" Url="html/8989e7d6-5edb-ba74-b26a-8ae9e08ea683.htm" />
+    <HelpKINode Title="properties" Url="html/9edcb2c3-7227-96f9-b110-3bfd5854d151.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SudokuHistoryItem.BoardInt property" Url="html/8a515255-f332-8de0-5e22-d8007b365d2c.htm" />
+  <HelpKINode Title="SudokuHistoryItem.CellID property" Url="html/d389cc85-5496-c9fa-b6d0-fe1a9461edd7.htm" />
+  <HelpKINode Title="SudokuHistoryItem.Digit property" Url="html/24c437b9-6bf6-4ff0-9c26-331db26a1c4e.htm" />
+  <HelpKINode Title="SudokuHistoryItem.Percent property" Url="html/3892f975-54bd-bc4b-abc9-43cdc18d2f29.htm" />
+  <HelpKINode Title="SudokuHistoryItem.SudokuHistoryItem constructor" Url="html/23e0314f-c755-7678-b1d7-d7f1f7afe286.htm" />
+  <HelpKINode Title="SudokuHistoryItem.SudokuResults property" Url="html/65f9538d-32bb-496e-ed16-a599cb6d9eda.htm" />
+  <HelpKINode Title="SudokuHistoryItem.ToString method" Url="html/d085f9bc-a388-31e2-32b6-c4ddf637adc5.htm" />
+  <HelpKINode Title="SudokuResults property" Url="html/65f9538d-32bb-496e-ed16-a599cb6d9eda.htm" />
+  <HelpKINode Title="SudokuSolveTechniqueLoader class">
+    <HelpKINode Title="SudokuSolveTechniqueLoader Class" Url="html/11adbf1a-c14a-31e0-2cc2-aa265a2cd903.htm" />
+    <HelpKINode Title="about SudokuSolveTechniqueLoader class" Url="html/11adbf1a-c14a-31e0-2cc2-aa265a2cd903.htm" />
+    <HelpKINode Title="methods" Url="html/56371e72-246f-3e82-b28f-f0ce23a8536a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SudokuSolveTechniqueLoader.GetSolveTechnicInfo method" Url="html/cb52c519-bf48-dcf1-c842-6af815d6d835.htm" />
+  <HelpKINode Title="SudokuSolveTechniqueLoader.LoadSolveTechnic method" Url="html/d44e7c6d-b3e3-5d0c-765a-ae6c636726a9.htm" />
+  <HelpKINode Title="ToString method">
+    <HelpKINode Title="Cell.ToString Method " Url="html/076eb0da-3fd3-cc47-f5d9-a0799bd3e83b.htm" />
+    <HelpKINode Title="House.ToString Method " Url="html/7fa9199d-c9bd-aa7f-976f-2efc0f0bb016.htm" />
+    <HelpKINode Title="SudokuHistoryItem.ToString Method " Url="html/d085f9bc-a388-31e2-32b6-c4ddf637adc5.htm" />
+  </HelpKINode>
+</HelpKI>
