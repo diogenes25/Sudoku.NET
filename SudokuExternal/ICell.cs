@@ -6,7 +6,7 @@ namespace de.onnen.Sudoku.SudokuExternal
     /// Smallest element in a sudoku grid, capable of containing a single digit.
     /// </summary>
     /// <remarks>
-    /// A cell is always a member of a single row, a single column and a single box. <br />
+    /// A cell is always a member of a single row, a single column and a single box.<br />
     /// There are 81 cells in a standard sudoku grid.
     /// </remarks>
     public interface ICell : ICellBase, INotifyPropertyChanged
