@@ -34,8 +34,6 @@ namespace de.onnen.Sudoku
 
         internal abstract bool SetDigit(int digit, SudokuLog sudokuResult);
 
-        //public abstract SudokuLog SetDigit(int digit);
-
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;

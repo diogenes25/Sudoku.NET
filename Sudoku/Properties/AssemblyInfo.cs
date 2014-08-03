@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("onnen Webdesign")]
 [assembly: AssemblyProduct("Sudoku Solver Base")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCopyright("Copyright ©  4")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -12,8 +12,10 @@ content to your help project.</para>
 				<para>To get started, add a documentation source to the project (a Visual Studio solution, project, or
 assembly and XML comments file).  See the <legacyBold>Getting Started</legacyBold> topics in the Sandcastle Help
 File Builder's help file for more information.  The following default items are included in this project:</para>
-
-				<list class="bullet">
+        <mediaLink>
+          <image xlink:href="SudokuBoardWPF"/>
+        </mediaLink> 
+        <list class="bullet">
 					<listItem>
 						<para><localUri>ContentLayout.content</localUri> - Use the content layout file to manage the
 conceptual content in the project and define its layout in the table of contents.</para>
@@ -22,7 +24,7 @@ conceptual content in the project and define its layout in the table of contents
 					<listItem>
 						<para>The <localUri>.\Media</localUri> folder - Place images in this folder that you will reference
 from conceptual content using <codeInline>medialLink</codeInline> or <codeInline>mediaLinkInline</codeInline>
-elements.  If you will not have any images in the file, you may remove this folder.</para>
+elements.  If you will not have any images in the file, you may remove this folder. </para>
 					</listItem>
 
 					<listItem>

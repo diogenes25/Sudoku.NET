@@ -5,6 +5,7 @@ using de.onnen.Sudoku.SudokuExternal;
 
 namespace de.onnen.Sudoku
 {
+    /// <inheritdoc cref="ICell"/>
     [DebuggerDisplay("Cell-ID {id} {digit} / {BaseValue}")]
     public class Cell : CellBase, ICell
     {
@@ -12,8 +13,7 @@ namespace de.onnen.Sudoku
 
         internal House[] fieldcontainters = new House[3];
 
-        //public event de.onnen.Sudoku.SudokuExternal.CellEventHandler CellEvent;
-
+        /// <inheritdoc />
         public new int CandidateValue
         {
             get { return base.CandidateValue; }
@@ -25,6 +25,7 @@ namespace de.onnen.Sudoku
             }
         }
 
+        /// <inheritdoc />
         public int Digit
         {
             get { return this.digit; }
@@ -32,7 +33,6 @@ namespace de.onnen.Sudoku
             {
                 if (value == 0)
                 {
-                    //if (SetField(ref this.digit, value, "Digit"))
                     this.digit = 0;
                     this.CandidateValue = Consts.BaseStart;
                 }
@@ -42,14 +42,12 @@ namespace de.onnen.Sudoku
                         return;
                     if (value > 0 && value <= Consts.DimensionSquare && this.digit < 1 && (this.CandidateValue & (1 << (value - 1))) == (1 << (value - 1)))
                     {
-                        //this.digit = value;
                         if (SetField(ref this.digit, value, "Digit"))
                             this.CandidateValue = 0;
                     }
                     else
                     {
                         throw new Exception("Digit " + value + " is in " + this.ToString() + " not possible");
-                        //Console.WriteLine("xx");
                     }
                 }
             }
@@ -62,14 +60,6 @@ namespace de.onnen.Sudoku
             this.CandidateValue = Consts.BaseStart;
         }
 
-        //internal void FireEvent(SudokuEvent eventInfo)
-        //{
-        //    if (this.CellEvent != null)
-        //    {
-        //        this.CellEvent(eventInfo);
-        //    }
-        //}
-
         public override bool Equals(object obj)
         {
             if (obj == null || !(obj is ICell))
@@ -77,6 +67,7 @@ namespace de.onnen.Sudoku
             return this.ID == ((Cell)obj).ID;
         }
 
+        /// <inheritdoc />
         public bool RemoveCandidate(int digit, SudokuLog sudokuResult)
         {
             // if (((1 << (digit - 1)) & this.baseValue) == 0)
@@ -114,21 +105,13 @@ namespace de.onnen.Sudoku
                 return true;
             }
 
-            //this.board.ReCheck();
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    this.fieldcontainters[i].ReCheck = true;
-            //}
-
-            //FireEvent(nakeResult.EventInfoInResult);
-
             return true;
         }
 
         /// <summary>
         /// Check if there is only one candidate left.
         /// </summary>
-        /// <param name="sudokuResult"></param>
+        /// <param name="sudokuResult">Log </param>
         /// <returns>true = Only one candidate was left and will be set</returns>
         private bool CheckLastDigit(SudokuLog sudokuResult)
         {
@@ -154,13 +137,7 @@ namespace de.onnen.Sudoku
             return SetDigit(ret + 1, sresult);
         }
 
-        /// <summary>
-        /// Set digit in cell.
-        /// </summary>
-        /// <remarks>
-        /// Set Digit, removes candidates in nested Houses (col, row and box).
-        /// </remarks>
-        /// <param name="digit"></param>
+        /// <inheritdoc />
         public SudokuLog SetDigit(int digit)
         {
             SudokuLog sudokuLog = new SudokuLog();
@@ -182,14 +159,6 @@ namespace de.onnen.Sudoku
                 value = digitFromOutside,
             };
 
-            //if (digitFromOutside < 1 || digitFromOutside > Consts.DimensionSquare || this.digit > 0 || (this.BaseValue & (1 << (digitFromOutside - 1))) != (1 << (digitFromOutside - 1)))
-            //{
-            //    sudokuResult.Successful = false;
-            //    sudokuResult.ErrorMessage = string.Format("Digit {0} is in Cell {1}" + this.ID + " not possible", digitFromOutside, this.ID);
-            //    return true;
-            //}
-
-            //this.board.ReCheck();
             try
             {
                 this.Digit = digitFromOutside;
@@ -221,16 +190,29 @@ namespace de.onnen.Sudoku
             return true;
         }
 
+        /// <summary>
+        /// Every Cell-information.
+        /// </summary>
+        /// <returns>String that contains every cell-information.</returns>
         public override string ToString()
         {
             return this.HType + "(" + this.ID + ") [" + ((char)(int)((this.ID / Consts.DimensionSquare) + 65)) + "" + ((this.ID % Consts.DimensionSquare) + 1) + "] " + this.digit;
         }
 
+        /// <summary>
+        /// Uniqe hashcode of the cell.
+        /// </summary>
+        /// <remarks>
+        /// When digit not set: negative value. First 9 Bits represents the candidates, next bits are the Cell-ID.<br />
+        /// When digit set: Positive value. First 9 Bits is the digit, next bits are the Cell-ID
+        /// </remarks>
+        /// <returns>Uniqe int with every information.</returns>
         public override int GetHashCode()
         {
             return (this.digit == 0) ? (this.CandidateValue + ((1 << Consts.Dimension) + this.ID) * -1) : (this.digit + ((1 << Consts.Dimension) + this.ID));
         }
 
+        /// <inheritdoc />
         public List<int> Candidates
         {
             get
@@ -244,17 +226,5 @@ namespace de.onnen.Sudoku
                 return retInt;
             }
         }
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //private void RaisePropertyChanged(string propertyName)
-        //{
-        //    // take a copy to prevent thread issues
-        //    PropertyChangedEventHandler handler = PropertyChanged;
-        //    if (handler != null)
-        //    {
-        //        handler(this, new PropertyChangedEventArgs(propertyName));
-        //    }
-        //}
     }
 }

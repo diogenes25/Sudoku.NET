@@ -1,7 +1,7 @@
 ﻿namespace de.onnen.Sudoku.SudokuExternal
 {
     /// <summary>
-    /// sudoku puzzle.
+    /// Sudoku puzzle.
     /// <remarks>
     /// It contains the 81 constituent cells, lined up in 9 rows and 9 columns, with a distinct border around the boxes.
     /// </remarks>
@@ -22,10 +22,37 @@
         IHouse GetHouse(HouseType houseType, int idx);
     }
 
+    /// <summary>
+    /// Constant values.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
     public static class Consts
     {
+        /// <summary>
+        /// Kantenlänge einer Box.<br />
+        /// </summary>
+        /// <remarks>
+        /// Im normalen Sudoku = 3.<br />
+        /// Letztlich beziehen sich alle anderen Konstanden auf diesen Wert.
+        /// </remarks>
         public const int Dimension = 3;
+
+        /// <summary>
+        /// Gesamte Kantenlänge des Sudoku.<br />
+        /// </summary>
+        /// <remarks>
+        /// Im normalen Sudoku = 9 (3*3).
+        /// </remarks>
         public const int DimensionSquare = Dimension * Dimension;
+
+        /// <summary>
+        /// Startwert (Bitmask) der Kandidaten.
+        /// </summary>
+        /// <remarks>
+        /// Im normalen Sudoku = (9 Bit) = 2^9 = 511
+        /// </remarks>
         public const int BaseStart = (1 << Consts.DimensionSquare) - 1;
     }
 }

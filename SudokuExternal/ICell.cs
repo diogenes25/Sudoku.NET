@@ -13,23 +13,26 @@ namespace de.onnen.Sudoku.SudokuExternal
     {
         /// <summary>
         /// A list of every candidate.
+        /// </summary>
         /// <remarks>
         /// @see BaseValue
         /// </remarks>
-        /// </summary>
         System.Collections.Generic.List<int> Candidates { get; }
 
         /// <summary>
         /// A numerical value between 1 and 9, which must be placed in the cells in order to complete the puzzle.
+        /// </summary>
         /// <remarks>
         /// For each digit, there must be 9 instances in the solution to satisfy all constraints.
         /// </remarks>
-        /// </summary>
         int Digit { get; }
 
+        /// <summary>
+        /// Set the digit and removes candidates in nested Houses (col, row and box).
+        /// </summary>
+        /// <param name="digit">Digit to cell.</param>
+        /// <returns>Log with every action that was done regarding this action.</returns>
         SudokuLog SetDigit(int digit);
-
-        //bool SetDigit(int digit, SudokuLog sudokuResult);
 
         /// <summary>
         /// Removing a candidate from the grid, by means of logical deduction.
@@ -39,7 +42,7 @@ namespace de.onnen.Sudoku.SudokuExternal
         /// </remarks>
         /// <param name="candidate">Candidate to be removed</param>
         /// <param name="child"></param>
-        /// <returns></returns>
+        /// <returns>true = The candidate was succesful removed. false = candidate was no in the cell.</returns>
         bool RemoveCandidate(int candidate, SudokuLog child);
     }
 }
