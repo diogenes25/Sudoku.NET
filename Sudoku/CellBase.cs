@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using de.onnen.Sudoku.SudokuExternal;
+using System.Collections.Generic;
 using System.ComponentModel;
-using de.onnen.Sudoku.SudokuExternal;
 
 namespace de.onnen.Sudoku
 {

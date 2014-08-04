@@ -1,9 +1,9 @@
-﻿using System;
+﻿using de.onnen.Sudoku.SudokuExternal;
+using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 
 namespace de.onnen.Sudoku
 {
@@ -41,7 +41,6 @@ namespace de.onnen.Sudoku
 		/// </summary>
 		public IList<ISolveTechnique> SolveTechniques { get { return this.solveTechniques.Select(x => (ISolveTechnique)x).ToList<ISolveTechnique>(); } }
 
-
 		public IHouse GetHouse(HouseType houseType, int idx)
 		{
 			return this.container[idx][(int)houseType];
@@ -71,18 +70,21 @@ namespace de.onnen.Sudoku
 		{
 			get
 			{
-				bool ready = true;
-				for (int containerType = 0; containerType < 3; containerType++)
+				//bool ready = true;
+				//for (int containerType = 0; containerType < 3; containerType++)
+				//{
+				int containerType = 0;
+				for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
 				{
-					for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
-					{
-						ready &= this.container[containerIdx][containerType].Complete;
-					}
+					//ready = this.container[containerIdx][containerType].Complete;
+					if (!this.container[containerIdx][containerType].Complete)
+						return false;
 				}
-				return ready;
+				//}
+				//return ready;
+				return true;
 			}
 		}
-
 
 		/// <inheritdoc />
 		public ICell[] Cells
@@ -202,7 +204,7 @@ namespace de.onnen.Sudoku
 		/// </summary>
 		/// <param name="cellid">ID of cell</param>
 		/// <param name="digit">Set Digit to Cell</param>
-		/// <param name="withSolve">true = Start solving with every solvetechnique (without traceback) after digit was set.</param>
+		/// <param name="withSolve">true = Start solving with every solvetechnique (without backtrack) after digit was set.</param>
 		public SudokuLog SetDigit(int cellid, int digit, bool withSolve)
 		{
 			SudokuLog sudokuResult = new SudokuLog();
@@ -246,7 +248,6 @@ namespace de.onnen.Sudoku
 			}
 			return sudokuResult;
 		}
-
 
 		public void SetBoard(IBoard otherBoard)
 		{

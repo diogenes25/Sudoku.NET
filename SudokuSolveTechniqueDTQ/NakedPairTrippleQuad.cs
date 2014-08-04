@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using de.onnen.Sudoku.SudokuExternal;
+﻿using de.onnen.Sudoku.SudokuExternal;
 using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace de.onnen.Sudoku.SolveTechniques
 {

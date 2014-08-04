@@ -1,15 +1,16 @@
-﻿using System;
+﻿using de.onnen.Sudoku.SudokuExternal;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using de.onnen.Sudoku.SudokuExternal;
 
 namespace de.onnen.Sudoku
 {
 	public static class SudokuHelper
 	{
 		private static int countCell = Consts.DimensionSquare * Consts.DimensionSquare;
+
 		public static int[] CreateSimpleBoard(Board board)
 		{
 			int[] retLst = new int[countCell];

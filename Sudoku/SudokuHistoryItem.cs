@@ -1,5 +1,5 @@
-﻿using System;
-using de.onnen.Sudoku.SudokuExternal;
+﻿using de.onnen.Sudoku.SudokuExternal;
+using System;
 
 namespace de.onnen.Sudoku
 {

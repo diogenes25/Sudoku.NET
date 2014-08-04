@@ -1,7 +1,7 @@
-﻿using System;
+﻿using de.onnen.Sudoku.SudokuExternal;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using de.onnen.Sudoku.SudokuExternal;
 
 namespace de.onnen.Sudoku
 {

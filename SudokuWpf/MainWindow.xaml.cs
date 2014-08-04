@@ -1,4 +1,6 @@
-﻿using System;
+﻿using de.onnen.Sudoku.SudokuExternal;
+using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -6,8 +8,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 
 namespace de.onnen.Sudoku.SudokuWpf
 {

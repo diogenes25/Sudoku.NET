@@ -1,8 +1,8 @@
-﻿using System;
+﻿using de.onnen.Sudoku.SudokuExternal;
+using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
-using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
 
 namespace de.onnen.Sudoku
 {

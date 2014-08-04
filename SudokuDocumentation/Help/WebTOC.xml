@@ -2,18 +2,18 @@
 <HelpTOC>
 
   <HelpTOCNode Title="Sodoku Content" Url="html/8f412750-0732-43ae-a09c-e5b191c4408f.htm" />
-  <HelpTOCNode Id="b0eb4220-4266-4697-9812-9337af83a8bb" Title="Version History" Url="html/d8dd08dd-4c61-4e23-830f-0a95b9815ef9.htm">
+  <HelpTOCNode Id="57b9e897-fa72-4615-a395-097001d9e55c" Title="Version History" Url="html/d8dd08dd-4c61-4e23-830f-0a95b9815ef9.htm">
     <HelpTOCNode Title="Version 1.0.0.0" Url="html/8b998267-9116-482f-ae16-800e3d99d685.htm" />
   </HelpTOCNode>
-  <HelpTOCNode Id="9ddf3670-e263-4da0-bac9-f21923042acf" Title="de.onnen.Sudoku" Url="html/b9f7e01a-0624-7e8c-afd8-654233e44b5f.htm">
-    <HelpTOCNode Id="a2388456-4017-4940-9c1e-a44591fad774" Title="Board Class" Url="html/4b0fdcf0-6df8-bee2-ee5a-fdcfb0ff7acd.htm">
-      <HelpTOCNode Id="a850e3dc-715c-4cfa-a14e-8a6559ba0243" Title="Board Constructor " Url="html/aba6fdaf-2502-ba44-f2a8-759c5e9dcbc2.htm">
+  <HelpTOCNode Id="2436c41d-893e-4e3e-990b-6ba563b1ae23" Title="de.onnen.Sudoku" Url="html/b9f7e01a-0624-7e8c-afd8-654233e44b5f.htm">
+    <HelpTOCNode Id="e6d14c72-1170-401a-bfc8-6d1ea1c58e5a" Title="Board Class" Url="html/4b0fdcf0-6df8-bee2-ee5a-fdcfb0ff7acd.htm">
+      <HelpTOCNode Id="1a8fb6eb-7820-4a93-89e6-e740e90d6a95" Title="Board Constructor " Url="html/aba6fdaf-2502-ba44-f2a8-759c5e9dcbc2.htm">
         <HelpTOCNode Title="Board Constructor " Url="html/1f6458f8-2265-93f8-2ad7-a315f04a5be3.htm" />
         <HelpTOCNode Title="Board Constructor (String)" Url="html/4eb52f35-7d4a-17ae-dbd9-5c5b215b10e1.htm" />
         <HelpTOCNode Title="Board Constructor (IList(ASolveTechnique))" Url="html/d2eaa1cd-64ef-8861-da67-d8be841addd7.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="14df001f-7e97-42f7-ac3d-05ac587e1051" Title="Board Methods" Url="html/c9891a85-7719-12be-4a35-a36006817133.htm">
-        <HelpTOCNode Id="b16e0b1c-ca67-4624-9b08-0ca6256f0e54" Title="Backtracking Method " Url="html/e7a249ff-dc76-b52a-79ca-3e98f2974f9d.htm">
+      <HelpTOCNode Id="bb62f1fc-f164-4398-8ccb-1a19994752bd" Title="Board Methods" Url="html/c9891a85-7719-12be-4a35-a36006817133.htm">
+        <HelpTOCNode Id="1c386e02-954e-41be-86d8-23aa3980e9fb" Title="Backtracking Method " Url="html/e7a249ff-dc76-b52a-79ca-3e98f2974f9d.htm">
           <HelpTOCNode Title="Backtracking Method " Url="html/9ca812e5-4e6e-385e-13f8-f06d4a5a315f.htm" />
           <HelpTOCNode Title="Backtracking Method (SudokuLog)" Url="html/3435958f-1f22-d776-5edf-ad9e397d4469.htm" />
         </HelpTOCNode>
@@ -22,7 +22,8 @@
         <HelpTOCNode Title="Register Method " Url="html/5baf815f-89df-45a8-9c1f-2bea2256b400.htm" />
         <HelpTOCNode Title="Reset Method " Url="html/855a771e-b7d8-c9ba-f81e-b14a87af3f71.htm" />
         <HelpTOCNode Title="SetBoard Method " Url="html/39d3444f-40c1-46bc-8bc1-6e6d0acecf0b.htm" />
-        <HelpTOCNode Id="92df7dcc-4817-46f8-a714-6dcf296b6bae" Title="SetDigit Method " Url="html/48142d12-58d3-5c5d-6d4c-7c311bbcbeda.htm">
+        <HelpTOCNode Id="5dcc60e0-b42f-4681-8467-ab2b816e79c4" Title="SetDigit Method " Url="html/48142d12-58d3-5c5d-6d4c-7c311bbcbeda.htm">
+          <HelpTOCNode Title="SetDigit Method (Int32, Int32)" Url="html/80a8985f-09fb-a9ff-16fd-a4f46333e625.htm" />
           <HelpTOCNode Title="SetDigit Method (Int32, Int32, Boolean)" Url="html/7388fdbb-ee2e-3cbe-ed54-fcc0fc783c37.htm" />
           <HelpTOCNode Title="SetDigit Method (Int32, Int32, Int32)" Url="html/e786ead2-aaa7-a01e-5544-066d09eb0500.htm" />
         </HelpTOCNode>
@@ -31,83 +32,83 @@
         <HelpTOCNode Title="Solve Method " Url="html/663bb9a7-2b79-987c-f01a-3a000ec585c7.htm" />
         <HelpTOCNode Title="SolvePercent Method " Url="html/71f45dd0-4adc-c851-1b8d-f2206364c4cc.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3d89c1cc-4e73-4917-b0a7-6f353404d7f0" Title="Board Properties" Url="html/f32f5081-2118-180b-ac15-7223063960c9.htm">
+      <HelpTOCNode Id="e08cc8f3-6da8-4b5c-8fb1-353f219d84ed" Title="Board Properties" Url="html/f32f5081-2118-180b-ac15-7223063960c9.htm">
         <HelpTOCNode Title="Cells Property " Url="html/c231596a-0a29-915a-651c-671f4a4c13cc.htm" />
         <HelpTOCNode Title="Givens Property " Url="html/31f8e14e-f575-df6f-0d42-a834baf0ae16.htm" />
         <HelpTOCNode Title="History Property " Url="html/7f2dde7c-c7d1-a9df-58fc-73e2c1393328.htm" />
         <HelpTOCNode Title="IsComplete Property " Url="html/c8a50bfd-2b35-82fe-4e1b-851732f14b70.htm" />
         <HelpTOCNode Title="SolveTechniques Property " Url="html/c868aa42-639c-30fd-4291-bc54b36d70ed.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="a8e86aa0-ddb9-471e-b63e-35072b60a119" Title="Board Events" Url="html/1917ba4d-c4ed-0ed2-c4f8-a603aa7bba7b.htm">
+      <HelpTOCNode Id="6c9df901-ed61-462d-9a19-15ddc865ef11" Title="Board Events" Url="html/1917ba4d-c4ed-0ed2-c4f8-a603aa7bba7b.htm">
         <HelpTOCNode Title="boardChangeEvent Event" Url="html/736272b1-1292-2316-aa10-95d803d7b551.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="Board.BoardChanged Delegate" Url="html/b4b3731f-e267-b44e-302e-663a22b82fb3.htm" />
-    <HelpTOCNode Id="82637e47-c55f-458d-8696-5beebcc9ff94" Title="Cell Class" Url="html/55421dda-fab1-7211-1932-4ae78d846235.htm">
+    <HelpTOCNode Id="8846c665-aac0-42e4-80eb-ef3575872e63" Title="Cell Class" Url="html/55421dda-fab1-7211-1932-4ae78d846235.htm">
       <HelpTOCNode Title="Cell Fields" Url="html/8df993aa-5c7d-2020-ac31-547acbaac91e.htm" />
-      <HelpTOCNode Id="447409b0-5ea6-4504-96fb-4d34173a0a10" Title="Cell Methods" Url="html/ea19a709-983e-3b83-a3bb-90f28e432b15.htm">
+      <HelpTOCNode Id="b01486a3-0650-46d3-a332-e4e3d6630318" Title="Cell Methods" Url="html/ea19a709-983e-3b83-a3bb-90f28e432b15.htm">
         <HelpTOCNode Title="Equals Method " Url="html/c9d334e9-8f2c-99b3-0fe5-e2c407d4334a.htm" />
         <HelpTOCNode Title="GetHashCode Method " Url="html/a27a5066-f480-d466-b599-90561901c740.htm" />
         <HelpTOCNode Title="RemoveCandidate Method " Url="html/811ff92f-f6e4-40bd-fbf7-952e0a8503f2.htm" />
         <HelpTOCNode Title="SetDigit Method " Url="html/ca0e279d-9d7f-275c-5a23-aaf9fef069ba.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/076eb0da-3fd3-cc47-f5d9-a0799bd3e83b.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="195c1f5f-6053-46df-b76d-b84257fc615c" Title="Cell Properties" Url="html/15c45625-fea2-64ea-be1a-3d5de0c6cff1.htm">
+      <HelpTOCNode Id="8d31cf09-b367-41ef-8d78-5836430a8fe4" Title="Cell Properties" Url="html/15c45625-fea2-64ea-be1a-3d5de0c6cff1.htm">
         <HelpTOCNode Title="Candidates Property " Url="html/542b03c8-84a1-c398-6a70-2680bcacc866.htm" />
         <HelpTOCNode Title="CandidateValue Property " Url="html/725ad105-547d-0d20-be8d-e08494262960.htm" />
         <HelpTOCNode Title="Digit Property " Url="html/83f4b0bb-b228-168d-c67a-0026c13eab25.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="Cell Events" Url="html/b3d5ab1a-1f35-17df-966c-b85650aa40d2.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="4e8b60a0-0aae-40af-bfaf-3a2eaa96bd21" Title="CellBase Class" Url="html/09d3bbd2-86a1-d8ad-3a65-8fdb9e267a10.htm">
+    <HelpTOCNode Id="3091847a-f174-4ec7-9ec8-1f37a8e9a789" Title="CellBase Class" Url="html/09d3bbd2-86a1-d8ad-3a65-8fdb9e267a10.htm">
       <HelpTOCNode Title="CellBase Constructor " Url="html/bf45a726-1595-4d7f-6d6d-567e44cfed08.htm" />
-      <HelpTOCNode Id="bfbac561-08a1-4433-a93d-ce047b7f904d" Title="CellBase Fields" Url="html/7f1bf856-1669-1878-c04c-eba6852aefef.htm">
+      <HelpTOCNode Id="f1e38633-866f-4c64-a80b-c2089897d79b" Title="CellBase Fields" Url="html/7f1bf856-1669-1878-c04c-eba6852aefef.htm">
         <HelpTOCNode Title="candidateValue Field" Url="html/9f3f22ef-919c-0b3e-9453-74f625c2b80f.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3bd282a0-3de9-497e-9280-8f47a47e1b79" Title="CellBase Methods" Url="html/70b4d922-02b3-04b2-a430-85704eba975d.htm">
+      <HelpTOCNode Id="7d973c0f-5d07-4df5-b0ea-f21d7617ef4b" Title="CellBase Methods" Url="html/70b4d922-02b3-04b2-a430-85704eba975d.htm">
         <HelpTOCNode Title="OnPropertyChanged Method " Url="html/85e34651-61cf-7817-fb02-ca60deee5fc9.htm" />
         <HelpTOCNode Title="SetField(T) Method " Url="html/be4e79be-92b5-f5de-fa3d-72e2da4e0f07.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="453adbc2-8ad9-45fb-a765-703a38e687a8" Title="CellBase Properties" Url="html/d4843367-aeef-f927-645c-d15eddfe73eb.htm">
+      <HelpTOCNode Id="a22fd632-b14c-4ccc-9d8c-feb76a15b6e9" Title="CellBase Properties" Url="html/d4843367-aeef-f927-645c-d15eddfe73eb.htm">
         <HelpTOCNode Title="CandidateValue Property " Url="html/ea4828bb-b0a5-1db4-d686-3ba9625f1f9f.htm" />
         <HelpTOCNode Title="HType Property " Url="html/162a997e-bea4-a2a5-6857-acec16873059.htm" />
         <HelpTOCNode Title="ID Property " Url="html/3ae813ea-b866-d1a7-bc1b-e66b220adb9c.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="db21ef7b-9c2f-42ea-846b-d8f5aa469da8" Title="CellBase Events" Url="html/e22ab24e-1811-0e75-b790-3a23dbdde967.htm">
+      <HelpTOCNode Id="c310b66e-4210-4dce-9da5-05ea6b07a7c5" Title="CellBase Events" Url="html/e22ab24e-1811-0e75-b790-3a23dbdde967.htm">
         <HelpTOCNode Title="PropertyChanged Event" Url="html/3b5d179f-5abb-7607-fdbc-029b9a1f0319.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="65075d10-c5fa-408a-bcc2-2e182a4c1a30" Title="House Class" Url="html/1c8c33dd-938f-459d-9949-e245a337c18e.htm">
+    <HelpTOCNode Id="991c3786-efe2-40af-9fd3-6ab198277fbc" Title="House Class" Url="html/1c8c33dd-938f-459d-9949-e245a337c18e.htm">
       <HelpTOCNode Title="House Fields" Url="html/4835b438-2d46-803e-50d0-e2a42a91d101.htm" />
-      <HelpTOCNode Id="3fb56aeb-46e9-4810-953b-5da9a25af986" Title="House Methods" Url="html/421b351c-a5a3-eae6-d259-0ed3014e57b7.htm">
+      <HelpTOCNode Id="2de0430b-23cc-4775-b3a4-813de8d52e31" Title="House Methods" Url="html/421b351c-a5a3-eae6-d259-0ed3014e57b7.htm">
         <HelpTOCNode Title="ToString Method " Url="html/7fa9199d-c9bd-aa7f-976f-2efc0f0bb016.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5e8376a3-c88a-42f4-bf5b-531b9ab5b338" Title="House Properties" Url="html/49fa870d-7526-5cfe-e7ec-cebb6745b35d.htm">
+      <HelpTOCNode Id="a8d090f2-5d94-4261-a238-5f6a12b54a44" Title="House Properties" Url="html/49fa870d-7526-5cfe-e7ec-cebb6745b35d.htm">
         <HelpTOCNode Title="Complete Property " Url="html/9046b266-c2a6-1141-bf3e-fdf138ad39aa.htm" />
         <HelpTOCNode Title="Peers Property " Url="html/b9f775f0-9115-a49e-3fa7-fccd5b92901e.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="House Events" Url="html/2b9b31c1-4cee-c721-cdac-b1735fb96e82.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="2068bc22-616c-414c-83a3-f0b8a99985ff" Title="Program Class" Url="html/a0e5c7d4-29fc-4880-3fbb-fd9d78b10d99.htm">
+    <HelpTOCNode Id="8ab80833-18cd-4a7c-a7d0-8784d26e47a6" Title="Program Class" Url="html/a0e5c7d4-29fc-4880-3fbb-fd9d78b10d99.htm">
       <HelpTOCNode Title="Program Constructor " Url="html/e556728e-a5d3-9c55-f115-2d37b9a14e0f.htm" />
-      <HelpTOCNode Id="2a8b8a56-f397-4366-ad33-79d8230f649a" Title="Program Methods" Url="html/2a1387bf-f4b2-a742-9a65-e6ffadb3acca.htm">
+      <HelpTOCNode Id="a2dd1715-541e-4159-8177-9861edc57bb5" Title="Program Methods" Url="html/2a1387bf-f4b2-a742-9a65-e6ffadb3acca.htm">
         <HelpTOCNode Title="BoardEvent Method " Url="html/56a6945f-90b9-ca03-bf2b-7d63a286ea70.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="fd246011-70b9-4b7c-bce2-697c3c5775f7" Title="SudokuHelper Class" Url="html/927f6b1a-a7e1-cb67-e8bf-99c2720e4a6f.htm">
-      <HelpTOCNode Id="0fcb660a-8e9b-41ad-9633-200828773959" Title="SudokuHelper Methods" Url="html/d653bde9-7354-a3d0-d2ce-e65296c81d48.htm">
+    <HelpTOCNode Id="698cd7bf-461a-42f0-944d-d45ea5ba284a" Title="SudokuHelper Class" Url="html/927f6b1a-a7e1-cb67-e8bf-99c2720e4a6f.htm">
+      <HelpTOCNode Id="f265b0dc-57b4-4b97-a1d3-06fa33676b20" Title="SudokuHelper Methods" Url="html/d653bde9-7354-a3d0-d2ce-e65296c81d48.htm">
         <HelpTOCNode Title="CreateSimpleBoard Method " Url="html/673287ee-bb26-ae72-f37e-ee221748778a.htm" />
         <HelpTOCNode Title="PrintSudokuResult Method " Url="html/7f65233d-5f8d-1362-3676-5a6ffdf8ffee.htm" />
-        <HelpTOCNode Title="ReadBoardFromFile Method " Url="html/4db7f445-7d12-2b8d-f1e2-dfbc6f70635c.htm" />
+        <HelpTOCNode Title="ReadBoardFromFile Method " Url="html/5176a342-cd36-0613-c15e-90b1b7072f20.htm" />
         <HelpTOCNode Title="ReadBoardFromFileTop Method " Url="html/dc321538-58a8-88b0-1251-315013c33586.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="dbe1f0c2-151a-469c-a3a1-1e039b5af317" Title="SudokuHistoryItem Class" Url="html/65ea047b-9620-1eec-330b-f4bbad2ca2f4.htm">
+    <HelpTOCNode Id="c66ae306-cf62-4178-8f1c-9b05a9319c9c" Title="SudokuHistoryItem Class" Url="html/65ea047b-9620-1eec-330b-f4bbad2ca2f4.htm">
       <HelpTOCNode Title="SudokuHistoryItem Constructor " Url="html/23e0314f-c755-7678-b1d7-d7f1f7afe286.htm" />
-      <HelpTOCNode Id="f6350494-b500-4774-b939-33f9668c7423" Title="SudokuHistoryItem Methods" Url="html/8989e7d6-5edb-ba74-b26a-8ae9e08ea683.htm">
+      <HelpTOCNode Id="d80c3f20-de83-494e-aae4-556176361bef" Title="SudokuHistoryItem Methods" Url="html/8989e7d6-5edb-ba74-b26a-8ae9e08ea683.htm">
         <HelpTOCNode Title="ToString Method " Url="html/d085f9bc-a388-31e2-32b6-c4ddf637adc5.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c0151e0e-07bd-4a7c-9347-e4983b6870f4" Title="SudokuHistoryItem Properties" Url="html/9edcb2c3-7227-96f9-b110-3bfd5854d151.htm">
+      <HelpTOCNode Id="206476b3-92f8-44f2-a48c-0f35350ef22b" Title="SudokuHistoryItem Properties" Url="html/9edcb2c3-7227-96f9-b110-3bfd5854d151.htm">
         <HelpTOCNode Title="BoardInt Property " Url="html/8a515255-f332-8de0-5e22-d8007b365d2c.htm" />
         <HelpTOCNode Title="CellID Property " Url="html/d389cc85-5496-c9fa-b6d0-fe1a9461edd7.htm" />
         <HelpTOCNode Title="Digit Property " Url="html/24c437b9-6bf6-4ff0-9c26-331db26a1c4e.htm" />
@@ -115,91 +116,91 @@
         <HelpTOCNode Title="SudokuResults Property " Url="html/65f9538d-32bb-496e-ed16-a599cb6d9eda.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="7a51d227-c52d-4940-85f9-575af34be91e" Title="SudokuSolveTechniqueLoader Class" Url="html/11adbf1a-c14a-31e0-2cc2-aa265a2cd903.htm">
-      <HelpTOCNode Id="6ed21010-3ad1-42fe-a511-f636cc3352bb" Title="SudokuSolveTechniqueLoader Methods" Url="html/56371e72-246f-3e82-b28f-f0ce23a8536a.htm">
+    <HelpTOCNode Id="add32005-6153-4cb4-8922-69ac5b32a049" Title="SudokuSolveTechniqueLoader Class" Url="html/11adbf1a-c14a-31e0-2cc2-aa265a2cd903.htm">
+      <HelpTOCNode Id="4d558810-ff38-4933-875b-b84a21bebd1e" Title="SudokuSolveTechniqueLoader Methods" Url="html/56371e72-246f-3e82-b28f-f0ce23a8536a.htm">
         <HelpTOCNode Title="GetSolveTechnicInfo Method " Url="html/cb52c519-bf48-dcf1-c842-6af815d6d835.htm" />
         <HelpTOCNode Title="LoadSolveTechnic Method " Url="html/d44e7c6d-b3e3-5d0c-765a-ae6c636726a9.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="c012d683-7760-4409-84d5-412e9fcfa1a7" Title="de.onnen.Sudoku.SudokuExternal" Url="html/42d95874-c0a9-c6ed-4026-cd3eda36f8e8.htm">
+  <HelpTOCNode Id="24995d62-b516-4ade-85cd-8601d28dd7cd" Title="de.onnen.Sudoku.SudokuExternal" Url="html/42d95874-c0a9-c6ed-4026-cd3eda36f8e8.htm">
     <HelpTOCNode Title="CellAction Enumeration" Url="html/d636a465-2e89-12a3-63e8-302ab76dafd9.htm" />
     <HelpTOCNode Title="CellEventHandler Delegate" Url="html/ee74f2ef-9c00-5dac-f268-7885f8ee132b.htm" />
-    <HelpTOCNode Id="0003b8a2-0f81-41a1-9487-c35b81315de3" Title="Consts Class" Url="html/42e3cf09-8a85-11f4-79d3-08b010a56ddf.htm">
-      <HelpTOCNode Id="a86147b3-bff4-4d17-a476-5ba6571022f7" Title="Consts Fields" Url="html/87489264-cc62-6a25-ea6e-7382f23673e8.htm">
+    <HelpTOCNode Id="14ece60f-b823-4ade-a861-4d45f2c79786" Title="Consts Class" Url="html/42e3cf09-8a85-11f4-79d3-08b010a56ddf.htm">
+      <HelpTOCNode Id="bb3f8024-7b35-4c34-8a33-2c17b62ce317" Title="Consts Fields" Url="html/87489264-cc62-6a25-ea6e-7382f23673e8.htm">
         <HelpTOCNode Title="BaseStart Field" Url="html/f1e6ef6e-0d04-b077-dd77-d5df7708158b.htm" />
         <HelpTOCNode Title="Dimension Field" Url="html/026234c0-0528-d52f-442e-aad0d3cc7fc5.htm" />
         <HelpTOCNode Title="DimensionSquare Field" Url="html/5aaeeea0-a037-ff44-b5b9-88b9e61538b0.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="HouseType Enumeration" Url="html/1c54d268-a224-9c56-7ff0-1dd52e910256.htm" />
-    <HelpTOCNode Id="f41c3ed6-c4df-4d65-8ce1-32e3f6a81dbe" Title="IBoard Interface" Url="html/7c2b33f6-d3e0-9aed-91fd-a8462237439a.htm">
-      <HelpTOCNode Id="404c3d11-f6f7-4ca2-8fb7-3c5378627f69" Title="IBoard Methods" Url="html/ed531422-6702-5489-419c-f1113dc3db76.htm">
+    <HelpTOCNode Id="957e6741-51e6-464b-92f9-421b8e192da2" Title="IBoard Interface" Url="html/7c2b33f6-d3e0-9aed-91fd-a8462237439a.htm">
+      <HelpTOCNode Id="8e5706c4-9e17-4eda-a470-c90c2e82bab4" Title="IBoard Methods" Url="html/ed531422-6702-5489-419c-f1113dc3db76.htm">
         <HelpTOCNode Title="GetHouse Method " Url="html/a261b0cf-9960-69c4-6ec4-f806774b94c2.htm" />
+        <HelpTOCNode Title="SetDigit Method " Url="html/9186cdd5-f374-a0e4-a7b2-c3e97b712994.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="58c20fe0-5dcb-4ed3-8427-cbe16adffcca" Title="IBoard Properties" Url="html/85564604-acf5-4bd8-0571-076562d3986d.htm">
+      <HelpTOCNode Id="0ff395a0-36fa-44ed-80c7-b1759d77c934" Title="IBoard Properties" Url="html/85564604-acf5-4bd8-0571-076562d3986d.htm">
         <HelpTOCNode Title="Cells Property " Url="html/5609720a-cf6f-b3a0-5f5a-45cdef52532b.htm" />
+        <HelpTOCNode Title="IsComplete Property " Url="html/019ce3c7-0f27-9966-8722-2585ca6761f3.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="7df8b0b9-d709-4439-9e9c-06eaf7424791" Title="ICell Interface" Url="html/1cec55ff-4477-a971-a2ed-9a28712ec019.htm">
-      <HelpTOCNode Id="3cafa128-61ce-4bfb-b172-455f319c1549" Title="ICell Methods" Url="html/4d47ccb7-b467-54e3-5508-14f1d1f90596.htm">
+    <HelpTOCNode Id="ed592d80-65e3-4179-b9b1-2884937d8c4e" Title="ICell Interface" Url="html/1cec55ff-4477-a971-a2ed-9a28712ec019.htm">
+      <HelpTOCNode Id="784afc93-c332-436a-a6ca-3afa8e5b2ff6" Title="ICell Methods" Url="html/4d47ccb7-b467-54e3-5508-14f1d1f90596.htm">
         <HelpTOCNode Title="RemoveCandidate Method " Url="html/4a4dc0c7-c4eb-0cf6-8346-cca136d0a2cb.htm" />
         <HelpTOCNode Title="SetDigit Method " Url="html/fd89be33-a952-640f-1a18-4f8d145ca0dc.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="841218f1-7d23-4098-ae19-f18272d2f58a" Title="ICell Properties" Url="html/e6d0c1a1-9add-c244-bbb1-d68f7b06320c.htm">
+      <HelpTOCNode Id="23ea22e3-880e-4352-8d2e-1d40e75b16a4" Title="ICell Properties" Url="html/e6d0c1a1-9add-c244-bbb1-d68f7b06320c.htm">
         <HelpTOCNode Title="Candidates Property " Url="html/06764270-d7c2-4bf8-0470-e64fd82cd955.htm" />
         <HelpTOCNode Title="Digit Property " Url="html/390ec377-ec42-6c50-9156-96b901e75100.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Title="ICell Events" Url="html/0d41f100-6bbb-5ede-d8eb-6e42ff1343be.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="3aefe418-29dd-46c6-9f3c-b53b65900cb4" Title="ICellBase Interface" Url="html/08897962-228a-07ba-9542-9e1aed28abd3.htm">
-      <HelpTOCNode Id="d8f6387d-be77-4031-bd06-6b9fc852fefd" Title="ICellBase Properties" Url="html/42952c70-b6bc-aa1d-7a84-f3ff7436313b.htm">
+    <HelpTOCNode Id="85d32afd-990f-4920-8c10-07348aa9a47d" Title="ICellBase Interface" Url="html/08897962-228a-07ba-9542-9e1aed28abd3.htm">
+      <HelpTOCNode Id="5544b53e-a4f1-40cd-89a3-05fd15c5e111" Title="ICellBase Properties" Url="html/42952c70-b6bc-aa1d-7a84-f3ff7436313b.htm">
         <HelpTOCNode Title="CandidateValue Property " Url="html/16ddc749-4a54-ede0-a0a5-cb17fae9c0b9.htm" />
         <HelpTOCNode Title="HType Property " Url="html/47278409-d566-4a3e-1e19-4adea26235eb.htm" />
         <HelpTOCNode Title="ID Property " Url="html/2d7e388a-3285-6cf8-b7a0-d87174e2e734.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="68cca04b-2e9c-4597-ad1a-a02111310e39" Title="IHouse Interface" Url="html/307fda81-f030-cffc-ea1b-666da7a3be2e.htm">
-      <HelpTOCNode Id="bb165bb2-a588-4556-9723-92b763d73fad" Title="IHouse Properties" Url="html/b6db98cc-ec73-2c3f-71a6-d312e36fda01.htm">
+    <HelpTOCNode Id="55c58338-bf2a-4799-b2da-e314d9585512" Title="IHouse Interface" Url="html/307fda81-f030-cffc-ea1b-666da7a3be2e.htm">
+      <HelpTOCNode Id="033215f5-efe6-4852-a2a2-97a022807cf4" Title="IHouse Properties" Url="html/b6db98cc-ec73-2c3f-71a6-d312e36fda01.htm">
         <HelpTOCNode Title="Complete Property " Url="html/78d89b91-9272-f8c6-f321-ea8ce4dae4e4.htm" />
         <HelpTOCNode Title="Peers Property " Url="html/52a74df5-8b24-b9ab-ad86-68ff4540c0f1.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="eb2bbb2f-90dc-4d79-9035-2ec7e04939af" Title="ISudokuHost Interface" Url="html/2de5ad84-f464-a843-9b07-25147a9d7de2.htm">
-      <HelpTOCNode Id="b9d012b2-eb2d-49af-94bc-b4c751552852" Title="ISudokuHost Methods" Url="html/dce7f4aa-8351-24a9-bc3f-00e9c69f4829.htm">
+    <HelpTOCNode Id="d9f11e39-56ab-4f0e-8144-17279aa1ac3c" Title="ISudokuHost Interface" Url="html/2de5ad84-f464-a843-9b07-25147a9d7de2.htm">
+      <HelpTOCNode Id="30fe2632-6ae8-42fd-a8b3-46c9fe2597d6" Title="ISudokuHost Methods" Url="html/dce7f4aa-8351-24a9-bc3f-00e9c69f4829.htm">
         <HelpTOCNode Title="Register Method " Url="html/406415fb-1643-b23e-8909-db8e07de08e6.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f518f4e6-a10a-4d44-98fe-06fb403ad8e8" Title="SolveTechniqueInfo Class" Url="html/b0d2a6f2-a71d-de8e-958e-8605ba7ef249.htm">
+    <HelpTOCNode Id="12437e93-4122-49d3-8fe6-f28c8e80dc7f" Title="SolveTechniqueInfo Class" Url="html/b0d2a6f2-a71d-de8e-958e-8605ba7ef249.htm">
       <HelpTOCNode Title="SolveTechniqueInfo Constructor " Url="html/b07aae84-91b1-48d7-ac7d-ef3e89680a4a.htm" />
-      <HelpTOCNode Title="SolveTechniqueInfo Methods" Url="html/8781a36a-b3ed-b024-9858-ca5687356dca.htm" />
-      <HelpTOCNode Id="ad7055f8-277a-4a7d-9dbf-0f5d24cab5ff" Title="SolveTechniqueInfo Properties" Url="html/01a4a4cd-5593-2058-d6ef-9bf9f5f8e51f.htm">
+      <HelpTOCNode Id="5beeeecc-8fec-41f2-990f-97a459dd4de5" Title="SolveTechniqueInfo Properties" Url="html/01a4a4cd-5593-2058-d6ef-9bf9f5f8e51f.htm">
         <HelpTOCNode Title="Active Property " Url="html/61a0ea85-0c26-8680-5b9c-b0e5c7cbb5df.htm" />
         <HelpTOCNode Title="Caption Property " Url="html/fcdc307e-3d66-6bf9-5679-f3db393f20af.htm" />
         <HelpTOCNode Title="Description Property " Url="html/48e47b4e-c4d6-83b2-b47a-3b99039705be.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d1de3c7d-4191-4419-a425-868a5c1dc38c" Title="SudokuEvent Class" Url="html/b6f8e597-eb2e-1f81-1058-c12f68f4c3ea.htm">
+    <HelpTOCNode Id="e9dc5a33-4ff2-472e-97b1-292544455db8" Title="SudokuEvent Class" Url="html/b6f8e597-eb2e-1f81-1058-c12f68f4c3ea.htm">
       <HelpTOCNode Title="SudokuEvent Constructor " Url="html/ffd5233b-1d91-278e-250a-13fecf6e91fa.htm" />
-      <HelpTOCNode Id="26be510c-24c3-4b31-8c2d-1723303fa894" Title="SudokuEvent Fields" Url="html/5738705a-4256-b1ef-1db7-346c4b4d379b.htm">
+      <HelpTOCNode Id="82dbcc71-a293-464b-a346-255ed0535c79" Title="SudokuEvent Fields" Url="html/5738705a-4256-b1ef-1db7-346c4b4d379b.htm">
         <HelpTOCNode Title="SolveTechnik Field" Url="html/e2de4158-7cdc-247c-e2f0-b13d6d866eed.htm" />
         <HelpTOCNode Title="value Field" Url="html/a895f773-5a7b-28e6-22c2-f9d64112342e.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="6c9d68a4-007d-4f11-ade9-32fab13987f4" Title="SudokuEvent Methods" Url="html/a9962c9f-9b83-bb3b-de61-7b41f7ba93df.htm">
+      <HelpTOCNode Id="6a6cd3d3-16dc-4348-93ee-cec07929ee2f" Title="SudokuEvent Methods" Url="html/a9962c9f-9b83-bb3b-de61-7b41f7ba93df.htm">
         <HelpTOCNode Title="ToString Method " Url="html/69c454d9-640f-d3f3-1a7c-0291885c5cbf.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="2076ef34-93d1-4157-8e9c-067978224490" Title="SudokuEvent Properties" Url="html/ce9c722e-d744-9ff8-c7c0-987c236ad40b.htm">
+      <HelpTOCNode Id="302bdbed-c9ed-4472-9247-8a7c9c07c160" Title="SudokuEvent Properties" Url="html/ce9c722e-d744-9ff8-c7c0-987c236ad40b.htm">
         <HelpTOCNode Title="Action Property " Url="html/e3317933-f551-73c1-0fe4-9c3c64ea4153.htm" />
         <HelpTOCNode Title="ChangedCellBase Property " Url="html/ebdc0a6f-61ee-f76a-cbaf-df0cad9ecfe1.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="a389ed3e-d59d-469b-8a4e-16d7d90c77d5" Title="SudokuLog Class" Url="html/5cb4dc04-da86-1172-162f-7a9e36f7198f.htm">
+    <HelpTOCNode Id="c49f851f-259e-4f5c-87fb-cfd535103c42" Title="SudokuLog Class" Url="html/5cb4dc04-da86-1172-162f-7a9e36f7198f.htm">
       <HelpTOCNode Title="SudokuLog Constructor " Url="html/7fb8256c-5bc9-4cce-88ff-be52dda018c5.htm" />
-      <HelpTOCNode Id="dbbb1ea3-c474-4af0-b4fd-a1dc259bb9d2" Title="SudokuLog Methods" Url="html/78a38c73-11ce-9b84-3b88-47ec68b86855.htm">
+      <HelpTOCNode Id="cce206e8-a918-49f5-b3fb-dae3a6cddad4" Title="SudokuLog Methods" Url="html/78a38c73-11ce-9b84-3b88-47ec68b86855.htm">
         <HelpTOCNode Title="CreateChildResult Method " Url="html/b24559ce-3015-8b7c-38cf-9773682a2a21.htm" />
         <HelpTOCNode Title="ToString Method " Url="html/ddea02ce-0636-b6a3-947c-9d6fcc4afc59.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="395fd584-a785-430b-9868-4eab6bf30411" Title="SudokuLog Properties" Url="html/e4c8592f-f7fa-defa-8535-5d45d11a9eb9.htm">
+      <HelpTOCNode Id="40632e67-0de5-4912-a8eb-36eb4e18d1a2" Title="SudokuLog Properties" Url="html/e4c8592f-f7fa-defa-8535-5d45d11a9eb9.htm">
         <HelpTOCNode Title="ChildSudokuResult Property " Url="html/dfdf8145-a375-9044-8a72-4a6ad855ce3c.htm" />
         <HelpTOCNode Title="ErrorMessage Property " Url="html/a6eca370-4f31-5ec8-5ed8-1bed3ebe3f49.htm" />
         <HelpTOCNode Title="EventInfoInResult Property " Url="html/fb660cd0-886f-2040-7c49-821a9a2a96db.htm" />
@@ -208,19 +209,19 @@
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="075db6f1-af3e-4196-b0dc-77fec75f2e73" Title="de.onnen.Sudoku.SudokuExternal.SolveTechniques" Url="html/29466ecb-8814-c46d-1462-b2ece1b70da2.htm">
-    <HelpTOCNode Id="6b179ff8-f107-41fe-a113-f856140dcf9e" Title="ASolveTechnique Class" Url="html/be729326-29c4-324f-5f23-ad4504ca177a.htm">
+  <HelpTOCNode Id="292d9613-02fe-4bc9-90d5-8d2f6c7e2715" Title="de.onnen.Sudoku.SudokuExternal.SolveTechniques" Url="html/29466ecb-8814-c46d-1462-b2ece1b70da2.htm">
+    <HelpTOCNode Id="9f34233c-dd82-45c3-a7a2-e4e39493fb1c" Title="ASolveTechnique Class" Url="html/be729326-29c4-324f-5f23-ad4504ca177a.htm">
       <HelpTOCNode Title="ASolveTechnique Constructor " Url="html/872a336a-2119-1dc9-0533-e5a2a05bcf1b.htm" />
-      <HelpTOCNode Id="b0137dd1-3237-449c-b106-5d67a041e8f1" Title="ASolveTechnique Fields" Url="html/a6df2d86-aafd-c109-63cc-c4aa1df6d665.htm">
+      <HelpTOCNode Id="653eb582-df88-4d31-870a-2d8d1db68e31" Title="ASolveTechnique Fields" Url="html/a6df2d86-aafd-c109-63cc-c4aa1df6d665.htm">
         <HelpTOCNode Title="board Field" Url="html/e0c2722c-d458-4b2b-a6c4-fa358c24a1bc.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="83d9b220-a460-4a48-b0bf-0fbcd5fda2a4" Title="ASolveTechnique Methods" Url="html/a7c3bd0c-c7ec-2f7d-c50f-9a09f9bcd2ce.htm">
+      <HelpTOCNode Id="6a6b1c84-1c47-4d9b-ac27-11e6cc5d41b0" Title="ASolveTechnique Methods" Url="html/a7c3bd0c-c7ec-2f7d-c50f-9a09f9bcd2ce.htm">
         <HelpTOCNode Title="Activate Method " Url="html/f14f2618-f6ff-baa7-7654-c56e54b371e9.htm" />
         <HelpTOCNode Title="Deactivate Method " Url="html/cbeb5912-b97b-fc07-a207-cd4f39492cc2.htm" />
         <HelpTOCNode Title="SetBoard Method " Url="html/48e3f55b-3c82-23c3-7292-1786ec34c1d4.htm" />
         <HelpTOCNode Title="SolveHouse Method " Url="html/3008b75a-b619-4b87-5fe3-2e133308cb08.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="a1a70bfc-8a5e-4507-9815-8fc7060e1cf9" Title="ASolveTechnique Properties" Url="html/0b4d6aae-2e6a-4a1d-b698-1ebff8f4f8e1.htm">
+      <HelpTOCNode Id="0e93ae35-a5c1-4036-8315-3d28d1e16dcd" Title="ASolveTechnique Properties" Url="html/0b4d6aae-2e6a-4a1d-b698-1ebff8f4f8e1.htm">
         <HelpTOCNode Title="CellView Property " Url="html/a840ea34-9945-eeee-fee6-ddf14e16bdbe.htm" />
         <HelpTOCNode Title="Host Property " Url="html/def73a0e-f1ac-9ec8-3657-eaa37b55c839.htm" />
         <HelpTOCNode Title="Info Property " Url="html/284fa277-e00a-ae62-06cc-3fc3611e1a20.htm" />
@@ -228,13 +229,13 @@
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="ECellView Enumeration" Url="html/11cad204-05ab-fae1-daec-ee50a15ed9bb.htm" />
-    <HelpTOCNode Id="7cb13c87-0f8a-406f-87cc-ce85b56d577c" Title="ISolveTechnique Interface" Url="html/2d4034aa-74f5-df24-9c3f-fd26fb3c5a8e.htm">
-      <HelpTOCNode Id="62ce4a98-7fbe-42c7-bc26-38ddb2b2ecb8" Title="ISolveTechnique Methods" Url="html/ae22f88b-0c41-8a5a-96c5-aaac7a66f3e7.htm">
+    <HelpTOCNode Id="08f6b696-ca2c-4f70-aee1-1936ffb1e25a" Title="ISolveTechnique Interface" Url="html/2d4034aa-74f5-df24-9c3f-fd26fb3c5a8e.htm">
+      <HelpTOCNode Id="31f88ec1-eb09-4011-a04e-4eb2fcbe9ef8" Title="ISolveTechnique Methods" Url="html/ae22f88b-0c41-8a5a-96c5-aaac7a66f3e7.htm">
         <HelpTOCNode Title="Activate Method " Url="html/ca17f847-0f39-b587-71d4-99aae0e1da43.htm" />
         <HelpTOCNode Title="Deactivate Method " Url="html/ba70599c-97fd-7998-fc58-d9eabb7c2b4e.htm" />
         <HelpTOCNode Title="SolveHouse Method " Url="html/e5719ca3-67c0-870d-c025-eeb63a261694.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="704bd61d-faec-4bd5-94cb-fa0f4d5b508b" Title="ISolveTechnique Properties" Url="html/ca692b6b-1edc-c824-c0d0-789015aa621b.htm">
+      <HelpTOCNode Id="24e97b95-c27d-4aaf-a1fa-e088a72e6f05" Title="ISolveTechnique Properties" Url="html/ca692b6b-1edc-c824-c0d0-789015aa621b.htm">
         <HelpTOCNode Title="CellView Property " Url="html/743e0bbf-ca5f-5aea-9b91-a06fc66db108.htm" />
         <HelpTOCNode Title="Host Property " Url="html/84eca13a-4fc2-118a-236c-5b57e9e71592.htm" />
         <HelpTOCNode Title="Info Property " Url="html/c06f105f-23ee-e096-44a2-9e91a88d8495.htm" />

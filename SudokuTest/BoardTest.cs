@@ -44,6 +44,7 @@ namespace Sudoku
 		{
 			solveTechniques = GetSolveTechniques();
 		}
+
 		//
 		//Use ClassCleanup to run code after all tests in a class have run
 		//[ClassCleanup()]
@@ -81,7 +82,6 @@ namespace Sudoku
 		[TestMethod()]
 		public void SetDigitTest()
 		{
-
 			Board target = new Board(solveTechniques);
 			int digit = 1;
 			int cell = 0;
@@ -243,7 +243,7 @@ namespace Sudoku
 		}
 
 		[TestMethod()]
-		public void Solve_Sudoku_solved_with_3_solveteniques_and_without_backtracking()
+		public void Solve_Sudoku_solved_with_3_solvetechniques_and_without_backtracking()
 		{
 			Board board = new Board(solveTechniques);
 			string simpleSudoku = @"030050040
