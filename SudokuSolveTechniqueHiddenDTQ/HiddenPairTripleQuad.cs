@@ -6,13 +6,17 @@ using System.Linq;
 namespace de.onnen.Sudoku.SolveTechniques
 {
 	/// <summary>
-	/// This technique is very similar to naked subsets, but instead of affecting other cells with the same row, column or block, candidates are eliminated from the cells that hold the subset. If there are N cells, with N candidates between them that don't appear elsewhere in the same row, column or block, then any other candidates for those cells can be eliminated.
+	/// Hidden Pair / Triple/ Quad
 	/// </summary>
+	/// <remarks>
+	/// This technique is very similar to naked subsets, but instead of affecting other cells with the same row, column or block, candidates are eliminated from the cells that hold the subset. If there are N cells, with N candidates between them that don't appear elsewhere in the same row, column or block, then any other candidates for those cells can be eliminated.
+	/// </remarks>
 	public class HiddenPairTripleQuad : ASolveTechnique
 	{
 		public HiddenPairTripleQuad()
 		{
 			this.Info.Caption = "Hidden TwinTripleQuad";
+			this.Info.Description = "This technique is very similar to naked subsets, but instead of affecting other cells with the same row, column or block, candidates are eliminated from the cells that hold the subset. If there are N cells, with N candidates between them that don't appear elsewhere in the same row, column or block, then any other candidates for those cells can be eliminated.";
 		}
 
 		public override void SolveHouse(IHouse house, SudokuLog sudokuResult)
@@ -63,7 +67,6 @@ namespace de.onnen.Sudoku.SolveTechniques
 					{
 						return;
 					}
-					//board.FireEvent(sudokuResult.EventInfoInResult);
 				}
 				else
 					if (kv.Value.Count < 5)

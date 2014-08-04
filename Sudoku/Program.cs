@@ -96,9 +96,9 @@ namespace de.onnen.Sudoku
 		private static Board ReadBoard()
 		{
 			int[] emh = new int[3];
-			IList<Board> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\HardestDatabase110626.txt"); // http://forum.enjoysudoku.com/the-hardest-sudokus-new-thread-t6539.html
+			//IList<Board> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\HardestDatabase110626.txt"); // http://forum.enjoysudoku.com/the-hardest-sudokus-new-thread-t6539.html
 			//IList<Board> boards = SudokuHelper.ReadBoardFromFile(@"..\..\..\SudokuTest\TestData\Simple.txt");
-			//IList<Board> boards = SudokuHelper.ReadBoardFromFile(@"..\..\..\SudokuTest\TestData\sudoku.txt");
+			IList<Board> boards = SudokuHelper.ReadBoardFromFile(@"..\..\..\SudokuTest\TestData\sudoku.txt");
 			//IList<Board> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\top95.txt");
 			//IList<Board> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\ElevensHardestSudoku.txt"); // https://sites.google.com/site/sudoeleven/
 			DateTime totalStartTime = DateTime.Now;
