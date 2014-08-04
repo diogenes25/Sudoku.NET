@@ -4,48 +4,66 @@ using de.onnen.Sudoku.SudokuExternal;
 
 namespace de.onnen.Sudoku
 {
-    public abstract class CellBase : ICellBase, INotifyPropertyChanged
-    {
-        protected int candidateValue = 0;
+	public abstract class CellBase : ICellBase, INotifyPropertyChanged
+	{
+		/// <summary>
+		/// Internal candidateValue to set value without NotifyPropertyChanged-Event.
+		/// </summary>
+		protected int candidateValue = 0;
 
-        private int id;
+		private int id;
 
-        //private HouseType houseType;
+		//private HouseType houseType;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
-        public HouseType HType
-        {
-            get;
-            protected set;
-        }
+		/// <inheritdoc />
+		public HouseType HType
+		{
+			get;
+			protected set;
+		}
 
-        public int ID
-        {
-            get { return this.id; }
-            protected set { this.id = value; }
-        }
+		/// <inheritdoc />
+		public int ID
+		{
+			get { return this.id; }
+			protected set { this.id = value; }
+		}
 
-        public int CandidateValue
-        {
-            get { return this.candidateValue; }
-            internal set { SetField(ref this.candidateValue, value, "CandidateValue"); }
-        }
+		/// <inheritdoc />
+		public int CandidateValue
+		{
+			get { return this.candidateValue; }
+			internal set { SetField(ref this.candidateValue, value, "CandidateValue"); }
+		}
 
-        internal abstract bool SetDigit(int digit, SudokuLog sudokuResult);
+		internal abstract bool SetDigit(int digit, SudokuLog sudokuResult);
 
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
+		/// <summary>
+		/// Cell-Value (CandidateValue and/or Digit) changed.
+		/// </summary>
+		/// <param name="propertyName">Digit or CadidateValue</param>
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			PropertyChangedEventHandler handler = PropertyChanged;
+			if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+		}
 
-        protected bool SetField<T>(ref T field, T value, string propertyName)
-        {
-            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
-            field = value;
-            OnPropertyChanged(propertyName);
-            return true;
-        }
-    }
+		/// <summary>
+		/// Set new PropertyValue and fire ProperyChanged-Event when old value differs from new value.
+		/// </summary>
+		/// <typeparam name="T">Propertytype</typeparam>
+		/// <param name="field">Property</param>
+		/// <param name="value">new value</param>
+		/// <param name="propertyName">Propertyname</param>
+		/// <returns></returns>
+		protected bool SetField<T>(ref T field, T value, string propertyName)
+		{
+			if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+			field = value;
+			OnPropertyChanged(propertyName);
+			return true;
+		}
+	}
 }

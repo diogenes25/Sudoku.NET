@@ -1,19 +1,19 @@
 ﻿namespace de.onnen.Sudoku.SudokuExternal.SolveTechniques
 {
-    public interface ISolveTechnique
-    {
-        SolveTechniqueInfo Info { get; set; }
+	public interface ISolveTechnique
+	{
+		SolveTechniqueInfo Info { get; set; }
 
-        ISudokuHost Host { get; set; }
+		ISudokuHost Host { get; set; }
 
-        bool IsActive { get; }
+		bool IsActive { get; }
 
-        void Activate();
+		void Activate();
 
-        void Deactivate();
+		void Deactivate();
 
-        void SolveHouse(IHouse house, SudokuLog sudokuResult);
+		void SolveHouse(IHouse house, SudokuLog sudokuResult);
 
-        ECellView CellView { get; }
-    }
+		ECellView CellView { get; }
+	}
 }

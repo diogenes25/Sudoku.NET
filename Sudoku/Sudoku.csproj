@@ -108,7 +108,16 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SolveTechnics\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>del \Q $(ProjectDir)SolveTechnics
+copy $(ProjectDir)..\SudokuSolveTechniqueDTQ\bin\Debug\SolveTechniqueDTQ.dll $(ProjectDir)SolveTechnics
+copy $(ProjectDir)..\SudokuSolveTechniqueHiddenDTQ\bin\Debug\SolveTechniqueHiddenDTQ.dll $(ProjectDir)SolveTechnics
+copy $(ProjectDir)..\SudokuSolveTechniqueLockedCandidates\bin\Debug\SolveTechniqueLockedCandidates.dll $(ProjectDir)SolveTechnics</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
