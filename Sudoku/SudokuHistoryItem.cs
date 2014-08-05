@@ -1,7 +1,7 @@
-﻿using de.onnen.Sudoku.SudokuExternal;
+﻿using DE.ONNEN.Sudoku.SudokuExternal;
 using System;
 
-namespace de.onnen.Sudoku
+namespace DE.ONNEN.Sudoku
 {
 	/// <summary>
 	/// A clone of the current board including some extra infos.

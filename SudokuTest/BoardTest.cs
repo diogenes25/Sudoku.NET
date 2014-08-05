@@ -1,6 +1,6 @@
-﻿using de.onnen.Sudoku;
-using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
+﻿using DE.ONNEN.Sudoku;
+using DE.ONNEN.Sudoku.SudokuExternal;
+using DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -70,9 +70,9 @@ namespace Sudoku
 		private static IList<ASolveTechnique> GetSolveTechniques()
 		{
 			IList<ASolveTechnique> st = new List<ASolveTechnique>();
-			st.Add(new de.onnen.Sudoku.SolveTechniques.HiddenPairTripleQuad());
-			st.Add(new de.onnen.Sudoku.SolveTechniques.LockedCandidates());
-			st.Add(new de.onnen.Sudoku.SolveTechniques.NakedPairTrippleQuad());
+			st.Add(new DE.ONNEN.Sudoku.SolveTechniques.HiddenPairTripleQuad());
+			st.Add(new DE.ONNEN.Sudoku.SolveTechniques.LockedCandidates());
+			st.Add(new DE.ONNEN.Sudoku.SolveTechniques.NakedPairTrippleQuad());
 			return st;
 		}
 

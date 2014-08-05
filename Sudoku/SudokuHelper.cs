@@ -1,11 +1,11 @@
-﻿using de.onnen.Sudoku.SudokuExternal;
+﻿using DE.ONNEN.Sudoku.SudokuExternal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace de.onnen.Sudoku
+namespace DE.ONNEN.Sudoku
 {
 	public static class SudokuHelper
 	{

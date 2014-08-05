@@ -1,9 +1,9 @@
-﻿using de.onnen.Sudoku.SudokuExternal;
+﻿using DE.ONNEN.Sudoku.SudokuExternal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace de.onnen.Sudoku
+namespace DE.ONNEN.Sudoku
 {
 	/// <inheritdoc cref="ICell"/>
 	[DebuggerDisplay("Cell-ID {id} {digit} / {BaseValue}")]

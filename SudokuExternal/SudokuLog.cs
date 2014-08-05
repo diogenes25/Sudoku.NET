@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace de.onnen.Sudoku.SudokuExternal
+namespace DE.ONNEN.Sudoku.SudokuExternal
 {
 	public class SudokuLog
 	{

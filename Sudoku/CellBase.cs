@@ -1,8 +1,8 @@
-﻿using de.onnen.Sudoku.SudokuExternal;
+﻿using DE.ONNEN.Sudoku.SudokuExternal;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace de.onnen.Sudoku
+namespace DE.ONNEN.Sudoku
 {
 	public abstract class CellBase : ICellBase, INotifyPropertyChanged
 	{

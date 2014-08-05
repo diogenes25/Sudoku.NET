@@ -1,8 +1,8 @@
 ﻿using System.Windows;
-using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
+using DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques;
 using Microsoft.Windows.Controls.Ribbon;
 
-namespace de.onnen.Sudoku.SudokuWpf
+namespace DE.ONNEN.Sudoku.SudokuWpf
 {
     public
         class RibbonGroupSolveTechnic : RibbonGroup

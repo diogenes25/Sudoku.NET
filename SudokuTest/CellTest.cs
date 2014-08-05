@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using de.onnen.Sudoku;
-using de.onnen.Sudoku.SudokuExternal;
+using DE.ONNEN.Sudoku;
+using DE.ONNEN.Sudoku.SudokuExternal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Sudoku

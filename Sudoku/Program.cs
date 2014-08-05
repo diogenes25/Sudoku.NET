@@ -1,8 +1,8 @@
-﻿using de.onnen.Sudoku.SudokuExternal;
+﻿using DE.ONNEN.Sudoku.SudokuExternal;
 using System;
 using System.Collections.Generic;
 
-namespace de.onnen.Sudoku
+namespace DE.ONNEN.Sudoku
 {
 	public class Program
 	{

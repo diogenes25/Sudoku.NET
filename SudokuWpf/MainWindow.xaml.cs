@@ -1,5 +1,5 @@
-﻿using de.onnen.Sudoku.SudokuExternal;
-using de.onnen.Sudoku.SudokuExternal.SolveTechniques;
+﻿using DE.ONNEN.Sudoku.SudokuExternal;
+using DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace de.onnen.Sudoku.SudokuWpf
+namespace DE.ONNEN.Sudoku.SudokuWpf
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml

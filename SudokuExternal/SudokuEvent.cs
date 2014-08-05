@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace de.onnen.Sudoku.SudokuExternal
+namespace DE.ONNEN.Sudoku.SudokuExternal
 {
 	public delegate void CellEventHandler(SudokuEvent eventInfo);
 

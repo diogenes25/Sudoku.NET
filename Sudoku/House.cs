@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using de.onnen.Sudoku.SudokuExternal;
+using DE.ONNEN.Sudoku.SudokuExternal;
 
-namespace de.onnen.Sudoku
+namespace DE.ONNEN.Sudoku
 {
 	public class House : CellBase, IHouse
 	{

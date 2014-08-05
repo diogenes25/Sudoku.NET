@@ -1,4 +1,4 @@
-﻿namespace de.onnen.Sudoku.SudokuExternal
+﻿namespace DE.ONNEN.Sudoku.SudokuExternal
 {
 	/// <summary>
 	/// Sudoku puzzle.

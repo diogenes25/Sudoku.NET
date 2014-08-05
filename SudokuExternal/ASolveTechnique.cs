@@ -1,4 +1,4 @@
-﻿namespace de.onnen.Sudoku.SudokuExternal.SolveTechniques
+﻿namespace DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques
 {
 	public abstract class ASolveTechnique : ISolveTechnique
 	{

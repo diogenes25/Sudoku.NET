@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace de.onnen.Sudoku.SudokuExternal
+namespace DE.ONNEN.Sudoku.SudokuExternal
 {
 	/// <summary>
 	/// Smallest element in a sudoku grid, capable of containing a single digit.

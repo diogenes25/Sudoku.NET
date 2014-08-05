@@ -1,10 +1,10 @@
-﻿using de.onnen.Sudoku.SudokuExternal;
+﻿using DE.ONNEN.Sudoku.SudokuExternal;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace de.onnen.Sudoku.SudokuWpf
+namespace DE.ONNEN.Sudoku.SudokuWpf
 {
 	/// <summary>
 	/// Interaction logic for SudokuButton.xaml
