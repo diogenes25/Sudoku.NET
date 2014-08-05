@@ -4,13 +4,8 @@ using System.Collections.Generic;
 
 namespace DE.Onnen.Sudoku
 {
-	[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1053:StaticHolderTypesShouldNotHaveConstructors")]
 	public class Program
 	{
-		public static void BoardEvent(SudokuEvent eventInfo)
-		{
-			Console.WriteLine("BoardEvent:" + eventInfo.ToString());
-		}
 
 		private static void Main(string[] args)
 		{
