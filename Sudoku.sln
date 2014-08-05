@@ -19,10 +19,19 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuExternal", "SudokuExternal\SudokuExternal.csproj", "{6F9BD1D8-1883-4479-850B-518593FF6FAC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveTechniqueHiddenPTQ", "SudokuSolveTechniqueHiddenDTQ\SolveTechniqueHiddenPTQ.csproj", "{A07C29DC-BADC-4D80-9542-D7588D2903DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{815D8134-6309-4B05-9046-B84332A2E3D7} = {815D8134-6309-4B05-9046-B84332A2E3D7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveTechniqueLockedCandidates", "SudokuSolveTechniqueLockedCandidates\SolveTechniqueLockedCandidates.csproj", "{44BD4E5D-6EE6-4A96-B55A-38342C9C5465}"
+	ProjectSection(ProjectDependencies) = postProject
+		{815D8134-6309-4B05-9046-B84332A2E3D7} = {815D8134-6309-4B05-9046-B84332A2E3D7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveTechniqueNakedPTQ", "SudokuSolveTechniqueDTQ\SolveTechniqueNakedPTQ.csproj", "{1F0608DC-2CA9-4AFB-92A4-A68CF37A8DB2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{815D8134-6309-4B05-9046-B84332A2E3D7} = {815D8134-6309-4B05-9046-B84332A2E3D7}
+	EndProjectSection
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "SudokuDocumentation", "SudokuDocumentation\SudokuDocumentation.shfbproj", "{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}"
 EndProject
@@ -119,6 +128,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Sudoku.vsmdi

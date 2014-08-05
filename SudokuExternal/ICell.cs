@@ -1,6 +1,7 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 
-namespace DE.ONNEN.Sudoku.SudokuExternal
+namespace DE.Onnen.Sudoku.SudokuExternal
 {
 	/// <summary>
 	/// Smallest element in a sudoku grid, capable of containing a single digit.
@@ -17,7 +18,7 @@ namespace DE.ONNEN.Sudoku.SudokuExternal
 		/// <remarks>
 		/// @see BaseValue
 		/// </remarks>
-		System.Collections.Generic.List<int> Candidates { get; }
+		ReadOnlyCollection<int> Candidates { get; }
 
 		/// <summary>
 		/// A numerical value between 1 and 9, which must be placed in the cells in order to complete the puzzle.
@@ -43,6 +44,6 @@ namespace DE.ONNEN.Sudoku.SudokuExternal
 		/// <param name="candidate">Candidate to be removed</param>
 		/// <param name="child"></param>
 		/// <returns>true = The candidate was succesful removed. false = candidate was no in the cell.</returns>
-		bool RemoveCandidate(int candidate, SudokuLog child);
+		bool RemoveCandidate(int candidateToRemove, SudokuLog sudokuResult);
 	}
 }

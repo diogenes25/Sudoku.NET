@@ -1,20 +1,21 @@
-﻿using DE.ONNEN.Sudoku.SudokuExternal;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace DE.ONNEN.Sudoku
+namespace DE.Onnen.Sudoku
 {
-	public abstract class CellBase : ICellBase, INotifyPropertyChanged
+	public abstract class ACellBase : ICellBase, INotifyPropertyChanged
 	{
 		/// <summary>
 		/// Internal candidateValue to set value without NotifyPropertyChanged-Event.
 		/// </summary>
-		protected int candidateValue = 0;
+		protected int candidateValueInternal = 0;
 
 		private int id;
 
-		//private HouseType houseType;
-
+		/// <summary>
+		/// Changes in CandidateValue and/or Digit.
+		/// </summary>
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		/// <inheritdoc />
@@ -34,8 +35,8 @@ namespace DE.ONNEN.Sudoku
 		/// <inheritdoc />
 		public int CandidateValue
 		{
-			get { return this.candidateValue; }
-			internal set { SetField(ref this.candidateValue, value, "CandidateValue"); }
+			get { return this.candidateValueInternal; }
+			internal set { SetField(ref this.candidateValueInternal, value, "CandidateValue"); }
 		}
 
 		internal abstract bool SetDigit(int digit, SudokuLog sudokuResult);
@@ -47,7 +48,10 @@ namespace DE.ONNEN.Sudoku
 		protected virtual void OnPropertyChanged(string propertyName)
 		{
 			PropertyChangedEventHandler handler = PropertyChanged;
-			if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+			if (handler != null)
+			{
+				handler(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 
 		/// <summary>
@@ -57,10 +61,13 @@ namespace DE.ONNEN.Sudoku
 		/// <param name="field">Property</param>
 		/// <param name="value">new value</param>
 		/// <param name="propertyName">Propertyname</param>
-		/// <returns></returns>
+		/// <returns>true = Value changed</returns>
 		protected bool SetField<T>(ref T field, T value, string propertyName)
 		{
-			if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+			if (EqualityComparer<T>.Default.Equals(field, value))
+			{
+				return false;
+			}
 			field = value;
 			OnPropertyChanged(propertyName);
 			return true;

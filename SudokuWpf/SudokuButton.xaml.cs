@@ -1,10 +1,11 @@
-﻿using DE.ONNEN.Sudoku.SudokuExternal;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace DE.ONNEN.Sudoku.SudokuWpf
+namespace DE.Onnen.Sudoku.SudokuWpf
 {
 	/// <summary>
 	/// Interaction logic for SudokuButton.xaml
@@ -72,7 +73,7 @@ namespace DE.ONNEN.Sudoku.SudokuWpf
 
 			if (((ICell)sender).Digit == 0)
 			{
-				List<int> c = ((ICell)sender).Candidates;
+				ReadOnlyCollection<int> c = ((ICell)sender).Candidates;
 				for (int v = 0; v < Consts.DimensionSquare; v++)
 				{
 					buttons[v].Visibility = c.Contains(v + 1) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
@@ -128,7 +129,7 @@ namespace DE.ONNEN.Sudoku.SudokuWpf
 			{
 				//this.Content = this.grid;
 				this.borderMain.Child = this.grid;
-				List<int> p = cell.Candidates;
+				ReadOnlyCollection<int> p = cell.Candidates;
 				for (int i = 0; i < 9; i++)
 				{
 					buttons[i].Visibility = p.Contains(i + 1) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;

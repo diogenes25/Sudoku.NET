@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using DE.ONNEN.Sudoku;
-using DE.ONNEN.Sudoku.SudokuExternal;
+﻿using DE.Onnen.Sudoku;
+using DE.Onnen.Sudoku.SudokuExternal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.ObjectModel;
 
 namespace Sudoku
 {
@@ -119,7 +119,7 @@ namespace Sudoku
 		{
 			int id = 0;
 			Cell target = new Cell(id);
-			List<int> actual;
+			ReadOnlyCollection<int> actual;
 			actual = target.Candidates;
 			Assert.AreEqual(Consts.DimensionSquare, actual.Count);
 			for (int i = 0; i < Consts.DimensionSquare; i++)
@@ -136,7 +136,7 @@ namespace Sudoku
 		{
 			int id = 0;
 			Cell target = new Cell(id);
-			List<int> actual;
+			ReadOnlyCollection<int> actual;
 			target.RemoveCandidate(3, new SudokuLog());
 			actual = target.Candidates;
 			Assert.AreEqual(Consts.DimensionSquare - 1, actual.Count);

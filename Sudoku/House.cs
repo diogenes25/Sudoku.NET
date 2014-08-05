@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using DE.ONNEN.Sudoku.SudokuExternal;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
+using System.Collections.Generic;
 
-namespace DE.ONNEN.Sudoku
+namespace DE.Onnen.Sudoku
 {
-	public class House : CellBase, IHouse
+	public class House : ACellBase, IHouse
 	{
 		private ICell[] peers;
 
@@ -82,7 +82,7 @@ namespace DE.ONNEN.Sudoku
 				return true;
 			}
 
-			this.candidateValue = newBaseValue;
+			this.candidateValueInternal = newBaseValue;
 			//int tmpBaseValue = (1 << (digit - 1));
 			//int tmp = this.BaseValue ^ tmpBaseValue;
 			//int newBaseValue = this.BaseValue & tmp;

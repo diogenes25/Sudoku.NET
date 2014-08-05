@@ -1,9 +1,9 @@
-﻿using DE.ONNEN.Sudoku.SudokuExternal;
-using DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
+using DE.Onnen.Sudoku.SudokuExternal.SolveTechniques;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DE.ONNEN.Sudoku.SolveTechniques
+namespace DE.Onnen.Sudoku.SolveTechniques
 {
 	/// <summary>
 	/// Naked Pair, Triplet, Quad (aka Locked Set, Naked Subset, Disjoint Subset)

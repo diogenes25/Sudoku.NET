@@ -25,6 +25,7 @@
     <DocumentationFile>bin\Debug\SolveTechniqueHiddenDTQ.XML</DocumentationFile>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

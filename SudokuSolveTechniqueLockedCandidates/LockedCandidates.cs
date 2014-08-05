@@ -1,7 +1,7 @@
-﻿using DE.ONNEN.Sudoku.SudokuExternal;
-using DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
+using DE.Onnen.Sudoku.SudokuExternal.SolveTechniques;
 
-namespace DE.ONNEN.Sudoku.SolveTechniques
+namespace DE.Onnen.Sudoku.SolveTechniques
 {
 	public class LockedCandidates : ASolveTechnique
 	{

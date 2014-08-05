@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace DE.ONNEN.Sudoku.SudokuExternal
+namespace DE.Onnen.Sudoku.SudokuExternal
 {
 	public delegate void CellEventHandler(SudokuEvent eventInfo);
 
-	public class SudokuEvent
+	public class SudokuEvent : EventArgs
 	{
 		public ICellBase ChangedCellBase { get; set; }
 

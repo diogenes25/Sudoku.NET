@@ -1,11 +1,12 @@
-﻿using DE.ONNEN.Sudoku.SudokuExternal;
-using DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
+using DE.Onnen.Sudoku.SudokuExternal.SolveTechniques;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 
-namespace DE.ONNEN.Sudoku
+namespace DE.Onnen.Sudoku
 {
 	/// <summary>
 	/// https://github.com/diogenes25/Sudoku
@@ -24,17 +25,18 @@ namespace DE.ONNEN.Sudoku
 		private const int COL_CONTAINERTYPE = 1;
 		private const int BLOCK_CONTAINERTYPE = 2;
 		private List<SudokuHistoryItem> history;
+		private List<Cell> givens;
 		private Cell[] cells = new Cell[Consts.DimensionSquare * Consts.DimensionSquare];
 		private House[][] container = new House[Consts.DimensionSquare][];
 		private double solvePercentBase = 0;
 		private IList<ASolveTechnique> solveTechniques = new List<ASolveTechnique>();
 
-		public List<SudokuHistoryItem> History { get { return history; } }
+		public ReadOnlyCollection<SudokuHistoryItem> History { get { return this.history.AsReadOnly(); } }
 
 		/// <summary>
 		/// Cells where Digits where set by SetDigit.
 		/// </summary>
-		public List<Cell> Givens { get; private set; }
+		public ReadOnlyCollection<Cell> Givens { get { return this.givens.AsReadOnly(); } }
 
 		/// <summary>
 		/// Loaded solvetechniques.
@@ -46,9 +48,10 @@ namespace DE.ONNEN.Sudoku
 			return this.container[idx][(int)houseType];
 		}
 
-		public delegate void BoardChanged(IBoard board, SudokuEvent sudokuEvent);
-
-		public event BoardChanged boardChangeEvent;
+		/// <summary>
+		/// Changes in board
+		/// </summary>
+		public event System.EventHandler<SudokuEvent> BoardChangeEvent;
 
 		/// <summary>
 		/// Percent
@@ -106,9 +109,12 @@ namespace DE.ONNEN.Sudoku
 		{
 			Init();
 			this.solveTechniques = solveTechniques;
-			foreach (ASolveTechnique st in this.solveTechniques)
+			if (solveTechniques != null && solveTechniques.Count > 0)
 			{
-				st.SetBoard(this);
+				foreach (ASolveTechnique st in this.solveTechniques)
+				{
+					st.SetBoard(this);
+				}
 			}
 		}
 
@@ -117,15 +123,15 @@ namespace DE.ONNEN.Sudoku
 		{
 		}
 
-		public Board(string filepath)
+		public Board(string filePath)
 		{
 			Init();
-			LoadSolveTechnics(filepath);
+			LoadSolveTechnics(filePath);
 		}
 
 		private void Init()
 		{
-			this.Givens = new List<Cell>();
+			this.givens = new List<Cell>();
 			this.history = new List<SudokuHistoryItem>();
 			this.solvePercentBase = Math.Pow(Consts.DimensionSquare, 3.0);
 			for (int i = 0; i < Consts.DimensionSquare * Consts.DimensionSquare; i++)
@@ -190,22 +196,34 @@ namespace DE.ONNEN.Sudoku
 		/// <param name="digit">Digit</param>
 		public SudokuLog SetDigit(int row, int col, int digit)
 		{
-			int cellid = (row * 9) + col;
+			int cellid = 0;
+			checked
+			{
+				cellid = (row * 9) + col;
+			}
 			return this.SetDigit(cellid, digit);
+			//else
+			//{
+			//	return new SudokuLog()
+			//	{
+			//		ErrorMessage = "Overflow",
+			//		Successful = false,
+			//	};
+			//}
 		}
 
-		public SudokuLog SetDigit(int cellid, int digit)
+		public SudokuLog SetDigit(int cellID, int digitToSet)
 		{
-			return this.SetDigit(cellid, digit, false);
+			return this.SetDigit(cellID, digitToSet, false);
 		}
 
 		/// <summary>
 		/// Set a digit at cell.
 		/// </summary>
-		/// <param name="cellid">ID of cell</param>
-		/// <param name="digit">Set Digit to Cell</param>
+		/// <param name="cellID">ID of cell</param>
+		/// <param name="digitToSet">Set Digit to Cell</param>
 		/// <param name="withSolve">true = Start solving with every solvetechnique (without backtrack) after digit was set.</param>
-		public SudokuLog SetDigit(int cellid, int digit, bool withSolve)
+		public SudokuLog SetDigit(int cellID, int digitToSet, bool withSolve)
 		{
 			SudokuLog sudokuResult = new SudokuLog();
 			sudokuResult.EventInfoInResult = new SudokuEvent()
@@ -215,18 +233,18 @@ namespace DE.ONNEN.Sudoku
 				SolveTechnik = "SetDigit",
 			};
 
-			if (cellid < 0 || cellid > cells.Length)
+			if (cellID < 0 || cellID > cells.Length)
 			{
 				sudokuResult.Successful = false;
-				sudokuResult.ErrorMessage = "Cell " + cellid + " is not in range";
+				sudokuResult.ErrorMessage = "Cell " + cellID + " is not in range";
 				return sudokuResult;
 			}
-			sudokuResult.EventInfoInResult.ChangedCellBase = this.cells[cellid];
+			sudokuResult.EventInfoInResult.ChangedCellBase = this.cells[cellID];
 
-			this.cells[cellid].SetDigit(digit, sudokuResult);
+			this.cells[cellID].SetDigit(digitToSet, sudokuResult);
 			if (sudokuResult.Successful)
 			{
-				this.Givens.Add(this.cells[cellid]);
+				this.givens.Add(this.cells[cellID]);
 				if (withSolve)
 				{
 					this.Solve(sudokuResult);
@@ -235,12 +253,12 @@ namespace DE.ONNEN.Sudoku
 
 			if (sudokuResult.Successful)
 			{
-				this.history.Add(new SudokuHistoryItem(this, this.cells[cellid], sudokuResult));
+				this.history.Add(new SudokuHistoryItem(this, this.cells[cellID], sudokuResult));
 			}
 			else
 			{
 				SetHistory(this.history.Count - 1);
-				this.cells[cellid].RemoveCandidate(digit, sudokuResult);
+				this.cells[cellID].RemoveCandidate(digitToSet, sudokuResult);
 				//if (withSolve)
 				//{
 				//    this.Solve(sudokuResult);
@@ -249,8 +267,17 @@ namespace DE.ONNEN.Sudoku
 			return sudokuResult;
 		}
 
+		/// <summary>
+		/// Set Cells from otherBoard to this Board.
+		/// </summary>
+		/// <param name="otherBoard">Another Board</param>
 		public void SetBoard(IBoard otherBoard)
 		{
+			if (otherBoard == null || otherBoard.Cells == null)
+			{
+				return;
+			}
+
 			for (int i = 0; i < otherBoard.Cells.Length; i++)
 			{
 				if (otherBoard.Cells[i].Digit > 0)
@@ -276,7 +303,7 @@ namespace DE.ONNEN.Sudoku
 					{
 						this.cells[i].Digit = this.history[historyId].BoardInt[i] * -1;
 					}
-					catch (Exception ex)
+					catch
 					{
 						//Console.WriteLine(ex.Message);
 						continue;
@@ -291,8 +318,17 @@ namespace DE.ONNEN.Sudoku
 			//this.Solve(new SudokuResult());
 		}
 
-		public void Solve(SudokuLog sudokuResult, bool forceSolve = false)
+		/// <summary>
+		/// Solves Sudoku with SolveTechniques (no Backtracking).
+		/// </summary>
+		/// <param name="sudokuResult">Log</param>
+		public void Solve(SudokuLog sudokuResult)
 		{
+			if (sudokuResult == null)
+			{
+				sudokuResult = new SudokuLog();
+			}
+
 			do
 			{
 				this.reCheck = false;
@@ -326,7 +362,15 @@ namespace DE.ONNEN.Sudoku
 
 		public void Backtracking(SudokuLog sudokuResult)
 		{
-			if (!BacktrackingContinue((Board)this.Clone()))
+			if (sudokuResult == null)
+			{
+				sudokuResult = new SudokuLog()
+				{
+					Successful = false,
+					ErrorMessage = "SudokuLog is null"
+				};
+			}
+			else if (!BacktrackingContinue((Board)this.Clone()))
 			{
 				sudokuResult.Successful = false;
 				sudokuResult.ErrorMessage = "Sudoku hat keine Lösung";
@@ -338,7 +382,7 @@ namespace DE.ONNEN.Sudoku
 		/// </summary>
 		public void Reset()
 		{
-			this.Givens.Clear();
+			this.givens.Clear();
 			this.history.Clear();
 			for (int i = 0; i < Consts.DimensionSquare * Consts.DimensionSquare; i++)
 			{
@@ -363,14 +407,14 @@ namespace DE.ONNEN.Sudoku
 			{
 				if (board.Cells[i].Digit == 0)
 				{
-					List<int> posDigit = board.Cells[i].Candidates;
+					ReadOnlyCollection<int> posDigit = board.Cells[i].Candidates;
 					foreach (int x in posDigit)
 					//System.Threading.Tasks.Parallel.ForEach(posDigit, x=>
 					{
 						Board newBoard = (Board)board.Clone();
 						SudokuLog result = newBoard.SetDigit(i, x, true);
-						if (boardChangeEvent != null)
-							boardChangeEvent(newBoard, new SudokuEvent() { Action = CellAction.SetDigitInt, ChangedCellBase = newBoard.Cells[i] });
+						if (BoardChangeEvent != null)
+							BoardChangeEvent(newBoard, new SudokuEvent() { Action = CellAction.SetDigitInt, ChangedCellBase = newBoard.Cells[i] });
 						//Thread.Sleep(300);
 						if (!result.Successful)
 						{
@@ -399,7 +443,19 @@ namespace DE.ONNEN.Sudoku
 			return false;
 		}
 
-		public void Show(bool withPos = false)
+		/// <summary>
+		/// Write Sudoku to Console.
+		/// </summary>
+		public void Show()
+		{
+			Show(false);
+		}
+
+		/// <summary>
+		/// Write Sudoku to Console.
+		/// </summary>
+		/// <param name="withPos">Positioninfos</param>
+		public void Show(bool withPos)
 		{
 			for (int x = 0; x < cells.Length; x++)
 			{
@@ -421,7 +477,7 @@ namespace DE.ONNEN.Sudoku
 				}
 				else
 				{
-					List<int> posDigit = this.cells[x].Candidates; ;
+					ReadOnlyCollection<int> posDigit = this.cells[x].Candidates; ;
 					if (withPos)
 					{
 						Console.Write("(");
@@ -465,13 +521,13 @@ namespace DE.ONNEN.Sudoku
 
 		#endregion ICloneable Members
 
-		private void LoadSolveTechnics(string filepath)
+		private void LoadSolveTechnics(string filePath)
 		{
 			//"d:\\Develop\\SolveTechniques"
-			if (String.IsNullOrWhiteSpace(filepath))
+			if (String.IsNullOrWhiteSpace(filePath))
 				return;
 
-			List<string> files = new List<string>(Directory.GetFiles(filepath, "*.dll"));
+			List<string> files = new List<string>(Directory.GetFiles(filePath, "*.dll"));
 			foreach (string file in files)
 			{
 				ASolveTechnique st = SudokuSolveTechniqueLoader.LoadSolveTechnic(file, this);

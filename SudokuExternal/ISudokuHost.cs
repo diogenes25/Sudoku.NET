@@ -1,4 +1,4 @@
-﻿namespace DE.ONNEN.Sudoku.SudokuExternal
+﻿namespace DE.Onnen.Sudoku.SudokuExternal
 {
 	public interface ISudokuHost
 	{

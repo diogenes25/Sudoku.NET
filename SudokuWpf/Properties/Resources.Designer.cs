@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DE.ONNEN.Sudoku.SudokuWpf.Properties {
+namespace DE.Onnen.Sudoku.SudokuWpf.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace DE.ONNEN.Sudoku.SudokuWpf.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DE.ONNEN.Sudoku.SudokuWpf.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DE.Onnen.Sudoku.SudokuWpf.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -1,5 +1,5 @@
-﻿using DE.ONNEN.Sudoku.SudokuExternal;
-using DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
+using DE.Onnen.Sudoku.SudokuExternal.SolveTechniques;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace DE.ONNEN.Sudoku.SudokuWpf
+namespace DE.Onnen.Sudoku.SudokuWpf
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
@@ -97,17 +97,12 @@ namespace DE.ONNEN.Sudoku.SudokuWpf
 			//rbnTabSolve.Items.Add(rg);
 
 			update = new UpdateDelegate(ReloadBoard);
-			this.board.boardChangeEvent += new Board.BoardChanged(board_boardChangeEvent);
+			this.board.BoardChangeEvent += new EventHandler<SudokuEvent>(board_boardChangeEvent);
 		}
 
-		//void eb_Click(object sender, RoutedEventArgs e)
-		//{
-		//    MessageBox.Show("XXX");
-		//}
-
-		private void board_boardChangeEvent(IBoard board, SudokuEvent sudokuEvent)
+		private void board_boardChangeEvent(object sender, EventArgs sudokuEvent)
 		{
-			this.board.SetBoard(board);
+			this.board.SetBoard((IBoard)sender);
 			Dispatcher.BeginInvoke(update, null);
 			//MessageBox.Show("HHH");
 		}
@@ -278,7 +273,7 @@ namespace DE.ONNEN.Sudoku.SudokuWpf
 		private void btnReduce_Click(object sender, RoutedEventArgs e)
 		{
 			SudokuLog sresult = new SudokuLog();
-			board.Solve(sresult, true);
+			board.Solve(sresult);
 		}
 	}
 }

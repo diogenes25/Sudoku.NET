@@ -1,4 +1,4 @@
-﻿namespace DE.ONNEN.Sudoku.SudokuExternal
+﻿namespace DE.Onnen.Sudoku.SudokuExternal
 {
 	/// <summary>
 	/// A group of 9 cells.

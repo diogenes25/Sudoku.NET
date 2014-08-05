@@ -1,4 +1,4 @@
-﻿namespace DE.ONNEN.Sudoku.SudokuExternal
+﻿namespace DE.Onnen.Sudoku.SudokuExternal
 {
 	/// <summary>
 	/// Sudoku puzzle.
@@ -29,9 +29,9 @@
 		/// <summary>
 		/// Set a digit at cell.
 		/// </summary>
-		/// <param name="cell">ID of cell</param>
-		/// <param name="digit">Digit</param>
-		SudokuLog SetDigit(int cellid, int digit);
+		/// <param name="cellID">ID of cell</param>
+		/// <param name="digitToSet">Digit</param>
+		SudokuLog SetDigit(int cellID, int digitToSet);
 	}
 
 	/// <summary>

@@ -8,7 +8,7 @@
     <ProjectGuid>{815D8134-6309-4B05-9046-B84332A2E3D7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>de.onnen.Sudoku</RootNamespace>
+    <RootNamespace>DE.Onnen.Sudoku</RootNamespace>
     <AssemblyName>Sudoku</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -45,6 +45,8 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Sudoku.XML</DocumentationFile>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -74,6 +76,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>onnen.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -82,6 +87,7 @@
     <Compile Include="Board.cs" />
     <Compile Include="CellBase.cs" />
     <Compile Include="Cell.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="House.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,7 +133,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>del \Q $(ProjectDir)SolveTechnics
+    <PostBuildEvent>del /Q $(ProjectDir)SolveTechnics
 copy $(ProjectDir)..\SudokuSolveTechniqueDTQ\bin\Debug\SolveTechniqueDTQ.dll $(ProjectDir)SolveTechnics
 copy $(ProjectDir)..\SudokuSolveTechniqueHiddenDTQ\bin\Debug\SolveTechniqueHiddenDTQ.dll $(ProjectDir)SolveTechnics
 copy $(ProjectDir)..\SudokuSolveTechniqueLockedCandidates\bin\Debug\SolveTechniqueLockedCandidates.dll $(ProjectDir)SolveTechnics</PostBuildEvent>

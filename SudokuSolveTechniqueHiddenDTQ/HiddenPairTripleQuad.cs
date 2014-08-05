@@ -1,9 +1,10 @@
-﻿using DE.ONNEN.Sudoku.SudokuExternal;
-using DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
+using DE.Onnen.Sudoku.SudokuExternal.SolveTechniques;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace DE.ONNEN.Sudoku.SolveTechniques
+namespace DE.Onnen.Sudoku.SolveTechniques
 {
 	/// <summary>
 	/// Hidden Pair / Triple/ Quad
@@ -29,7 +30,7 @@ namespace DE.ONNEN.Sudoku.SolveTechniques
 			{
 				if (house.Peers[i].Digit == 0)
 				{
-					List<int> posDigit = house.Peers[i].Candidates;
+					ReadOnlyCollection<int> posDigit = house.Peers[i].Candidates;
 					foreach (int num in posDigit)
 					{
 						if (!digitInCell.ContainsKey(num))

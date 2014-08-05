@@ -1,16 +1,17 @@
-﻿using DE.ONNEN.Sudoku.SudokuExternal;
-using DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
+using DE.Onnen.Sudoku.SudokuExternal.SolveTechniques;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Reflection;
 
-namespace DE.ONNEN.Sudoku
+namespace DE.Onnen.Sudoku
 {
 	public static class SudokuSolveTechniqueLoader
 	{
-		public static SolveTechniqueInfo GetSolveTechnicInfo(string filename)
+		public static SolveTechniqueInfo GetSolveTechnicInfo(string fileName)
 		{
-			ASolveTechnique solveTechnic = LoadSolveTechnic(filename, null);
+			ASolveTechnique solveTechnic = LoadSolveTechnic(fileName, null);
 			SolveTechniqueInfo info = new SolveTechniqueInfo();
 			if (solveTechnic is ISolveTechnique)
 			{
@@ -18,19 +19,19 @@ namespace DE.ONNEN.Sudoku
 			}
 			else
 			{
-				throw new NotImplementedException(string.Format("The type {0} is not implemented in file {1}", typeof(ASolveTechnique).ToString(), filename));
+				throw new NotImplementedException(string.Format(CultureInfo.CurrentCulture, "The type {0} is not implemented in file {1}", typeof(ASolveTechnique).ToString(), fileName));
 			}
 			return info;
 		}
 
-		public static ASolveTechnique LoadSolveTechnic(string filename, ISudokuHost host)
+		public static ASolveTechnique LoadSolveTechnic(string fileName, ISudokuHost host)
 		{
-			if (filename == null)
+			if (String.IsNullOrWhiteSpace(fileName))
 			{
 				throw new ArgumentNullException("filename", "the parameter filename cannot be null");
 			}
 
-			Assembly solvetechnic = Assembly.LoadFrom(filename);
+			Assembly solvetechnic = Assembly.LoadFrom(fileName);
 			string typeName = typeof(ASolveTechnique).ToString();
 			Type[] types = solvetechnic.GetTypes();
 			List<Type> mytype = new List<Type>();
@@ -46,7 +47,7 @@ namespace DE.ONNEN.Sudoku
 
 			if (!typeFound)
 			{
-				throw new NotImplementedException(string.Format("The type {0} is not implemented in file{1}", typeName, filename));
+				throw new NotImplementedException(string.Format(CultureInfo.CurrentCulture, "The type {0} is not implemented in file{1}", typeName, fileName));
 			}
 
 			List<ASolveTechnique> result = new List<ASolveTechnique>();

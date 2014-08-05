@@ -1,4 +1,4 @@
-﻿namespace DE.ONNEN.Sudoku.SudokuExternal.SolveTechniques
+﻿namespace DE.Onnen.Sudoku.SudokuExternal.SolveTechniques
 {
 	public interface ISolveTechnique
 	{

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DE.ONNEN.Sudoku.SudokuWpf.Properties {
+namespace DE.Onnen.Sudoku.SudokuWpf.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

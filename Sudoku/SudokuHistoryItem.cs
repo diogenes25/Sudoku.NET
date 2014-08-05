@@ -1,7 +1,8 @@
-﻿using DE.ONNEN.Sudoku.SudokuExternal;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
 using System;
+using System.Globalization;
 
-namespace DE.ONNEN.Sudoku
+namespace DE.Onnen.Sudoku
 {
 	/// <summary>
 	/// A clone of the current board including some extra infos.
@@ -43,10 +44,25 @@ namespace DE.ONNEN.Sudoku
 		public SudokuHistoryItem(Board board, Cell cell, SudokuLog sudokuResult)
 		{
 			this.BoardInt = SudokuHelper.CreateSimpleBoard(board);
-			this.CellID = cell.ID;
-			this.Digit = cell.Digit;
+			if (cell == null)
+			{
+				this.CellID = -1;
+				this.Digit = -1;
+			}
+			else
+			{
+				this.CellID = cell.ID;
+				this.Digit = cell.Digit;
+			}
 			this.SudokuResults = sudokuResult;
-			this.Percent = board.SolvePercent();
+			if (board == null)
+			{
+				this.Percent = 0;
+			}
+			else
+			{
+				this.Percent = board.SolvePercent();
+			}
 		}
 
 		/// <summary>
@@ -55,7 +71,7 @@ namespace DE.ONNEN.Sudoku
 		/// <returns>String</returns>
 		public override string ToString()
 		{
-			return String.Format("Cell({0}) [{1}{2}] {3} {4}%",
+			return String.Format(CultureInfo.CurrentCulture, "Cell({0}) [{1}{2}] {3} {4}%",
 									this.CellID,
 									((char)(int)((this.CellID / Consts.DimensionSquare) + 65)),
 									((this.CellID % Consts.DimensionSquare) + 1),

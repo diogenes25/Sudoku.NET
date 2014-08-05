@@ -1,13 +1,14 @@
-﻿using DE.ONNEN.Sudoku.SudokuExternal;
+﻿using DE.Onnen.Sudoku.SudokuExternal;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-namespace DE.ONNEN.Sudoku
+namespace DE.Onnen.Sudoku
 {
 	/// <inheritdoc cref="ICell"/>
 	[DebuggerDisplay("Cell-ID {id} {digit} / {BaseValue}")]
-	public class Cell : CellBase, ICell
+	public class Cell : ACellBase, ICell
 	{
 		private int digit = 0;
 
@@ -68,8 +69,13 @@ namespace DE.ONNEN.Sudoku
 		}
 
 		/// <inheritdoc />
-		public bool RemoveCandidate(int digit, SudokuLog sudokuResult)
+		public bool RemoveCandidate(int candidateToRemove, SudokuLog sudokuResult)
 		{
+			if (sudokuResult == null)
+			{
+				sudokuResult = new SudokuLog();
+			}
+
 			// if (((1 << (digit - 1)) & this.baseValue) == 0)
 			// 0110101 Abziehen
 			// 0011010 Original
@@ -80,17 +86,17 @@ namespace DE.ONNEN.Sudoku
 			// int newBaseValue = this.baseValue & tmp;
 			// if (newBaseValue == this.baseValue)
 			//    return false;
-			if (digit < 1 || digit > Consts.DimensionSquare || (this.CandidateValue & (1 << (digit - 1))) == 0)
+			if (candidateToRemove < 1 || candidateToRemove > Consts.DimensionSquare || (this.CandidateValue & (1 << (candidateToRemove - 1))) == 0)
 				return false;
 
-			this.CandidateValue -= (1 << (digit - 1));
+			this.CandidateValue -= (1 << (candidateToRemove - 1));
 
 			SudokuEvent eventInfoInResult = new SudokuEvent()
 			{
 				ChangedCellBase = this,
 				Action = CellAction.RemPoss,
 				SolveTechnik = "SetDigit",
-				value = digit,
+				value = candidateToRemove,
 			};
 
 			SudokuLog nakeResult = sudokuResult.CreateChildResult();
@@ -138,10 +144,10 @@ namespace DE.ONNEN.Sudoku
 		}
 
 		/// <inheritdoc />
-		public SudokuLog SetDigit(int digit)
+		public SudokuLog SetDigit(int digitToSet)
 		{
 			SudokuLog sudokuLog = new SudokuLog();
-			SetDigit(digit, sudokuLog);
+			SetDigit(digitToSet, sudokuLog);
 			return sudokuLog;
 		}
 
@@ -213,7 +219,7 @@ namespace DE.ONNEN.Sudoku
 		}
 
 		/// <inheritdoc />
-		public List<int> Candidates
+		public ReadOnlyCollection<int> Candidates
 		{
 			get
 			{
@@ -223,7 +229,7 @@ namespace DE.ONNEN.Sudoku
 					if (((1 << i) & this.CandidateValue) > 0)
 						retInt.Add(i + 1);
 				}
-				return retInt;
+				return retInt.AsReadOnly();
 			}
 		}
 	}
