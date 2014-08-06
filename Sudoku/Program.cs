@@ -6,10 +6,6 @@ namespace DE.Onnen.Sudoku
 {
 	public class Program
 	{
-		public static void BoardEvent(SudokuEvent eventInfo)
-		{
-			Console.WriteLine("BoardEvent:" + eventInfo.ToString());
-		}
 
 		private static void Main(string[] args)
 		{
