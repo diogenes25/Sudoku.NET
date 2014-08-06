@@ -2,7 +2,7 @@ Sudoku.NET
 ==========
 
 Sudoku Solver (with plugable solvetechniques).
-Die Core-Komponente (Sudoku) enthält nur eine einzige rudimentären Lösungsstrategie ([Naked Single](http://sudoku-solutions.com/solvingNakedSubsets.php#nakedSingle "Naked Single")), der mit jedem Setzen einer Zahl ausgeführt wird und eine Backtracking-Funktion [Backtracking](http://en.wikipedia.org/wiki/Backtracking "Backtracking").
+Die Core-Komponente (Sudoku) enthält nur eine einzige rudimentären Lösungsstrategie ([Naked Single](http://sudoku-solutions.com/solvingNakedSubsets.php#nakedSingle "Naked Single")), die mit jedem Setzen einer Zahl ausgeführt wird und eine Backtracking-Funktion [Backtracking](http://en.wikipedia.org/wiki/Backtracking "Backtracking").
 Es können weitere Lösungsstrategien implementiert werden, die entweder sofort zur Lösung des Sudokus führt oder (min.) die Schritte beim Backtracking reduziert.
 
 Enthaltene Projekte
@@ -24,6 +24,10 @@ Die Solution enthält mehrere Projekte.
 * SudokuDocumentation
 	* [Sandcastle-Projekt](https://shfb.codeplex.com/ "Sandcastle Help File Builder")
 
+
+
+Add own SolvingTechnique
+------------------------
 To create your "own" solvetechnique you just have to:
 
 1.  derive from ASolveTechnique:
