@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveTechniqueNakedPTQ", "S
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "SudokuDocumentation", "SudokuDocumentation\SudokuDocumentation.shfbproj", "{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuConsole", "SudokuConsole\SudokuConsole.csproj", "{CAB86749-9699-4D75-B7BC-2443CF39E155}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +127,16 @@ Global
 		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Release|x86.ActiveCfg = Release|Any CPU
+		{CAB86749-9699-4D75-B7BC-2443CF39E155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB86749-9699-4D75-B7BC-2443CF39E155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB86749-9699-4D75-B7BC-2443CF39E155}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CAB86749-9699-4D75-B7BC-2443CF39E155}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CAB86749-9699-4D75-B7BC-2443CF39E155}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CAB86749-9699-4D75-B7BC-2443CF39E155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB86749-9699-4D75-B7BC-2443CF39E155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB86749-9699-4D75-B7BC-2443CF39E155}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CAB86749-9699-4D75-B7BC-2443CF39E155}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CAB86749-9699-4D75-B7BC-2443CF39E155}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

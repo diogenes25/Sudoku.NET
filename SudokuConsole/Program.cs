@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DE.Onnen.Sudoku
+namespace DE.Onnen.Sudoku.SudokuConsole
 {
 	public class Program
 	{

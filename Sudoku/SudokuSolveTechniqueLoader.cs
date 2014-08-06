@@ -28,7 +28,7 @@ namespace DE.Onnen.Sudoku
 		{
 			if (String.IsNullOrWhiteSpace(fileName))
 			{
-				throw new ArgumentNullException("filename", "the parameter filename cannot be null");
+				throw new ArgumentNullException("fileName", "the parameter filename cannot be null");
 			}
 
 			Assembly solvetechnic = Assembly.LoadFrom(fileName);

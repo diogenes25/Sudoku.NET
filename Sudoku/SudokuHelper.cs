@@ -11,8 +11,22 @@ namespace DE.Onnen.Sudoku
 	{
 		private static int countCell = Consts.DimensionSquare * Consts.DimensionSquare;
 
+		/// <summary>
+		/// Convert a Board to a int-Array
+		/// </summary>
+		/// <remarks>
+		/// Positiv value = Candidates as bitmask.<br/>
+		/// Negativ value = Digit.
+		/// </remarks>
+		/// <param name="board"></param>
+		/// <returns></returns>
 		public static int[] CreateSimpleBoard(Board board)
 		{
+			if (board == null || board.Cells == null || board.Cells.Length < 1)
+			{
+				return null;
+			}
+
 			int[] retLst = new int[countCell];
 			for (int i = 0; i < board.Cells.Length; i++)
 			{
@@ -78,6 +92,7 @@ namespace DE.Onnen.Sudoku
 		/// 450008007 (etc.)
 		/// </remarks>
 		/// <param name="file">Path/File to textfile</param>
+		/// <param name="zero">char that marks 'No Digit'</param>
 		/// <returns>List of Boards</returns>
 		public static IList<Board> ReadBoardFromFile(string file, char zero = '0')
 		{
@@ -86,13 +101,14 @@ namespace DE.Onnen.Sudoku
 			while (true)
 			{
 				tr.ReadLine();
-				Board board = new Board();
+				Board board = new Board("..\\..\\..\\Sudoku\\SolveTechnics\\");
 				for (int y = 0; y < Consts.DimensionSquare; y++)
 				{
 					string line = tr.ReadLine();
 					if (String.IsNullOrWhiteSpace(line))
 					{
 						tr.Close();
+						//tr.Dispose();
 						return retList;
 					}
 					for (int x = 0; x < Consts.DimensionSquare; x++)

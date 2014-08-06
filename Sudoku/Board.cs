@@ -119,8 +119,9 @@ namespace DE.Onnen.Sudoku
 		}
 
 		public Board()
-			: this("..\\..\\SolveTechnics\\")
+		//: this("..\\..\\..\\Sudoku\\SolveTechnics\\")
 		{
+			Init();
 		}
 
 		public Board(string filePath)
