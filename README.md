@@ -2,7 +2,7 @@ Sudoku.NET
 ==========
 
 Sudoku Solver (with plugable solvetechniques).
-Die Core-Komponente (Sudoku) enthält nur eine einzige rudimentären Lösungsstrategie ([Naked Single](http://sudoku-solutions.com/solvingNakedSubsets.php#nakedSingle, "Naked Single")), der mit jedem Setzen einer Zahl ausgeführt wird und eine Backtracking-Funktion [Backtracking](http://en.wikipedia.org/wiki/Backtracking,"Backtracking").
+Die Core-Komponente (Sudoku) enthält nur eine einzige rudimentären Lösungsstrategie ([Naked Single](http://sudoku-solutions.com/solvingNakedSubsets.php#nakedSingle "Naked Single")), der mit jedem Setzen einer Zahl ausgeführt wird und eine Backtracking-Funktion [Backtracking](http://en.wikipedia.org/wiki/Backtracking "Backtracking").
 Es können weitere Lösungsstrategien implementiert werden, die entweder sofort zur Lösung des Sudokus führt oder (min.) die Schritte beim Backtracking reduziert.
 
 Enthaltene Projekte
@@ -16,11 +16,11 @@ Die Solution enthält mehrere Projekte.
 * SudokuTest
 	* UnitTests
 * SolveTechniqueHiddenPTQ
-	* [Hidden X](http://sudoku-solutions.com/solvingHiddenSubsets.php, "Hidden Single/Pair/Tripple/Quad")
+	* [Hidden X](http://sudoku-solutions.com/solvingHiddenSubsets.php "Hidden Single/Pair/Tripple/Quad")
 * SolveTechniqueLockedCandidates
-	* [Locked](http://sudoku-solutions.com/solvingInteractions.php, "Locked Candidates (Pointing/Claiming)")
+	* [Locked](http://sudoku-solutions.com/solvingInteractions.php "Locked Candidates (Pointing/Claiming)")
 * SolveTechniqueNakedPTQ
-	* [Naked X](http://sudoku-solutions.com/solvingNakedSubsets.php, "Naked Single/Pair/Tripple/Quad")
+	* [Naked X](http://sudoku-solutions.com/solvingNakedSubsets.php "Naked Single/Pair/Tripple/Quad")
 * SudokuDocumentation
 	* [Sandcastle-Projekt](https://shfb.codeplex.com/ "Sandcastle Help File Builder")
 
