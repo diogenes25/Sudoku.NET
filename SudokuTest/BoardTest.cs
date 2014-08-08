@@ -85,8 +85,8 @@ namespace Sudoku
 			int digit = 1;
 			int cell = 0;
 			target.SetDigit(cell, digit);
-			Assert.AreEqual(1, target.Cells[0].Digit);
-			Assert.AreEqual(0, target.Cells[0].CandidateValue);
+			Assert.AreEqual(1, target[0].Digit);
+			Assert.AreEqual(0, target[0].CandidateValue);
 
 			int baseValue = (1 << Consts.DimensionSquare) - 1;
 			int expected = baseValue - (1 << 0);
@@ -96,13 +96,13 @@ namespace Sudoku
 				{
 					if (c == 1)
 					{
-						Assert.AreEqual(0, target.Cells[i * 9].Digit);
-						Assert.AreEqual(expected, target.Cells[i * 9].CandidateValue);
+						Assert.AreEqual(0, target[i * 9].Digit);
+						Assert.AreEqual(expected, target[i * 9].CandidateValue);
 					}
 					else
 					{
-						Assert.AreEqual(0, target.Cells[i].Digit);
-						Assert.AreEqual(expected, target.Cells[i].CandidateValue);
+						Assert.AreEqual(0, target[i].Digit);
+						Assert.AreEqual(expected, target[i].CandidateValue);
 					}
 				}
 			}
@@ -115,8 +115,8 @@ namespace Sudoku
 					int b = (containerIdx * Consts.Dimension) + (zc + (zr * Consts.DimensionSquare)) + ((containerIdx / Consts.Dimension) * Consts.DimensionSquare * 2);
 					if (b == 0)
 						continue;
-					Assert.AreEqual(0, target.Cells[b].Digit);
-					Assert.AreEqual(expected, target.Cells[b].CandidateValue);
+					Assert.AreEqual(0, target[b].Digit);
+					Assert.AreEqual(expected, target[b].CandidateValue);
 				}
 			}
 		}
@@ -132,8 +132,8 @@ namespace Sudoku
 			int col = 8;
 			int digit = 9;
 			target.SetDigit(row, col, digit);
-			Assert.AreEqual(9, target.Cells[80].Digit);
-			Assert.AreEqual(0, target.Cells[80].CandidateValue);
+			Assert.AreEqual(9, target[80].Digit);
+			Assert.AreEqual(0, target[80].CandidateValue);
 		}
 
 		/// <summary>
@@ -152,14 +152,14 @@ namespace Sudoku
 			board.SetDigit(11, 6);
 
 			board.SetDigit(18, 7);
-			Assert.AreEqual(0, board.Cells[20].Digit);
-			Assert.AreEqual(((1 << 7) + (1 << 8)), board.Cells[20].CandidateValue);
+			Assert.AreEqual(0, board[20].Digit);
+			Assert.AreEqual(((1 << 7) + (1 << 8)), board[20].CandidateValue);
 
 			// Now Last
 			board.SetDigit(19, 8);
 
-			Assert.AreEqual(9, board.Cells[20].Digit);
-			Assert.AreEqual(0, board.Cells[20].CandidateValue);
+			Assert.AreEqual(9, board[20].Digit);
+			Assert.AreEqual(0, board[20].CandidateValue);
 		}
 
 		/// <summary>
@@ -176,10 +176,10 @@ namespace Sudoku
 					continue;
 				target.SetDigit((i * 9), 9 - i);
 			}
-			Assert.AreEqual(9, target.Cells[8].Digit);
-			Assert.AreEqual(0, target.Cells[8].CandidateValue);
-			Assert.AreEqual(9, target.Cells[72].Digit);
-			Assert.AreEqual(0, target.Cells[72].CandidateValue);
+			Assert.AreEqual(9, target[8].Digit);
+			Assert.AreEqual(0, target[8].CandidateValue);
+			Assert.AreEqual(9, target[72].Digit);
+			Assert.AreEqual(0, target[72].CandidateValue);
 		}
 
 		[TestMethod()]
@@ -195,20 +195,20 @@ namespace Sudoku
 			board.SetDigit(1, 3, 7);
 			board.SetDigit(1, 4, 8);
 			SudokuLog result = board.SetDigit(1, 5, 9);
-			Assert.AreEqual(6, board.Cells[11].Digit);
+			Assert.AreEqual(6, board[11].Digit);
 			int block0Value = (1 << 6) | (1 << 7) | (1 << 8);
-			Assert.AreEqual(block0Value, board.Cells[18].CandidateValue);
-			Assert.AreEqual(block0Value, board.Cells[19].CandidateValue);
-			Assert.AreEqual(block0Value, board.Cells[20].CandidateValue);
+			Assert.AreEqual(block0Value, board[18].CandidateValue);
+			Assert.AreEqual(block0Value, board[19].CandidateValue);
+			Assert.AreEqual(block0Value, board[20].CandidateValue);
 			int block1r2Value = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5);
-			Assert.AreEqual(block1r2Value, board.Cells[21].CandidateValue);
-			Assert.AreEqual(block1r2Value, board.Cells[22].CandidateValue);
-			Assert.AreEqual(block1r2Value, board.Cells[23].CandidateValue);
+			Assert.AreEqual(block1r2Value, board[21].CandidateValue);
+			Assert.AreEqual(block1r2Value, board[22].CandidateValue);
+			Assert.AreEqual(block1r2Value, board[23].CandidateValue);
 			board.Solve(result);
 			int block1r2ValueSolve = (1 << 0) | (1 << 1) | (1 << 2);
-			Assert.AreEqual(block1r2ValueSolve, board.Cells[21].CandidateValue);
-			Assert.AreEqual(block1r2ValueSolve, board.Cells[22].CandidateValue);
-			Assert.AreEqual(block1r2ValueSolve, board.Cells[23].CandidateValue);
+			Assert.AreEqual(block1r2ValueSolve, board[21].CandidateValue);
+			Assert.AreEqual(block1r2ValueSolve, board[22].CandidateValue);
+			Assert.AreEqual(block1r2ValueSolve, board[23].CandidateValue);
 		}
 
 		[TestMethod()]
@@ -221,9 +221,9 @@ namespace Sudoku
 			SudokuLog result = board.SetDigit(0, 8, 4);
 			board.Solve(result);
 			int block1r2Value = (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5) | (1 << 6) | (1 << 7) | (1 << 8);
-			Assert.AreEqual(block1r2Value, board.Cells[18].CandidateValue);
-			Assert.AreEqual(block1r2Value, board.Cells[19].CandidateValue);
-			Assert.AreEqual(block1r2Value, board.Cells[20].CandidateValue);
+			Assert.AreEqual(block1r2Value, board[18].CandidateValue);
+			Assert.AreEqual(block1r2Value, board[19].CandidateValue);
+			Assert.AreEqual(block1r2Value, board[20].CandidateValue);
 		}
 
 		[TestMethod()]
@@ -236,9 +236,9 @@ namespace Sudoku
 			SudokuLog result = board.SetDigit(8, 0, 4);
 			board.Solve(result);
 			int block1r2Value = (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5) | (1 << 6) | (1 << 7) | (1 << 8);
-			Assert.AreEqual(block1r2Value, board.Cells[2].CandidateValue);
-			Assert.AreEqual(block1r2Value, board.Cells[11].CandidateValue);
-			Assert.AreEqual(block1r2Value, board.Cells[20].CandidateValue);
+			Assert.AreEqual(block1r2Value, board[2].CandidateValue);
+			Assert.AreEqual(block1r2Value, board[11].CandidateValue);
+			Assert.AreEqual(block1r2Value, board[20].CandidateValue);
 		}
 
 		[TestMethod()]
@@ -311,7 +311,7 @@ namespace Sudoku
 
 			SudokuLog result = board.SetDigit(0, 0, 6);
 			board.Solve(result);
-			Assert.AreEqual(2, board.Cells[80].Digit);
+			Assert.AreEqual(2, board[80].Digit);
 		}
 	}
 }

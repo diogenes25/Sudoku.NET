@@ -63,7 +63,7 @@ namespace DE.Onnen.Sudoku.SudokuWpf
 			{
 				for (int x = 0; x < 9; x++)
 				{
-					btnSudoku[c] = new SudokuButton(board.Cells[c], board, this)
+					btnSudoku[c] = new SudokuButton(board[c], board, this)
 					{
 						Margin = new Thickness(2.0, 2.0, 2.0, 2.0),
 					};
@@ -148,7 +148,7 @@ namespace DE.Onnen.Sudoku.SudokuWpf
 
 		private void BtnNew_Click(object sender, RoutedEventArgs e)
 		{
-			board.Reset();
+			board.Clear();
 			lstbxHistory.Items.Clear();
 			ReloadBoard();
 		}
@@ -218,7 +218,7 @@ namespace DE.Onnen.Sudoku.SudokuWpf
 				//this.listBox1.Items.Add(new ListBoxItem() { Content = filename });
 				if (File.Exists(filename))
 				{
-					board.Reset();
+					board.Clear();
 					SudokuLog result = null;
 					TextReader tr = new StreamReader(filename);
 					string line;

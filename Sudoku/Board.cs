@@ -92,10 +92,10 @@ namespace DE.Onnen.Sudoku
 		}
 
 		/// <inheritdoc />
-		public ICell[] Cells
-		{
-			get { return this.cells; }
-		}
+        //public ICell[] Cells
+        //{
+        //    get { return this.cells; }
+        //}
 
 		/// <summary>
 		/// Some changes happend while solving. Another check is needed.
@@ -276,20 +276,20 @@ namespace DE.Onnen.Sudoku
 		/// <param name="otherBoard">Another Board</param>
 		public void SetBoard(IBoard otherBoard)
 		{
-			if (otherBoard == null || otherBoard.Cells == null)
+			if (otherBoard == null || otherBoard== null)
 			{
 				return;
 			}
 
-			for (int i = 0; i < otherBoard.Cells.Length; i++)
+			for (int i = 0; i < otherBoard.Count; i++)
 			{
-				if (otherBoard.Cells[i].Digit > 0)
+				if (otherBoard[i].Digit > 0)
 				{
-					this.cells[i].Digit = otherBoard.Cells[i].Digit;
+					this.cells[i].Digit = otherBoard[i].Digit;
 				}
 				else
 				{
-					this.cells[i].CandidateValue = otherBoard.Cells[i].CandidateValue;
+					this.cells[i].CandidateValue = otherBoard[i].CandidateValue;
 				}
 			}
 		}
@@ -383,7 +383,7 @@ namespace DE.Onnen.Sudoku
 		/// <summary>
 		/// Reset Board.
 		/// </summary>
-		public void Reset()
+        public void Clear()
 		{
 			this.givens.Clear();
 			this.history.Clear();
@@ -408,16 +408,16 @@ namespace DE.Onnen.Sudoku
 
 			for (int i = 0; i < cells.Length; i++)
 			{
-				if (board.Cells[i].Digit == 0)
+				if (board[i].Digit == 0)
 				{
-					ReadOnlyCollection<int> posDigit = board.Cells[i].Candidates;
+					ReadOnlyCollection<int> posDigit = board[i].Candidates;
 					foreach (int x in posDigit)
 					//System.Threading.Tasks.Parallel.ForEach(posDigit, x=>
 					{
 						Board newBoard = (Board)board.Clone();
 						SudokuLog result = newBoard.SetDigit(i, x, true);
 						if (BoardChangeEvent != null)
-							BoardChangeEvent(newBoard, new SudokuEvent() { Action = CellAction.SetDigitInt, ChangedCellBase = newBoard.Cells[i] });
+							BoardChangeEvent(newBoard, new SudokuEvent() { Action = CellAction.SetDigitInt, ChangedCellBase = newBoard[i] });
 						//Thread.Sleep(300);
 						if (!result.Successful)
 						{
@@ -497,11 +497,94 @@ namespace DE.Onnen.Sudoku
 		public override string ToString()
 		{
 			StringBuilder sb = new StringBuilder();
-			foreach (ICell cell in Cells)
+			foreach (ICell cell in this)
 			{
 				sb.Append(cell.Digit);
 			}
 			return sb.ToString();
 		}
-	}
+
+        #region IList<ICell> Members
+
+        public int IndexOf(ICell item)
+        {
+            return this.IndexOf(item);
+        }
+
+        public void Insert(int index, ICell item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICell this[int index]
+        {
+            get
+            {
+                return this.cells[index];
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        #endregion
+
+        #region ICollection<ICell> Members
+
+        public void Add(ICell item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Contains(ICell item)
+        {
+            return this.cells.Contains(item);
+        }
+
+        public void CopyTo(ICell[] array, int arrayIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Count
+        {
+            get { return this.cells.Count(); }
+        }
+
+        public bool IsReadOnly
+        {
+            get { return true; }
+        }
+
+        public bool Remove(ICell item)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region IEnumerable<ICell> Members
+
+        public IEnumerator<ICell> GetEnumerator()
+        {
+            return this.cells.Select(x=>(ICell)x).GetEnumerator();
+        }
+
+        #endregion
+
+        #region IEnumerable Members
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return this.cells.GetEnumerator();
+        }
+
+        #endregion
+    }
 }

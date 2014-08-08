@@ -8,7 +8,7 @@ namespace DE.Onnen.Sudoku.SudokuConsole
 	public class Program
 	{
 
-		private static void Mainc(string[] args)
+		private static void Main(string[] args)
 		{
 			Board board = new Board();
 			//board.SetDigit(1, 0, 2);
@@ -38,19 +38,21 @@ namespace DE.Onnen.Sudoku.SudokuConsole
 			//board.SetDigit(7, 8, 7);
 			//board.SetDigit(0, 0, 6);
 			board.SetCellsFromString("000000000000000000000000000000000000000000000000000000000000000000000000000000001");
-			string xxx = board.Matrix();
+            //string xxx = board.Matrix();
+            string xxx = board.htmlTable();
 			Console.WriteLine(xxx);
-			xxx = board.Matrix(true);
-			Console.WriteLine(xxx);
-			xxx = board.MatrixWithCandidates();
-			Console.WriteLine(xxx);
-			Console.WriteLine(board.ToString());
+            //xxx = board.Matrix(true);
+            //Console.WriteLine(xxx);
+            //xxx = board.MatrixWithCandidates();
+            //Console.WriteLine(xxx);
+            //Console.WriteLine(board.htmlTable());
+            //Console.WriteLine(board.ToString());
 			Console.ReadKey();
 		}
 
-	private static void Main(string[] args)
+	private static void Mainx(string[] args)
 		{
-			Board board = ReadBoard();
+            //Board board = ReadBoard();
 			DateTime start = DateTime.Now;
 
 			//OnlyInBlock(board);
@@ -78,7 +80,7 @@ namespace DE.Onnen.Sudoku.SudokuConsole
 			//}
 			Console.WriteLine(DateTime.Now.Subtract(start).Milliseconds);
 			Console.WriteLine(result.ToString());
-			Console.WriteLine(board.MatrixWithCandidates());
+            //Console.WriteLine(board.MatrixWithCandidates());
 			Console.ReadKey();
 		}
 

@@ -24,21 +24,21 @@ namespace DE.Onnen.Sudoku
 		/// <returns></returns>
 		public static int[] CreateSimpleBoard(Board board)
 		{
-			if (board == null || board.Cells == null || board.Cells.Length < 1)
+			if (board == null || board.Count< 1)
 			{
 				return null;
 			}
 
 			int[] retLst = new int[countCell];
-			for (int i = 0; i < board.Cells.Length; i++)
+			for (int i = 0; i < board.Count; i++)
 			{
-				if (board.Cells[i].Digit > 0)
+				if (board[i].Digit > 0)
 				{
-					retLst[i] = board.Cells[i].Digit * -1;
+					retLst[i] = board[i].Digit * -1;
 				}
 				else
 				{
-					retLst[i] = board.Cells[i].CandidateValue;
+					retLst[i] = board[i].CandidateValue;
 				}
 			}
 			return retLst;
