@@ -1,5 +1,4 @@
-﻿using DE.Onnen.Sudoku.SudokuExternal;
-using System;
+﻿using System;
 using System.Globalization;
 
 namespace DE.Onnen.Sudoku
@@ -61,7 +60,7 @@ namespace DE.Onnen.Sudoku
 			}
 			else
 			{
-				this.Percent = board.SolvePercent();
+				this.Percent = board.SolvePercent;
 			}
 		}
 

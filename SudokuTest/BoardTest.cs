@@ -1,6 +1,5 @@
 ﻿using DE.Onnen.Sudoku;
-using DE.Onnen.Sudoku.SudokuExternal;
-using DE.Onnen.Sudoku.SudokuExternal.SolveTechniques;
+using DE.Onnen.Sudoku.SolveTechniques;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;

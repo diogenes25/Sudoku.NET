@@ -1,5 +1,4 @@
-﻿using DE.Onnen.Sudoku.SudokuExternal;
-using DE.Onnen.Sudoku.SudokuExternal.SolveTechniques;
+﻿using DE.Onnen.Sudoku.SolveTechniques;
 using System.Collections.Generic;
 using System.Linq;
 

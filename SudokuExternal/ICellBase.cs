@@ -1,4 +1,4 @@
-﻿namespace DE.Onnen.Sudoku.SudokuExternal
+﻿namespace DE.Onnen.Sudoku
 {
 	public interface ICellBase
 	{

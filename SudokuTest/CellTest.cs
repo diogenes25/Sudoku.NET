@@ -1,5 +1,4 @@
 ﻿using DE.Onnen.Sudoku;
-using DE.Onnen.Sudoku.SudokuExternal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.ObjectModel;

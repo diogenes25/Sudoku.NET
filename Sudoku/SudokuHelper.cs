@@ -1,14 +1,16 @@
-﻿using DE.Onnen.Sudoku.SudokuExternal;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace DE.Onnen.Sudoku
 {
 	public static class SudokuHelper
 	{
+
 		private static int countCell = Consts.DimensionSquare * Consts.DimensionSquare;
 
 		/// <summary>
@@ -52,7 +54,7 @@ namespace DE.Onnen.Sudoku
 		/// </remarks>
 		/// <param name="file">Path/File to textfile</param>
 		/// <returns>List of Boards</returns>
-		public static IList<Board> ReadBoardFromFileTop(string file)
+		public static IList<Board> ReadBoardFromFileTop(string file, char zero = '0')
 		{
 			IList<Board> retList = new List<Board>();
 			TextReader tr = new StreamReader(file);
@@ -61,20 +63,10 @@ namespace DE.Onnen.Sudoku
 			{
 				if (line.Length < countCell)
 					continue;
-				Board board = new Board();
-				for (int x = 0; x < countCell; x++)
-				{
-					char currChar = line[x];
-					if (!currChar.Equals('.'))
-					{
-						int digit = Convert.ToInt32(currChar) - 48;
-						SudokuLog result = board.SetDigit(x, digit);
-						if (!result.Successful)
-						{
-							Debug.WriteLine(x);
-						}
-					}
-				}
+				//Board board = new Board();
+				Board board = new Board("..\\..\\..\\Sudoku\\SolveTechnics\\");
+			
+				board.SetCellsFromString(line, zero);
 				retList.Add(board);
 			}
 			tr.Close();
@@ -123,6 +115,7 @@ namespace DE.Onnen.Sudoku
 							Debug.WriteLine(y + " " + x);
 						}
 					}
+					
 				}
 				retList.Add(board);
 			}
@@ -145,5 +138,7 @@ namespace DE.Onnen.Sudoku
 				PrintSudokuResult(sr, sb, cap + " ");
 			}
 		}
+
+
 	}
 }

@@ -1,15 +1,55 @@
-﻿using DE.Onnen.Sudoku.SudokuExternal;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using DE.Onnen.Sudoku;
 
 namespace DE.Onnen.Sudoku.SudokuConsole
 {
+
 	public class Program
 	{
 
-		private static void Main(string[] args)
+		private static void Mainc(string[] args)
 		{
-			//Board board = new Board();
+			Board board = new Board();
+			//board.SetDigit(1, 0, 2);
+			//board.SetDigit(1, 2, 3);
+			//board.SetDigit(1, 3, 6);
+			//board.SetDigit(1, 7, 9);
+			//board.SetDigit(2, 0, 9);
+			//board.SetDigit(2, 1, 5);
+			//board.SetDigit(2, 5, 3);
+			//board.SetDigit(2, 7, 2);
+			//board.SetDigit(3, 3, 5);
+			//board.SetDigit(3, 6, 3);
+			//board.SetDigit(4, 0, 7);
+			//board.SetDigit(4, 3, 3);
+			//board.SetDigit(4, 4, 8);
+			//board.SetDigit(4, 5, 6);
+			//board.SetDigit(4, 8, 1);
+			//board.SetDigit(5, 2, 6);
+			//board.SetDigit(5, 5, 7);
+			//board.SetDigit(6, 1, 7);
+			//board.SetDigit(6, 3, 1);
+			//board.SetDigit(6, 7, 3);
+			//board.SetDigit(6, 8, 4);
+			//board.SetDigit(7, 1, 4);
+			//board.SetDigit(7, 5, 9);
+			//board.SetDigit(7, 6, 5);
+			//board.SetDigit(7, 8, 7);
+			//board.SetDigit(0, 0, 6);
+			board.SetCellsFromString("000000000000000000000000000000000000000000000000000000000000000000000000000000001");
+			string xxx = board.Matrix();
+			Console.WriteLine(xxx);
+			xxx = board.Matrix(true);
+			Console.WriteLine(xxx);
+			xxx = board.MatrixWithCandidates();
+			Console.WriteLine(xxx);
+			Console.WriteLine(board.ToString());
+			Console.ReadKey();
+		}
+
+	private static void Main(string[] args)
+		{
 			Board board = ReadBoard();
 			DateTime start = DateTime.Now;
 
@@ -38,7 +78,7 @@ namespace DE.Onnen.Sudoku.SudokuConsole
 			//}
 			Console.WriteLine(DateTime.Now.Subtract(start).Milliseconds);
 			Console.WriteLine(result.ToString());
-			board.Show(true);
+			Console.WriteLine(board.MatrixWithCandidates());
 			Console.ReadKey();
 		}
 
@@ -94,8 +134,8 @@ namespace DE.Onnen.Sudoku.SudokuConsole
 			int[] emh = new int[3];
 			//IList<Board> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\HardestDatabase110626.txt"); // http://forum.enjoysudoku.com/the-hardest-sudokus-new-thread-t6539.html
 			//IList<Board> boards = SudokuHelper.ReadBoardFromFile(@"..\..\..\SudokuTest\TestData\Simple.txt");
-			IList<Board> boards = SudokuHelper.ReadBoardFromFile(@"..\..\..\SudokuTest\TestData\sudoku.txt");
-			//IList<Board> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\top95.txt");
+			//IList<Board> boards = SudokuHelper.ReadBoardFromFile(@"..\..\..\SudokuTest\TestData\sudoku.txt");
+			IList<Board> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\top95.txt", '.');
 			//IList<Board> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\ElevensHardestSudoku.txt"); // https://sites.google.com/site/sudoeleven/
 			DateTime totalStartTime = DateTime.Now;
 			foreach (Board board in boards)

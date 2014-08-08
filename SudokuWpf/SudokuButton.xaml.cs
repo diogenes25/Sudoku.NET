@@ -1,4 +1,4 @@
-﻿using DE.Onnen.Sudoku.SudokuExternal;
+﻿using DE.Onnen.Sudoku;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -84,7 +84,7 @@ namespace DE.Onnen.Sudoku.SudokuWpf
 				lbl.Content = ((ICell)sender).Digit;
 				this.borderMain.Child = lbl;
 			}
-			mwin.progressbarBoard.Value = board.SolvePercent();
+			mwin.progressbarBoard.Value = board.SolvePercent;
 		}
 
 		private void SudokuButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -114,7 +114,7 @@ namespace DE.Onnen.Sudoku.SudokuWpf
 				lbl.Content = eventInfo.value;
 				this.borderMain.Child = lbl;
 			}
-			mwin.progressbarBoard.Value = board.SolvePercent();
+			mwin.progressbarBoard.Value = board.SolvePercent;
 		}
 
 		public void Reload()

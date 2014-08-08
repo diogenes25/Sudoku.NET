@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board.cs" />
+    <Compile Include="BoardExtensions.cs" />
     <Compile Include="CellBase.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="GlobalSuppressions.cs" />

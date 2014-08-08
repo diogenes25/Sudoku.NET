@@ -1,4 +1,5 @@
-﻿namespace DE.Onnen.Sudoku.SudokuExternal
+﻿using System.Collections.ObjectModel;
+namespace DE.Onnen.Sudoku
 {
 	/// <summary>
 	/// Sudoku puzzle.
@@ -32,6 +33,17 @@
 		/// <param name="cellID">ID of cell</param>
 		/// <param name="digitToSet">Digit</param>
 		SudokuLog SetDigit(int cellID, int digitToSet);
+
+		/// <summary>
+		/// Cells where Digits where set by SetDigit.
+		/// </summary>
+		ReadOnlyCollection<ICell> Givens { get; }
+
+		/// <summary>
+		/// Percent
+		/// </summary>
+		/// <returns>Percent</returns>
+		double SolvePercent { get; }
 	}
 
 	/// <summary>

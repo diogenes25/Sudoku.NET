@@ -1,4 +1,4 @@
-﻿using DE.Onnen.Sudoku.SudokuExternal;
+﻿using DE.Onnen.Sudoku;
 using System.Collections.Generic;
 
 namespace DE.Onnen.Sudoku

@@ -1,10 +1,10 @@
-﻿using DE.Onnen.Sudoku.SudokuExternal;
-using DE.Onnen.Sudoku.SudokuExternal.SolveTechniques;
+﻿using DE.Onnen.Sudoku.SolveTechniques;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace DE.Onnen.Sudoku
 {
@@ -18,6 +18,7 @@ namespace DE.Onnen.Sudoku
 	/// http://www.setbb.com/phpbb/viewtopic.php?t=379&mforum=sudoku
 	/// http://www.playr.co.uk/sudoku/dictionary.php
 	/// http://www.sudocue.net/glossary.php
+	/// http://walter.bislins.ch/projekte/index.asp?page=Sudoku
 	/// </summary>
 	public class Board : ICloneable, IBoard, ISudokuHost
 	{
@@ -25,7 +26,7 @@ namespace DE.Onnen.Sudoku
 		private const int COL_CONTAINERTYPE = 1;
 		private const int BLOCK_CONTAINERTYPE = 2;
 		private List<SudokuHistoryItem> history;
-		private List<Cell> givens;
+		private List<ICell> givens;
 		private Cell[] cells = new Cell[Consts.DimensionSquare * Consts.DimensionSquare];
 		private House[][] container = new House[Consts.DimensionSquare][];
 		private double solvePercentBase = 0;
@@ -33,10 +34,8 @@ namespace DE.Onnen.Sudoku
 
 		public ReadOnlyCollection<SudokuHistoryItem> History { get { return this.history.AsReadOnly(); } }
 
-		/// <summary>
-		/// Cells where Digits where set by SetDigit.
-		/// </summary>
-		public ReadOnlyCollection<Cell> Givens { get { return this.givens.AsReadOnly(); } }
+		/// <inheritdoc />
+		public ReadOnlyCollection<ICell> Givens { get { return this.givens.AsReadOnly(); } }
 
 		/// <summary>
 		/// Loaded solvetechniques.
@@ -57,15 +56,18 @@ namespace DE.Onnen.Sudoku
 		/// Percent
 		/// </summary>
 		/// <returns>Percent</returns>
-		public double SolvePercent()
+		public double SolvePercent
 		{
-			double currSolvePercent = 0;
-			foreach (Cell c in cells)
+			get
 			{
-				currSolvePercent += (Consts.DimensionSquare - c.Candidates.Count);
-			}
+				double currSolvePercent = 0;
+				foreach (Cell c in cells)
+				{
+					currSolvePercent += (Consts.DimensionSquare - c.Candidates.Count);
+				}
 
-			return (currSolvePercent / this.solvePercentBase) * 100;
+				return (currSolvePercent / this.solvePercentBase) * 100;
+			}
 		}
 
 		/// <inheritdoc />
@@ -132,7 +134,7 @@ namespace DE.Onnen.Sudoku
 
 		private void Init()
 		{
-			this.givens = new List<Cell>();
+			this.givens = new List<ICell>();
 			this.history = new List<SudokuHistoryItem>();
 			this.solvePercentBase = Math.Pow(Consts.DimensionSquare, 3.0);
 			for (int i = 0; i < Consts.DimensionSquare * Consts.DimensionSquare; i++)
@@ -444,59 +446,6 @@ namespace DE.Onnen.Sudoku
 			return false;
 		}
 
-		/// <summary>
-		/// Write Sudoku to Console.
-		/// </summary>
-		public void Show()
-		{
-			Show(false);
-		}
-
-		/// <summary>
-		/// Write Sudoku to Console.
-		/// </summary>
-		/// <param name="withPos">Positioninfos</param>
-		public void Show(bool withPos)
-		{
-			for (int x = 0; x < cells.Length; x++)
-			{
-				int row = (x / Consts.DimensionSquare);
-				int col = (x % Consts.DimensionSquare);
-
-				if ((x % Consts.DimensionSquare) == 0)
-				{
-					if (row % 3 == 0)
-						Console.WriteLine("\n----------------------------------------------------------------");
-					else
-					{
-						Console.WriteLine("\n");
-					}
-				}
-				if (this.cells[x].Digit > 0)
-				{
-					Console.Write("[ {0} ]", this.cells[x].Digit);
-				}
-				else
-				{
-					ReadOnlyCollection<int> posDigit = this.cells[x].Candidates; ;
-					if (withPos)
-					{
-						Console.Write("(");
-						foreach (int pn in posDigit)
-						{
-							Console.Write(pn);
-						}
-						Console.Write(")");
-					}
-					else
-						Console.Write("- {0} -", posDigit.Count);
-					//Console.Write(this.cells[x].BaseValue + " | ");
-				}
-				if ((col + 1) % 3 == 0)
-					Console.Write(" | ");
-			}
-			Console.WriteLine("\n---------- Complete: " + this.IsComplete + " - " + this.SolvePercent() + " % ----------------------");
-		}
 
 		#region ICloneable Members
 
@@ -544,5 +493,15 @@ namespace DE.Onnen.Sudoku
 		}
 
 		#endregion ISudokuHost Members
+
+		public override string ToString()
+		{
+			StringBuilder sb = new StringBuilder();
+			foreach (ICell cell in Cells)
+			{
+				sb.Append(cell.Digit);
+			}
+			return sb.ToString();
+		}
 	}
 }
