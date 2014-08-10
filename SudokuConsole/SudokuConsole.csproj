@@ -46,10 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chapter1.cs" />
+    <Compile Include="Chapter3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SudokuExtensions\SudokuExtensions.csproj">
+      <Project>{08B2350D-6A42-4716-9850-8F44AD8900A6}</Project>
+      <Name>SudokuExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SudokuExternal\SudokuExternal.csproj">
       <Project>{6F9BD1D8-1883-4479-850B-518593FF6FAC}</Project>
       <Name>SudokuExternal</Name>

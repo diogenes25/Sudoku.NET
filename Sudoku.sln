@@ -35,6 +35,8 @@ Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "SudokuDocumentation", "Sudo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuConsole", "SudokuConsole\SudokuConsole.csproj", "{6D61E64A-7848-4804-826A-A2EB507ED59D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuExtensions", "SudokuExtensions\SudokuExtensions.csproj", "{08B2350D-6A42-4716-9850-8F44AD8900A6}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Sudoku.vsmdi
@@ -129,6 +131,7 @@ Global
 		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Release|x86.ActiveCfg = Release|Any CPU
 		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Debug|Any CPU.Build.0 = Debug|x86
 		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Debug|x86.ActiveCfg = Debug|x86
@@ -138,6 +141,16 @@ Global
 		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Release|Mixed Platforms.Build.0 = Release|x86
 		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Release|x86.ActiveCfg = Release|x86
 		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Release|x86.Build.0 = Release|x86
+		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
 namespace DE.Onnen.Sudoku
 {
     /// <summary>
@@ -8,12 +9,17 @@ namespace DE.Onnen.Sudoku
     /// It contains the 81 constituent cells, lined up in 9 rows and 9 columns, with a distinct border around the boxes.
     /// </remarks>
     /// </summary>
-    public interface IBoard : IList<ICell>
+    public interface IBoard : ICollection<ICell>
     {
         /// <summary>
         /// 81 cells of the board.
         /// </summary>
         //ICell[] Cells { get; }
+
+        ICell this[int index]
+        {
+            get;
+        }
 
         /// <summary>
         /// Returns a specific house.
@@ -45,6 +51,14 @@ namespace DE.Onnen.Sudoku
         /// </summary>
         /// <returns>Percent</returns>
         double SolvePercent { get; }
+
+        /// <summary>
+        /// Solves Sudoku with SolveTechniques (no Backtracking).
+        /// </summary>
+        /// <param name="sudokuResult">Log</param>
+        void Solve(SudokuLog sudokuResult);
+
+        void Backtracking(SudokuLog sudokuResult);
     }
 
     /// <summary>
