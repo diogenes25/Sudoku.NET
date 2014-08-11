@@ -85,6 +85,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACellCollection.cs" />
     <Compile Include="Board.cs" />
     <Compile Include="CellBase.cs" />
     <Compile Include="Cell.cs" />

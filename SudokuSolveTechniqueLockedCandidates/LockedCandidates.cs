@@ -47,7 +47,7 @@ namespace DE.Onnen.Sudoku.SolveTechniques
 					}
 
 					int pos = -1;
-					foreach (ICell c in board.GetHouse(cellInContainertype, houseIdx).Peers) // Cells des Row
+					foreach (ICell c in board.GetHouse(cellInContainertype, houseIdx)) // Cells des Row
 					{
 						pos++;
 						if (((house.HType == HouseType.Row)
@@ -120,11 +120,11 @@ namespace DE.Onnen.Sudoku.SolveTechniques
 			{
 				if (verticalBlock)
 				{
-					valueInRow[(p % Consts.Dimension)] |= house.Peers[p].CandidateValue;
+					valueInRow[(p % Consts.Dimension)] |= house[p].CandidateValue;
 				}
 				else
 				{
-					valueInRow[p / Consts.Dimension] |= house.Peers[p].CandidateValue;
+					valueInRow[p / Consts.Dimension] |= house[p].CandidateValue;
 				}
 			}
 

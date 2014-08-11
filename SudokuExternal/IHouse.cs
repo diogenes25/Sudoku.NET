@@ -1,4 +1,5 @@
-﻿namespace DE.Onnen.Sudoku
+﻿using System.Collections.Generic;
+namespace DE.Onnen.Sudoku
 {
 	/// <summary>
 	/// A group of 9 cells.
@@ -7,17 +8,27 @@
 	/// In standard sudoku, a house can be a row, a column or a box. There are 27 houses in a standard sudoku grid.
 	/// </remarks>
 	/// </summary>
-	public interface IHouse : ICellBase
-	{
+	public interface IHouse : ICellBase, ICollection<ICell>
+    {
+        /// <summary>
+        /// 81 cells of the board.
+        /// </summary>
+        //ICell[] Cells { get; }
+
+        ICell this[int index]
+        {
+            get;
+        }
+
 		/// <summary>
 		/// true == Every digit ist set.
 		/// </summary>
 		bool Complete { get; }
 
-		/// <summary>
-		/// Cells (buddies) of this house.
-		/// </summary>
-		ICell[] Peers { get; }
+		///// <summary>
+		///// Cells (buddies) of this house.
+		///// </summary>
+		//ICell[] Peers { get; }
 	}
 
 	/// <summary>

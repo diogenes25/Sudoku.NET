@@ -23,7 +23,7 @@ namespace DE.Onnen.Sudoku.SolveTechniques
 		{
 			// Key = BaseValue, Anz Possible
 			Dictionary<int, List<ICell>> nakedMore = new Dictionary<int, List<ICell>>();
-			foreach (ICell c in house.Peers)
+			foreach (ICell c in house)
 			{
 				int val = c.CandidateValue;
 				if (!nakedMore.ContainsKey(val))
@@ -48,7 +48,7 @@ namespace DE.Onnen.Sudoku.SolveTechniques
 						SolveTechnik = st,
 					};
 					bool found = false;
-					foreach (ICell c in house.Peers)
+					foreach (ICell c in house)
 					{
 						if (kv.Value.Contains(c))
 						{

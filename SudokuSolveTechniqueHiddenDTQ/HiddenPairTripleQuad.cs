@@ -27,16 +27,16 @@ namespace DE.Onnen.Sudoku.SolveTechniques
 
 			for (int i = 0; i < Consts.DimensionSquare; i++)
 			{
-				if (house.Peers[i].Digit == 0)
+				if (house[i].Digit == 0)
 				{
-					ReadOnlyCollection<int> posDigit = house.Peers[i].Candidates;
+					ReadOnlyCollection<int> posDigit = house[i].Candidates;
 					foreach (int num in posDigit)
 					{
 						if (!digitInCell.ContainsKey(num))
 						{
 							digitInCell.Add(num, new List<ICell>());
 						}
-						digitInCell[num].Add(house.Peers[i]);
+						digitInCell[num].Add(house[i]);
 					}
 				}
 			}

@@ -1,13 +1,15 @@
 ﻿using DE.Onnen.Sudoku;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DE.Onnen.Sudoku
 {
 	public class House : ACellBase, IHouse
 	{
-		private ICell[] peers;
+		private ICell[] cells;
 
-		public ICell[] Peers { get { return peers; } }
+		//public ICell[] Peers { get { return peers; } }
 
 		internal bool ReCheck { set; get; }
 
@@ -16,7 +18,7 @@ namespace DE.Onnen.Sudoku
 			get
 			{
 				int retval = 0;
-				foreach (Cell c in this.peers)
+				foreach (Cell c in this.cells)
 				{
 					retval |= c.CandidateValue;
 				}
@@ -27,7 +29,7 @@ namespace DE.Onnen.Sudoku
 		internal House(ICell[] cells, HouseType containerType, int containerIdx)
 		{
 			this.CandidateValue = Consts.BaseStart;
-			this.peers = cells;
+			this.cells = cells;
 			this.HType = containerType;
 			this.ID = containerIdx;
 			this.ReCheck = false;
@@ -55,7 +57,7 @@ namespace DE.Onnen.Sudoku
 			bool ok = true;
 			int newBaseValue = Consts.BaseStart;
 			HashSet<int> m = new HashSet<int>();
-			foreach (ICell cell in this.peers)
+			foreach (ICell cell in this.cells)
 			{
 				if (cell.Digit > 0)
 				{
@@ -99,7 +101,7 @@ namespace DE.Onnen.Sudoku
 				value = digit,
 			};
 
-			foreach (Cell cell in peers)
+			foreach (Cell cell in cells)
 			{
 				cell.RemoveCandidate(digit, result);
 			}
@@ -109,6 +111,73 @@ namespace DE.Onnen.Sudoku
 		public override string ToString()
 		{
 			return this.HType + "(" + this.ID + ") " + this.CandidateValue;
+		}
+
+			#region IList<ICell> Members
+
+		public ICell this[int index]
+		{
+			get { return this.cells[index]; }
+		}
+
+		#endregion IList<ICell> Members
+
+		#region ICollection<ICell> Members
+
+		public void Add(ICell item)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool Contains(ICell item)
+		{
+			return this.cells.Contains(item);
+		}
+
+		public void CopyTo(ICell[] array, int arrayIndex)
+		{
+			throw new NotImplementedException();
+		}
+
+		public int Count
+		{
+			get { return this.cells.Length; }
+		}
+
+		public bool IsReadOnly
+		{
+			get { return true; }
+		}
+
+		public bool Remove(ICell item)
+		{
+			throw new NotImplementedException();
+		}
+
+		#endregion ICollection<ICell> Members
+
+		#region IEnumerable<ICell> Members
+
+		public IEnumerator<ICell> GetEnumerator()
+		{
+			return this.cells.Select(x => (ICell)x).GetEnumerator();
+		}
+
+		#endregion IEnumerable<ICell> Members
+
+		#region IEnumerable Members
+
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+		{
+			return this.cells.GetEnumerator();
+		}
+
+		#endregion IEnumerable Members
+
+
+		public void Clear()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

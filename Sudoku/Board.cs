@@ -20,14 +20,13 @@ namespace DE.Onnen.Sudoku
     /// http://www.sudocue.net/glossary.php
     /// http://walter.bislins.ch/projekte/index.asp?page=Sudoku
     /// </summary>
-    public class Board : ICloneable, IBoard, ISudokuHost
+    public class Board : ACellCollection, ICloneable, IBoard, ISudokuHost
     {
         private const int ROW_CONTAINERTYPE = 0;
         private const int COL_CONTAINERTYPE = 1;
         private const int BLOCK_CONTAINERTYPE = 2;
         private List<SudokuHistoryItem> history;
         private List<ICell> givens;
-        private Cell[] cells = new Cell[Consts.DimensionSquare * Consts.DimensionSquare];
         private House[][] container = new House[Consts.DimensionSquare][];
         private double solvePercentBase = 0;
         private IList<ASolveTechnique> solveTechniques = new List<ASolveTechnique>();
@@ -134,6 +133,7 @@ namespace DE.Onnen.Sudoku
 
         private void Init()
         {
+			this.cells = new Cell[Consts.DimensionSquare * Consts.DimensionSquare];
             this.givens = new List<ICell>();
             this.history = new List<SudokuHistoryItem>();
             this.solvePercentBase = Math.Pow(Consts.DimensionSquare, 3.0);
@@ -387,10 +387,11 @@ namespace DE.Onnen.Sudoku
         {
             this.givens.Clear();
             this.history.Clear();
-            for (int i = 0; i < Consts.DimensionSquare * Consts.DimensionSquare; i++)
-            {
-                cells[i].Digit = 0;
-            }
+			base.Clear();
+			//for (int i = 0; i < Consts.DimensionSquare * Consts.DimensionSquare; i++)
+			//{
+			//	cells[i].Digit = 0;
+			//}
 
             for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
             {
@@ -502,67 +503,6 @@ namespace DE.Onnen.Sudoku
             }
             return sb.ToString();
         }
-
-        #region IList<ICell> Members
-
-        public ICell this[int index]
-        {
-            get { return this.cells[index]; }
-        }
-
-        #endregion IList<ICell> Members
-
-        #region ICollection<ICell> Members
-
-        public void Add(ICell item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Contains(ICell item)
-        {
-            return this.cells.Contains(item);
-        }
-
-        public void CopyTo(ICell[] array, int arrayIndex)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Count
-        {
-            get { return this.cells.Count(); }
-        }
-
-        public bool IsReadOnly
-        {
-            get { return true; }
-        }
-
-        public bool Remove(ICell item)
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion ICollection<ICell> Members
-
-        #region IEnumerable<ICell> Members
-
-        public IEnumerator<ICell> GetEnumerator()
-        {
-            return this.cells.Select(x => (ICell)x).GetEnumerator();
-        }
-
-        #endregion IEnumerable<ICell> Members
-
-        #region IEnumerable Members
-
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            return this.cells.GetEnumerator();
-        }
-
-        #endregion IEnumerable Members
 
         private static int countCell = Consts.DimensionSquare * Consts.DimensionSquare;
 

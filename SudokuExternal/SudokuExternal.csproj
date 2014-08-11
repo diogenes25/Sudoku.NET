@@ -52,6 +52,7 @@
     <Compile Include="IBoard.cs" />
     <Compile Include="ICell.cs" />
     <Compile Include="ICellBase.cs" />
+    <Compile Include="ICellCollection.cs" />
     <Compile Include="IHouse.cs" />
     <Compile Include="ISolveTechnique.cs" />
     <Compile Include="ISudokuHost.cs" />

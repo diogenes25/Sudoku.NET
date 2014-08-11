@@ -54,7 +54,7 @@ namespace DE.Onnen.Sudoku
                     sb.Append(Environment.NewLine);
                 }
                 IHouse house = board.GetHouse(HouseType.Row, i);
-                for (int x = 0; x < house.Peers.Length; x++)
+                for (int x = 0; x < house.Count; x++)
                 {
                     if (x % 3 == 0)
                     {
@@ -66,7 +66,7 @@ namespace DE.Onnen.Sudoku
                     }
                     else
                     {
-                        sb.Append(((house.Peers[x].Digit > 0) ? house.Peers[x].Digit.ToString() : " "));
+                        sb.Append(((house[x].Digit > 0) ? house[x].Digit.ToString() : " "));
                     }
                     id++;
                 }
@@ -174,7 +174,7 @@ namespace DE.Onnen.Sudoku
                 sb.Append(Environment.NewLine);
                 sb.Append("\t");
                 IHouse house = board.GetHouse(HouseType.Row, i);
-                for (int x = 0; x < house.Peers.Length; x++)
+                for (int x = 0; x < house.Count; x++)
                 {
                     sb.Append("<td class=\"sudokucell\">");
                     if (onlyGiven)
@@ -183,7 +183,7 @@ namespace DE.Onnen.Sudoku
                     }
                     else
                     {
-                        sb.Append(((house.Peers[x].Digit > 0) ? house.Peers[x].Digit.ToString() : "&nbsp;"));
+                        sb.Append(((house[x].Digit > 0) ? house[x].Digit.ToString() : "&nbsp;"));
                     }
                     sb.Append("</td>");
                     id++;
