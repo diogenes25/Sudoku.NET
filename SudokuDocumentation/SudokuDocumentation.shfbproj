@@ -28,8 +28,9 @@
     </TransformComponentArguments>
     <DocumentationSources>
       <DocumentationSource sourceFile="..\Sudoku\Sudoku.csproj" />
-      <DocumentationSource sourceFile="..\SudokuExternal\SudokuExternal.csproj" />
       <DocumentationSource sourceFile="ProjectComment.xml" />
+      <DocumentationSource sourceFile="..\Sudoku.Interfaces\Sudoku.Interfaces.csproj" />
+      <DocumentationSource sourceFile="..\SudokuExtensions\SudokuExtensions.csproj" />
     </DocumentationSources>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <HelpFileFormat>Website</HelpFileFormat>
@@ -93,6 +94,10 @@
     <Content Include="icons\Help.png" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Media\Extensions_Matrix.png">
+      <ImageId>Extensions_Matrix</ImageId>
+      <AlternateText>Extensions Matrix</AlternateText>
+    </Image>
     <Image Include="Media\SudokuBoardWPF.PNG">
       <ImageId>SudokuBoardWPF</ImageId>
       <AlternateText>Sudoku BoardWPF</AlternateText>

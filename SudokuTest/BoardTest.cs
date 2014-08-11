@@ -96,7 +96,7 @@ namespace DE.Onnen.Sudoku
 		///A test for SetDigit
 		///</summary>
 		[TestMethod()]
-		public void SetDigitTest2()
+		public void SetDigit_set_digit_when_only_one_candidate_left()
 		{
 			Board board = new Board(solveTechniques);
 			board.SetDigit(0, 1);

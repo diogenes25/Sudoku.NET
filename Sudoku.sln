@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku", "Sudoku\Sudoku.csproj", "{815D8134-6309-4B05-9046-B84332A2E3D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuTest", "SudokuTest\SudokuTest.csproj", "{A7B9DB95-B681-4174-BE22-7FAC6F6B2E59}"
@@ -14,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuWpf", "SudokuWpf\SudokuWpf.csproj", "{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuExternal", "SudokuExternal\SudokuExternal.csproj", "{6F9BD1D8-1883-4479-850B-518593FF6FAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.Interfaces", "Sudoku.Interfaces\Sudoku.Interfaces.csproj", "{6F9BD1D8-1883-4479-850B-518593FF6FAC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveTechniqueHiddenPTQ", "SudokuSolveTechniqueHiddenDTQ\SolveTechniqueHiddenPTQ.csproj", "{A07C29DC-BADC-4D80-9542-D7588D2903DE}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -38,9 +40,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuExtensions", "SudokuExtensions\SudokuExtensions.csproj", "{08B2350D-6A42-4716-9850-8F44AD8900A6}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Sudoku.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -157,5 +156,8 @@ Global
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Sudoku.vsmdi
 	EndGlobalSection
 EndGlobal

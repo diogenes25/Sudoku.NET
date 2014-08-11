@@ -159,9 +159,9 @@
     <None Include="SudokuWpf_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SudokuExternal\SudokuExternal.csproj">
+    <ProjectReference Include="..\Sudoku.Interfaces\Sudoku.Interfaces.csproj">
       <Project>{6F9BD1D8-1883-4479-850B-518593FF6FAC}</Project>
-      <Name>SudokuExternal</Name>
+      <Name>Sudoku.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sudoku\Sudoku.csproj">
       <Project>{815D8134-6309-4B05-9046-B84332A2E3D7}</Project>

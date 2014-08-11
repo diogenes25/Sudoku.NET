@@ -55,11 +55,18 @@
     <Compile Include="CellTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IBoardTest.cs" />
+    <Compile Include="SolveTechniques\LockedCandidatesTest.cs" />
+    <Compile Include="SolveTechniques\HiddenPairTripleQuadTest.cs" />
+    <Compile Include="SolveTechniques\NakedPairTrippleQuadTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SudokuExternal\SudokuExternal.csproj">
+    <ProjectReference Include="..\Sudoku.Interfaces\Sudoku.Interfaces.csproj">
       <Project>{6F9BD1D8-1883-4479-850B-518593FF6FAC}</Project>
-      <Name>SudokuExternal</Name>
+      <Name>Sudoku.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SudokuExtensions\SudokuExtensions.csproj">
+      <Project>{08b2350d-6a42-4716-9850-8f44ad8900a6}</Project>
+      <Name>SudokuExtensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\SudokuSolveTechniqueDTQ\SolveTechniqueNakedPTQ.csproj">
       <Project>{1f0608dc-2ca9-4afb-92a4-a68cf37a8db2}</Project>

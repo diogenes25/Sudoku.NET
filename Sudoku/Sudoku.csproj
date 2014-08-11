@@ -101,12 +101,6 @@
     <None Include="Properties\app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SudokuExternal\SudokuExternal.csproj">
-      <Project>{6F9BD1D8-1883-4479-850B-518593FF6FAC}</Project>
-      <Name>SudokuExternal</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
@@ -133,6 +127,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="brain.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sudoku.Interfaces\Sudoku.Interfaces.csproj">
+      <Project>{6f9bd1d8-1883-4479-850b-518593ff6fac}</Project>
+      <Name>Sudoku.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

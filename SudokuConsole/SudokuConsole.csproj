@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chapter1.cs" />
+    <Compile Include="Chapter2.cs" />
     <Compile Include="Chapter3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,9 +57,21 @@
       <Project>{08B2350D-6A42-4716-9850-8F44AD8900A6}</Project>
       <Name>SudokuExtensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SudokuExternal\SudokuExternal.csproj">
+    <ProjectReference Include="..\Sudoku.Interfaces\Sudoku.Interfaces.csproj">
       <Project>{6F9BD1D8-1883-4479-850B-518593FF6FAC}</Project>
-      <Name>SudokuExternal</Name>
+      <Name>Sudoku.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SudokuSolveTechniqueDTQ\SolveTechniqueNakedPTQ.csproj">
+      <Project>{1f0608dc-2ca9-4afb-92a4-a68cf37a8db2}</Project>
+      <Name>SolveTechniqueNakedPTQ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SudokuSolveTechniqueHiddenDTQ\SolveTechniqueHiddenPTQ.csproj">
+      <Project>{a07c29dc-badc-4d80-9542-d7588d2903de}</Project>
+      <Name>SolveTechniqueHiddenPTQ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SudokuSolveTechniqueLockedCandidates\SolveTechniqueLockedCandidates.csproj">
+      <Project>{44bd4e5d-6ee6-4a96-b55a-38342c9c5465}</Project>
+      <Name>SolveTechniqueLockedCandidates</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sudoku\Sudoku.csproj">
       <Project>{815D8134-6309-4B05-9046-B84332A2E3D7}</Project>

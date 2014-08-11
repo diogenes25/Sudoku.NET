@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DE.Onnen.Sudoku
 {
-	public class House : ACellBase, IHouse
+	public class HouseCollection : ACellBase, IHouse
 	{
 		private ICell[] cells;
 
@@ -26,7 +26,7 @@ namespace DE.Onnen.Sudoku
 			}
 		}
 
-		internal House(ICell[] cells, HouseType containerType, int containerIdx)
+		internal HouseCollection(ICell[] cells, HouseType containerType, int containerIdx)
 		{
 			this.CandidateValue = Consts.BaseStart;
 			this.cells = cells;
