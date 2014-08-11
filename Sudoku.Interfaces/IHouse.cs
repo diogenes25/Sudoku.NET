@@ -23,7 +23,7 @@ namespace DE.Onnen.Sudoku
 		/// <summary>
 		/// true == Every digit ist set.
 		/// </summary>
-		bool Complete { get; }
+		bool IsComplete { get; }
 
 		///// <summary>
 		///// Cells (buddies) of this house.
