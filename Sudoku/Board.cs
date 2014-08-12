@@ -81,7 +81,7 @@ namespace DE.Onnen.Sudoku
 				for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
 				{
 					//ready = this.container[containerIdx][containerType].Complete;
-					if (!this.container[containerIdx][containerType].Complete)
+					if (!this.container[containerIdx][containerType].IsComplete)
 						return false;
 				}
 				//}
@@ -333,7 +333,7 @@ namespace DE.Onnen.Sudoku
 				{
 					for (int containerType = 0; containerType < 3; containerType++)
 					{
-						if (container[containerIdx][containerType].Complete)
+						if (container[containerIdx][containerType].IsComplete)
 							continue;
 						foreach (ASolveTechnique st in solveTechniques)
 						{
