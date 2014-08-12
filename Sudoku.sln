@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku", "Sudoku\Sudoku.csproj", "{815D8134-6309-4B05-9046-B84332A2E3D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuTest", "SudokuTest\SudokuTest.csproj", "{A7B9DB95-B681-4174-BE22-7FAC6F6B2E59}"
@@ -39,10 +41,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuExtensions", "SudokuE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuWeb", "SudokuWeb\SudokuWeb.csproj", "{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuTS", "SudokuTS\SudokuTS.csproj", "{4CA063B8-2D3D-4826-85EC-326219FEC7EF}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Sudoku.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -163,11 +164,21 @@ Global
 		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Release|x86.ActiveCfg = Release|Any CPU
+		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Sudoku.vsmdi
 	EndGlobalSection
 EndGlobal
