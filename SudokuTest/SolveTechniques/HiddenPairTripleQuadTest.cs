@@ -1,8 +1,7 @@
-﻿using System;
+﻿using DE.Onnen.Sudoku;
+using DE.Onnen.Sudoku.SolveTechniques;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using DE.Onnen.Sudoku.SolveTechniques;
-using DE.Onnen.Sudoku;
 
 namespace Sudoku.SolveTechniques
 {
@@ -10,8 +9,6 @@ namespace Sudoku.SolveTechniques
 	public class HiddenPairTripleQuadTest
 	{
 		private static IList<ASolveTechnique> solveTechniques;
-
-
 
 		#region Additional test attributes
 
@@ -25,8 +22,6 @@ namespace Sudoku.SolveTechniques
 			solveTechniques = GetSolveTechniques();
 		}
 
-
-
 		#endregion Additional test attributes
 
 		private static IList<ASolveTechnique> GetSolveTechniques()
@@ -35,7 +30,6 @@ namespace Sudoku.SolveTechniques
 			st.Add(new DE.Onnen.Sudoku.SolveTechniques.HiddenPairTripleQuad());
 			return st;
 		}
-
 
 		/// <summary>
 		///A test for Backtracking
@@ -52,6 +46,5 @@ namespace Sudoku.SolveTechniques
 				Assert.AreEqual((i + 1), target[i].Digit);
 			}
 		}
-
 	}
 }

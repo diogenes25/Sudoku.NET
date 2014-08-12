@@ -1,8 +1,7 @@
-﻿using System;
+﻿using DE.Onnen.Sudoku;
+using DE.Onnen.Sudoku.SolveTechniques;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using DE.Onnen.Sudoku.SolveTechniques;
-using DE.Onnen.Sudoku;
 
 namespace Sudoku.SolveTechniques
 {
@@ -10,8 +9,6 @@ namespace Sudoku.SolveTechniques
 	public class NakedPairTrippleQuadTest
 	{
 		private static IList<ASolveTechnique> solveTechniques;
-
-
 
 		#region Additional test attributes
 
@@ -26,11 +23,8 @@ namespace Sudoku.SolveTechniques
 			solveTechniques.Add(new DE.Onnen.Sudoku.SolveTechniques.LockedCandidates());
 		}
 
-
-
 		#endregion Additional test attributes
 
-	
 		/// <summary>
 		/// 8,9  aus Cell[30] bis Cell[35] löschen.
 		/// </summary>
@@ -156,6 +150,5 @@ namespace Sudoku.SolveTechniques
 				Assert.AreEqual((i + 1), target[i].Digit);
 			}
 		}
-
 	}
 }

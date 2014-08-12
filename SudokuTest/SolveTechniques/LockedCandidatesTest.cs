@@ -1,8 +1,7 @@
-﻿using System;
+﻿using DE.Onnen.Sudoku;
+using DE.Onnen.Sudoku.SolveTechniques;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using DE.Onnen.Sudoku.SolveTechniques;
-using DE.Onnen.Sudoku;
 
 namespace Sudoku.SolveTechniques
 {
@@ -10,8 +9,6 @@ namespace Sudoku.SolveTechniques
 	public class LockedCandidatesTest
 	{
 		private static IList<ASolveTechnique> solveTechniques;
-
-
 
 		#region Additional test attributes
 
@@ -24,8 +21,6 @@ namespace Sudoku.SolveTechniques
 		{
 			solveTechniques = GetSolveTechniques();
 		}
-
-
 
 		#endregion Additional test attributes
 
@@ -51,6 +46,5 @@ namespace Sudoku.SolveTechniques
 				Assert.AreEqual((i + 1), target[i].Digit);
 			}
 		}
-
 	}
 }

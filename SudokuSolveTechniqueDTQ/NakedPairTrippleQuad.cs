@@ -1,5 +1,4 @@
-﻿using DE.Onnen.Sudoku.SolveTechniques;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace DE.Onnen.Sudoku.SolveTechniques

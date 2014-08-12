@@ -1,13 +1,10 @@
-﻿using DE.Onnen.Sudoku;
-using DE.Onnen.Sudoku.SolveTechniques;
+﻿using DE.Onnen.Sudoku.SolveTechniques;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DE.Onnen.Sudoku.SudokuConsole
 {
-	class Chapter2
+	internal class Chapter2
 	{
 		/// <summary>
 		/// Board um weitere Solvetechniques NakedPairTrippleQuad erweitert.
@@ -37,6 +34,5 @@ namespace DE.Onnen.Sudoku.SudokuConsole
 			board.Solve(new SudokuLog());
 			Console.WriteLine(board.MatrixWithCandidates());
 		}
-
 	}
 }

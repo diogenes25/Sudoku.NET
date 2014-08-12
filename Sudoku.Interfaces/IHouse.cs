@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 namespace DE.Onnen.Sudoku
 {
 	/// <summary>
@@ -9,16 +10,16 @@ namespace DE.Onnen.Sudoku
 	/// </remarks>
 	/// </summary>
 	public interface IHouse : ICellBase, ICollection<ICell>
-    {
-        /// <summary>
-        /// 81 cells of the board.
-        /// </summary>
-        //ICell[] Cells { get; }
-
-        ICell this[int index]
-        {
-            get;
-        }
+	{
+		/// <summary>
+		/// 81 cells of the board.
+		/// </summary>
+		/// <param name="index"></param>
+		/// <returns></returns>
+		ICell this[int index]
+		{
+			get;
+		}
 
 		/// <summary>
 		/// true == Every digit ist set.

@@ -1,8 +1,5 @@
 ﻿using DE.Onnen.Sudoku;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace de.onnen.Sudoku.SudokuExternal
 {

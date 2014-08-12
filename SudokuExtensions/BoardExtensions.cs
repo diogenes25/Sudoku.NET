@@ -5,6 +5,12 @@ using System.Text;
 
 namespace DE.Onnen.Sudoku
 {
+	/// <summary>
+	/// Extension-Methods for IBoard.
+	/// </summary>
+	/// <remarks>
+	/// 
+	/// </remarks>
 	public static class BoardExtensions
 	{
 		public static void SetCellsFromString(this IBoard board, string line, char zero = '0')

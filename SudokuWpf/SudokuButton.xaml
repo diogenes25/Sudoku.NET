@@ -5,18 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Border Margin="0" BorderThickness="1" BorderBrush="Black" Name="borderMain">
-        <Grid  Name="sudokuButtonGrid">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="33*" />
-                <RowDefinition Height="33*" />
-                <RowDefinition Height="33*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="33*" />
-                <ColumnDefinition Width="33*" />
-                <ColumnDefinition Width="33*" />
-            </Grid.ColumnDefinitions>
-        </Grid>
-    </Border>
+	<Border Margin="0" BorderThickness="1" BorderBrush="Black" Name="borderMain">
+		<Grid  Name="sudokuButtonGrid">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="33*" />
+				<RowDefinition Height="33*" />
+				<RowDefinition Height="33*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="33*" />
+				<ColumnDefinition Width="33*" />
+				<ColumnDefinition Width="33*" />
+			</Grid.ColumnDefinitions>
+		</Grid>
+	</Border>
 </UserControl>

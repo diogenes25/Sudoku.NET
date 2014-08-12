@@ -1,6 +1,4 @@
-﻿using DE.Onnen.Sudoku.SolveTechniques;
-
-namespace DE.Onnen.Sudoku.SolveTechniques
+﻿namespace DE.Onnen.Sudoku.SolveTechniques
 {
 	public class LockedCandidates : ASolveTechnique
 	{
