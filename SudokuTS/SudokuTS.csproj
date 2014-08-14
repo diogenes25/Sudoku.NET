@@ -20,10 +20,15 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="index.html" />
+    <Content Include="TS.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="chapter3.ts" />
+    <TypeScriptCompile Include="chapter4.ts" />
+    <TypeScriptCompile Include="Sudoku\Cell.ts" />
+    <TypeScriptCompile Include="Test.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">

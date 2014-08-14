@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="Test.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", initialize);
+
+		function initialize() {
+			var element = document.querySelector("#output");
+			var func = Contact.getFullName();
+			element.innerText = func();
+		}
+	</script>
+</head>
+<body>
+	<div id="output"></div>
+</body>
+</html>
