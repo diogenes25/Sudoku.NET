@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using DE.Onnen.Sudoku;
+using System;
 using System.Web.Mvc;
-using DE.Onnen.Sudoku;
 
 namespace SudokuMVCWeb.Controllers
 {

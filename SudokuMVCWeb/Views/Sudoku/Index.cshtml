@@ -4,9 +4,6 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-
 <h2>Index</h2>
 
 @{System.Text.StringBuilder sb = new System.Text.StringBuilder("<table border=2>");
@@ -19,7 +16,7 @@ for (int boxy = 0; boxy < 3; boxy++)
 	for (int boxx = 0; boxx < 3; boxx++)
 	{
 
-		int boxid = (boxy*3) + boxx;
+		int boxid = (boxy * 3) + boxx;
 		sb.Append(System.Environment.NewLine);
 		sb.Append("\t<td id=\"sudokuboxID_");
 		sb.Append(boxid);
@@ -87,7 +84,7 @@ for (int boxy = 0; boxy < 3; boxy++)
 				}
 				sb.Append(System.Environment.NewLine);
 				sb.Append("\t\t\t\t</table>");
-			
+
 			}
 			sb.Append(System.Environment.NewLine);
 			sb.Append("\t\t\t</td>");
@@ -109,6 +106,4 @@ sb.Append("</table>");
 sb.Append(System.Environment.NewLine);
 }
 
-
 <div>@Html.Raw(sb.ToString())</div>
-

@@ -1,5 +1,4 @@
-﻿
-var theContact = {
+﻿var theContact = {
     firstname: "Tjark",
     lastname: "Onnen",
     //age: 41
@@ -19,7 +18,6 @@ interface IContact {
     firstname: string;
     lastname: string;
     age?: number
-
 }
 
 interface IPrintContact {

@@ -45,11 +45,6 @@ namespace Sudoku.SolveTechniques
 			{
 				Assert.AreEqual((i + 1), target[i].Digit);
 			}
-		
-		
 		}
-
-		
-
 	}
 }

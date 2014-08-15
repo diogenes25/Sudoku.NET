@@ -19,7 +19,6 @@ function PrintName(last: string, first: string, ...age: number[]): string {
 PrintName("123", "tjark", 1, 3, 5, 7, 9);
 
 var Contact = {
-
 	lastname: "Onnen",
 	firstname: "Tjark",
 

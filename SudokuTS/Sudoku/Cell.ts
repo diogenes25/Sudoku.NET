@@ -8,9 +8,8 @@
 		{
 			return this._digit;
 		}
-
 	}
-} 
+}
 
 var cx = new Sudoku.Cell();
 console.log(cx.Digit);

@@ -45,7 +45,7 @@
   <HelpKINode Title="Active property" Url="html/8bd8c332-9d76-527a-3e3d-e151c51cee0c.htm" />
   <HelpKINode Title="Add method">
     <HelpKINode Title="ACellCollection.Add Method " Url="html/90fa2209-9efe-397c-9f8e-325c1fb60b60.htm" />
-    <HelpKINode Title="House.Add Method " Url="html/1c0aaa04-f932-c859-388e-6dfb4ebba70a.htm" />
+    <HelpKINode Title="HouseCollection.Add Method " Url="html/08767657-9910-2e97-aaa2-38b64e269934.htm" />
   </HelpKINode>
   <HelpKINode Title="ASolveTechnique class">
     <HelpKINode Title="ASolveTechnique Class" Url="html/0a13b10c-ba1b-23b4-2073-7a5f182d4fe8.htm" />
@@ -87,6 +87,7 @@
   <HelpKINode Title="Board.Clone method" Url="html/07268992-8361-8a82-21cf-d1224e0904bc.htm" />
   <HelpKINode Title="Board.CreateSimpleBoard method" Url="html/aadd803d-2a38-a400-6d15-4f51a2c305fc.htm" />
   <HelpKINode Title="Board.Equals method" Url="html/c8029934-0cc2-dd37-b1ec-f48f0fa701f4.htm" />
+  <HelpKINode Title="Board.GetHashCode method" Url="html/cbefee0f-1a8e-3057-9661-b52ab121143b.htm" />
   <HelpKINode Title="Board.GetHouse method" Url="html/842cac46-0e2c-1d8c-468f-b0d5fdf8d3b4.htm" />
   <HelpKINode Title="Board.Givens property" Url="html/238b6cd5-301e-7cb0-af9a-2dc61011d648.htm" />
   <HelpKINode Title="Board.History property" Url="html/a36d34cb-1525-55da-170a-153749807787.htm" />
@@ -136,6 +137,7 @@
   <HelpKINode Title="Cell.Digit property" Url="html/7f7c6ee5-0964-ebc8-9eae-a92e2c1de98e.htm" />
   <HelpKINode Title="Cell.Equals method" Url="html/8b0a932f-9c3b-7424-9538-793831609301.htm" />
   <HelpKINode Title="Cell.GetHashCode method" Url="html/fcf3db81-091f-da60-2ac2-18a1e7c366f6.htm" />
+  <HelpKINode Title="Cell.IsGiven property" Url="html/7c7baf6a-29a4-a003-ce4a-3a12976b0827.htm" />
   <HelpKINode Title="Cell.RemoveCandidate method" Url="html/9a257197-b178-05da-736a-00835a2b1e4a.htm" />
   <HelpKINode Title="Cell.SetDigit method" Url="html/d98ee275-27fd-f295-c595-81e4779b4e17.htm" />
   <HelpKINode Title="Cell.ToString method" Url="html/687aaba4-4873-fb05-10c2-766e0e248eb4.htm" />
@@ -152,14 +154,10 @@
   <HelpKINode Title="Clear method">
     <HelpKINode Title="ACellCollection.Clear Method " Url="html/bd57f254-be0b-c95a-a200-e513987ef9dc.htm" />
     <HelpKINode Title="Board.Clear Method " Url="html/fa8c462f-28d4-7942-ece1-8003df6bb093.htm" />
-    <HelpKINode Title="House.Clear Method " Url="html/5f154172-e3aa-f223-7a76-a2d0a30e97c6.htm" />
+    <HelpKINode Title="HouseCollection.Clear Method " Url="html/ca6333e1-9983-eab9-e07b-c581b427d693.htm" />
   </HelpKINode>
   <HelpKINode Title="Clone method" Url="html/07268992-8361-8a82-21cf-d1224e0904bc.htm" />
   <HelpKINode Title="Col enumeration member" Url="html/8a58208c-2fa2-0c98-a229-01d3e17b05b5.htm" />
-  <HelpKINode Title="Complete property">
-    <HelpKINode Title="House.Complete Property " Url="html/b459dc02-ecb6-0f53-cfe0-e7f035a4cbea.htm" />
-    <HelpKINode Title="IHouse.Complete Property " Url="html/ff886721-f26c-227a-74bb-710e320751f1.htm" />
-  </HelpKINode>
   <HelpKINode Title="Consts class">
     <HelpKINode Title="Consts Class" Url="html/825ee59a-53bb-a112-3df7-7eae5fa4fd09.htm" />
     <HelpKINode Title="about Consts class" Url="html/825ee59a-53bb-a112-3df7-7eae5fa4fd09.htm" />
@@ -170,15 +168,15 @@
   <HelpKINode Title="Consts.DimensionSquare field" Url="html/2024bd32-a04d-d51c-ee6d-698381733c07.htm" />
   <HelpKINode Title="Contains method">
     <HelpKINode Title="ACellCollection.Contains Method " Url="html/7dc18c55-23d2-f054-d11b-8dbd930c3826.htm" />
-    <HelpKINode Title="House.Contains Method " Url="html/b68706df-b19b-1715-9c9b-2ab0c4290bc6.htm" />
+    <HelpKINode Title="HouseCollection.Contains Method " Url="html/8643a54c-30f0-e2ab-a7a0-2cfd5b278c0f.htm" />
   </HelpKINode>
   <HelpKINode Title="CopyTo method">
     <HelpKINode Title="ACellCollection.CopyTo Method " Url="html/dfb30bcb-5fc2-d6a9-9f2f-5759f913840e.htm" />
-    <HelpKINode Title="House.CopyTo Method " Url="html/25ca3884-35b7-d320-b2a8-afd655ce6efb.htm" />
+    <HelpKINode Title="HouseCollection.CopyTo Method " Url="html/6f09e752-4fb8-6020-3ae5-d871a33e3acb.htm" />
   </HelpKINode>
   <HelpKINode Title="Count property">
     <HelpKINode Title="ACellCollection.Count Property " Url="html/2d4e5661-b49c-886b-2fff-2d6d63a17213.htm" />
-    <HelpKINode Title="House.Count Property " Url="html/37505a3b-6308-722c-4c4b-a2a3ad4e9cb4.htm" />
+    <HelpKINode Title="HouseCollection.Count Property " Url="html/a76839d6-ebbe-586d-9e36-d6e6e89bb866.htm" />
   </HelpKINode>
   <HelpKINode Title="CreateChildResult method" Url="html/b335c15e-ab07-42a2-c72b-52ae007e9fbc.htm" />
   <HelpKINode Title="CreateSimpleBoard method" Url="html/aadd803d-2a38-a400-6d15-4f51a2c305fc.htm" />
@@ -191,7 +189,7 @@
   <HelpKINode Title="DE.Onnen.Sudoku.CellAction enumeration" Url="html/d9b1d414-3d1d-4cdc-ef7c-a2a497c3987c.htm" />
   <HelpKINode Title="DE.Onnen.Sudoku.CellEventHandler delegate" Url="html/ebeb527b-2e76-f899-ca8d-4191812cda24.htm" />
   <HelpKINode Title="DE.Onnen.Sudoku.Consts class" Url="html/825ee59a-53bb-a112-3df7-7eae5fa4fd09.htm" />
-  <HelpKINode Title="DE.Onnen.Sudoku.House class" Url="html/970218df-7fcc-5cb4-5f80-44a9031d98ba.htm" />
+  <HelpKINode Title="DE.Onnen.Sudoku.HouseCollection class" Url="html/42fba40d-5e7d-3e45-7f5a-5bbee8e29e0e.htm" />
   <HelpKINode Title="DE.Onnen.Sudoku.HouseType enumeration" Url="html/8a58208c-2fa2-0c98-a229-01d3e17b05b5.htm" />
   <HelpKINode Title="DE.Onnen.Sudoku.IBoard interface" Url="html/1756b103-d3b1-e8e4-bd91-5d233aafd3c2.htm" />
   <HelpKINode Title="DE.Onnen.Sudoku.ICell interface" Url="html/a933f5e9-bb07-cda2-4ce2-10e57236d876.htm" />
@@ -231,9 +229,12 @@
   <HelpKINode Title="EventInfoInResult property" Url="html/3a3f187d-765c-22ba-a5ef-f3d31acdbe3e.htm" />
   <HelpKINode Title="GetEnumerator method">
     <HelpKINode Title="ACellCollection.GetEnumerator Method " Url="html/5d597576-9c76-ba14-b4bf-b3ad0aa78f91.htm" />
-    <HelpKINode Title="House.GetEnumerator Method " Url="html/9bc70f02-d4e2-cf6c-55a3-bce065864cd9.htm" />
+    <HelpKINode Title="HouseCollection.GetEnumerator Method " Url="html/ee20b794-22d2-33ff-4e02-d17911110eef.htm" />
   </HelpKINode>
-  <HelpKINode Title="GetHashCode method" Url="html/fcf3db81-091f-da60-2ac2-18a1e7c366f6.htm" />
+  <HelpKINode Title="GetHashCode method">
+    <HelpKINode Title="Board.GetHashCode Method " Url="html/cbefee0f-1a8e-3057-9661-b52ab121143b.htm" />
+    <HelpKINode Title="Cell.GetHashCode Method " Url="html/fcf3db81-091f-da60-2ac2-18a1e7c366f6.htm" />
+  </HelpKINode>
   <HelpKINode Title="GetHouse method">
     <HelpKINode Title="Board.GetHouse Method " Url="html/842cac46-0e2c-1d8c-468f-b0d5fdf8d3b4.htm" />
     <HelpKINode Title="IBoard.GetHouse Method " Url="html/8493d691-241c-0926-568a-7fd67f86c03a.htm" />
@@ -249,25 +250,25 @@
     <HelpKINode Title="ASolveTechnique.Host Property " Url="html/7a01a1e4-ef5e-4a1a-2598-e4597e037879.htm" />
     <HelpKINode Title="ISolveTechnique.Host Property " Url="html/e19a362a-fec2-f308-7e9b-566057864124.htm" />
   </HelpKINode>
-  <HelpKINode Title="House class">
-    <HelpKINode Title="House Class" Url="html/970218df-7fcc-5cb4-5f80-44a9031d98ba.htm" />
-    <HelpKINode Title="about House class" Url="html/970218df-7fcc-5cb4-5f80-44a9031d98ba.htm" />
-    <HelpKINode Title="events" Url="html/5171b28b-f056-b1a9-6c9f-226af1d0de51.htm" />
-    <HelpKINode Title="fields" Url="html/19179dbe-f62b-d25d-43e9-fc60c5bcb132.htm" />
-    <HelpKINode Title="methods" Url="html/03f0be83-75ac-d454-f376-a4fbd94d5178.htm" />
-    <HelpKINode Title="properties" Url="html/bf21ceb7-c4c0-f72b-a05d-bac1ae5c3431.htm" />
+  <HelpKINode Title="HouseCollection class">
+    <HelpKINode Title="HouseCollection Class" Url="html/42fba40d-5e7d-3e45-7f5a-5bbee8e29e0e.htm" />
+    <HelpKINode Title="about HouseCollection class" Url="html/42fba40d-5e7d-3e45-7f5a-5bbee8e29e0e.htm" />
+    <HelpKINode Title="events" Url="html/da82113c-b95f-db08-fd96-58613a22b6d0.htm" />
+    <HelpKINode Title="fields" Url="html/f8105c72-6fa6-77a1-0764-8a033b78a632.htm" />
+    <HelpKINode Title="methods" Url="html/48bd6b54-2895-1c99-c4ef-81de0b81e502.htm" />
+    <HelpKINode Title="properties" Url="html/ef672e24-5ce3-c85d-582a-0f367740ee74.htm" />
   </HelpKINode>
-  <HelpKINode Title="House.Add method" Url="html/1c0aaa04-f932-c859-388e-6dfb4ebba70a.htm" />
-  <HelpKINode Title="House.Clear method" Url="html/5f154172-e3aa-f223-7a76-a2d0a30e97c6.htm" />
-  <HelpKINode Title="House.Complete property" Url="html/b459dc02-ecb6-0f53-cfe0-e7f035a4cbea.htm" />
-  <HelpKINode Title="House.Contains method" Url="html/b68706df-b19b-1715-9c9b-2ab0c4290bc6.htm" />
-  <HelpKINode Title="House.CopyTo method" Url="html/25ca3884-35b7-d320-b2a8-afd655ce6efb.htm" />
-  <HelpKINode Title="House.Count property" Url="html/37505a3b-6308-722c-4c4b-a2a3ad4e9cb4.htm" />
-  <HelpKINode Title="House.GetEnumerator method" Url="html/9bc70f02-d4e2-cf6c-55a3-bce065864cd9.htm" />
-  <HelpKINode Title="House.IsReadOnly property" Url="html/d7a7511f-73bd-2dec-e4d5-d7059147fbca.htm" />
-  <HelpKINode Title="House.Item property" Url="html/fe06f3ba-3c3a-37b5-016c-531645da4b71.htm" />
-  <HelpKINode Title="House.Remove method" Url="html/f9fa51a6-acc2-0d5f-bbe9-e5cdf9d856b6.htm" />
-  <HelpKINode Title="House.ToString method" Url="html/32a68257-871b-e236-67d4-915dc33e57a8.htm" />
+  <HelpKINode Title="HouseCollection.Add method" Url="html/08767657-9910-2e97-aaa2-38b64e269934.htm" />
+  <HelpKINode Title="HouseCollection.Clear method" Url="html/ca6333e1-9983-eab9-e07b-c581b427d693.htm" />
+  <HelpKINode Title="HouseCollection.Contains method" Url="html/8643a54c-30f0-e2ab-a7a0-2cfd5b278c0f.htm" />
+  <HelpKINode Title="HouseCollection.CopyTo method" Url="html/6f09e752-4fb8-6020-3ae5-d871a33e3acb.htm" />
+  <HelpKINode Title="HouseCollection.Count property" Url="html/a76839d6-ebbe-586d-9e36-d6e6e89bb866.htm" />
+  <HelpKINode Title="HouseCollection.GetEnumerator method" Url="html/ee20b794-22d2-33ff-4e02-d17911110eef.htm" />
+  <HelpKINode Title="HouseCollection.IsComplete property" Url="html/4cb4829d-7c31-2b7d-a7b9-c2cd3791dc78.htm" />
+  <HelpKINode Title="HouseCollection.IsReadOnly property" Url="html/35f728e7-0ab3-e0ae-f5bf-d8c8fe8b70ff.htm" />
+  <HelpKINode Title="HouseCollection.Item property" Url="html/812b855e-3b65-a0c3-2945-a5c7e72eeb2f.htm" />
+  <HelpKINode Title="HouseCollection.Remove method" Url="html/c38c8047-68da-3b83-fad7-aede28c626c4.htm" />
+  <HelpKINode Title="HouseCollection.ToString method" Url="html/9cf1c995-3236-0edf-d3c1-7d5769039972.htm" />
   <HelpKINode Title="HouseType enumeration" Url="html/8a58208c-2fa2-0c98-a229-01d3e17b05b5.htm" />
   <HelpKINode Title="htmlTable method" Url="html/2db029a6-94c5-8d1d-c158-41a79fb2b044.htm" />
   <HelpKINode Title="HType property">
@@ -296,6 +297,7 @@
   </HelpKINode>
   <HelpKINode Title="ICell.Candidates property" Url="html/9f5bdc13-f928-43b8-560c-f5f1419a3749.htm" />
   <HelpKINode Title="ICell.Digit property" Url="html/c2d9decd-859c-8609-7540-246ff59b5d04.htm" />
+  <HelpKINode Title="ICell.IsGiven property" Url="html/65f435f3-2fae-b66a-6f81-b30ed8bf68dc.htm" />
   <HelpKINode Title="ICell.RemoveCandidate method" Url="html/7b894357-307b-95b9-2702-31a4cdb6adff.htm" />
   <HelpKINode Title="ICell.SetDigit method" Url="html/12199a97-32c0-74f2-3eae-bf1a788cd5ab.htm" />
   <HelpKINode Title="ICellBase interface">
@@ -321,7 +323,7 @@
     <HelpKINode Title="about IHouse interface" Url="html/d9115204-a197-9a37-7c90-d4ca5028e414.htm" />
     <HelpKINode Title="properties" Url="html/84bfc92f-0680-485b-c09d-b68f657ddc3f.htm" />
   </HelpKINode>
-  <HelpKINode Title="IHouse.Complete property" Url="html/ff886721-f26c-227a-74bb-710e320751f1.htm" />
+  <HelpKINode Title="IHouse.IsComplete property" Url="html/00ef9b40-68fd-8bec-9701-026d0f6db091.htm" />
   <HelpKINode Title="IHouse.Item property" Url="html/93df90f7-79e8-6290-f510-3c5a067f90d1.htm" />
   <HelpKINode Title="Info property">
     <HelpKINode Title="ASolveTechnique.Info Property " Url="html/2a43836b-b3f5-afcb-5db9-7ecffb3dd211.htm" />
@@ -333,7 +335,13 @@
   </HelpKINode>
   <HelpKINode Title="IsComplete property">
     <HelpKINode Title="Board.IsComplete Property " Url="html/8ba999f1-9160-ca28-8044-085546e36c38.htm" />
+    <HelpKINode Title="HouseCollection.IsComplete Property " Url="html/4cb4829d-7c31-2b7d-a7b9-c2cd3791dc78.htm" />
     <HelpKINode Title="IBoard.IsComplete Property " Url="html/e8956d56-6fcc-ffd0-452d-71d148f3f490.htm" />
+    <HelpKINode Title="IHouse.IsComplete Property " Url="html/00ef9b40-68fd-8bec-9701-026d0f6db091.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsGiven property">
+    <HelpKINode Title="Cell.IsGiven Property " Url="html/7c7baf6a-29a4-a003-ce4a-3a12976b0827.htm" />
+    <HelpKINode Title="ICell.IsGiven Property " Url="html/65f435f3-2fae-b66a-6f81-b30ed8bf68dc.htm" />
   </HelpKINode>
   <HelpKINode Title="ISolveTechnique interface">
     <HelpKINode Title="ISolveTechnique Interface" Url="html/8125006e-a894-5940-4087-994846e63f07.htm" />
@@ -350,7 +358,7 @@
   <HelpKINode Title="ISolveTechnique.SolveHouse method" Url="html/e6f4cd86-38cf-c627-4142-e523d120756b.htm" />
   <HelpKINode Title="IsReadOnly property">
     <HelpKINode Title="ACellCollection.IsReadOnly Property " Url="html/33c40330-966d-f11c-a35c-f9a07f69304c.htm" />
-    <HelpKINode Title="House.IsReadOnly Property " Url="html/d7a7511f-73bd-2dec-e4d5-d7059147fbca.htm" />
+    <HelpKINode Title="HouseCollection.IsReadOnly Property " Url="html/35f728e7-0ab3-e0ae-f5bf-d8c8fe8b70ff.htm" />
   </HelpKINode>
   <HelpKINode Title="ISudokuHost interface">
     <HelpKINode Title="ISudokuHost Interface" Url="html/61ac588f-a1b0-8c53-7caf-f8033bdd3b24.htm" />
@@ -360,7 +368,7 @@
   <HelpKINode Title="ISudokuHost.Register method" Url="html/15ce9f23-2f56-13b3-f474-0affb46d4235.htm" />
   <HelpKINode Title="Item property">
     <HelpKINode Title="ACellCollection.Item Property " Url="html/a1ecb311-91e7-ed4c-23a4-43e4585ca8f4.htm" />
-    <HelpKINode Title="House.Item Property " Url="html/fe06f3ba-3c3a-37b5-016c-531645da4b71.htm" />
+    <HelpKINode Title="HouseCollection.Item Property " Url="html/812b855e-3b65-a0c3-2945-a5c7e72eeb2f.htm" />
     <HelpKINode Title="IBoard.Item Property " Url="html/a78797cb-c837-50fb-75ea-c573c0220c19.htm" />
     <HelpKINode Title="ICellCollection.Item Property " Url="html/75bdfa61-0b47-95e8-cf48-d6d703cb1701.htm" />
     <HelpKINode Title="IHouse.Item Property " Url="html/93df90f7-79e8-6290-f510-3c5a067f90d1.htm" />
@@ -382,7 +390,7 @@
   </HelpKINode>
   <HelpKINode Title="Remove method">
     <HelpKINode Title="ACellCollection.Remove Method " Url="html/30307d50-46c2-91d1-2277-edd00c0fae64.htm" />
-    <HelpKINode Title="House.Remove Method " Url="html/f9fa51a6-acc2-0d5f-bbe9-e5cdf9d856b6.htm" />
+    <HelpKINode Title="HouseCollection.Remove Method " Url="html/c38c8047-68da-3b83-fad7-aede28c626c4.htm" />
   </HelpKINode>
   <HelpKINode Title="RemoveCandidate method">
     <HelpKINode Title="Cell.RemoveCandidate Method " Url="html/9a257197-b178-05da-736a-00835a2b1e4a.htm" />
@@ -455,7 +463,7 @@
   <HelpKINode Title="SudokuHistoryItem class">
     <HelpKINode Title="SudokuHistoryItem Class" Url="html/808ba48a-1e83-0083-a72b-bfef8e3a65e8.htm" />
     <HelpKINode Title="about SudokuHistoryItem class" Url="html/808ba48a-1e83-0083-a72b-bfef8e3a65e8.htm" />
-    <HelpKINode Title="constructor" Url="html/15882183-ae7a-a2ea-4071-609bca6404a6.htm" />
+    <HelpKINode Title="constructor" Url="html/8573258f-ea9e-2b18-7e7c-d69c4667e189.htm" />
     <HelpKINode Title="methods" Url="html/f2e65ef4-230f-0209-e9bc-1bf74741e4eb.htm" />
     <HelpKINode Title="properties" Url="html/ac009c7b-cf9c-9531-6639-be51cd7185d3.htm" />
   </HelpKINode>
@@ -463,7 +471,7 @@
   <HelpKINode Title="SudokuHistoryItem.CellID property" Url="html/9803d837-a19b-104f-a948-f310b0a763fa.htm" />
   <HelpKINode Title="SudokuHistoryItem.Digit property" Url="html/1e01fb7b-9f76-bc9b-cc27-068e44106990.htm" />
   <HelpKINode Title="SudokuHistoryItem.Percent property" Url="html/cc0190ca-4e07-ff51-df7d-e36f93150cba.htm" />
-  <HelpKINode Title="SudokuHistoryItem.SudokuHistoryItem constructor" Url="html/15882183-ae7a-a2ea-4071-609bca6404a6.htm" />
+  <HelpKINode Title="SudokuHistoryItem.SudokuHistoryItem constructor" Url="html/8573258f-ea9e-2b18-7e7c-d69c4667e189.htm" />
   <HelpKINode Title="SudokuHistoryItem.SudokuResults property" Url="html/115f0885-81fa-bc0a-f346-8e9bc382f86b.htm" />
   <HelpKINode Title="SudokuHistoryItem.ToString method" Url="html/2ea9690b-d3d8-bac8-c8c7-32ed336ee75e.htm" />
   <HelpKINode Title="SudokuLog class">
@@ -492,7 +500,7 @@
   <HelpKINode Title="ToString method">
     <HelpKINode Title="Board.ToString Method " Url="html/d0cc8fe8-d937-3ca4-2de3-a686e724fcd1.htm" />
     <HelpKINode Title="Cell.ToString Method " Url="html/687aaba4-4873-fb05-10c2-766e0e248eb4.htm" />
-    <HelpKINode Title="House.ToString Method " Url="html/32a68257-871b-e236-67d4-915dc33e57a8.htm" />
+    <HelpKINode Title="HouseCollection.ToString Method " Url="html/9cf1c995-3236-0edf-d3c1-7d5769039972.htm" />
     <HelpKINode Title="SudokuEvent.ToString Method " Url="html/7c0b5f12-00fd-a3b5-118f-008d362a04b2.htm" />
     <HelpKINode Title="SudokuHistoryItem.ToString Method " Url="html/2ea9690b-d3d8-bac8-c8c7-32ed336ee75e.htm" />
     <HelpKINode Title="SudokuLog.ToString Method " Url="html/68cef028-030f-48c5-e2a9-bab8746dbe09.htm" />

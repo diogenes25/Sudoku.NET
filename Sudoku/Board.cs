@@ -26,15 +26,17 @@ namespace DE.Onnen.Sudoku
 		private const int COL_CONTAINERTYPE = 1;
 		private const int BLOCK_CONTAINERTYPE = 2;
 		private List<SudokuHistoryItem> history;
+
 		//private List<ICell> givens;
 		private HouseCollection[][] container = new HouseCollection[Consts.DimensionSquare][];
+
 		private double solvePercentBase = 0;
 		private IList<ASolveTechnique> solveTechniques = new List<ASolveTechnique>();
 
 		public ReadOnlyCollection<SudokuHistoryItem> History { get { return this.history.AsReadOnly(); } }
 
 		/// <inheritdoc />
-		public ReadOnlyCollection<ICell> Givens { get { return this.cells.Where(x=>x.IsGiven).Select(x=>(ICell)x).ToList().AsReadOnly(); } }
+		public ReadOnlyCollection<ICell> Givens { get { return this.cells.Where(x => x.IsGiven).Select(x => (ICell)x).ToList().AsReadOnly(); } }
 
 		/// <summary>
 		/// Loaded solvetechniques.

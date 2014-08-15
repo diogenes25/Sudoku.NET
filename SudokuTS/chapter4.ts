@@ -1,4 +1,4 @@
-﻿function addSupport<T extends EmailAddresses>(contact: T) : T 
+﻿function addSupport<T extends EmailAddresses>(contact: T) : T
 {
 	for (var n = 0; n < contact.emails.length; n++)
 	{

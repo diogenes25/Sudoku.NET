@@ -9,7 +9,7 @@ namespace DE.Onnen.Sudoku
 	/// Extension-Methods for IBoard.
 	/// </summary>
 	/// <remarks>
-	/// 
+	///
 	/// </remarks>
 	public static class BoardExtensions
 	{
