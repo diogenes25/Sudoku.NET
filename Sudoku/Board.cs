@@ -26,7 +26,7 @@ namespace DE.Onnen.Sudoku
 		private const int COL_CONTAINERTYPE = 1;
 		private const int BLOCK_CONTAINERTYPE = 2;
 		private List<SudokuHistoryItem> history;
-		private List<ICell> givens;
+		//private List<ICell> givens;
 		private HouseCollection[][] container = new HouseCollection[Consts.DimensionSquare][];
 		private double solvePercentBase = 0;
 		private IList<ASolveTechnique> solveTechniques = new List<ASolveTechnique>();
@@ -34,7 +34,7 @@ namespace DE.Onnen.Sudoku
 		public ReadOnlyCollection<SudokuHistoryItem> History { get { return this.history.AsReadOnly(); } }
 
 		/// <inheritdoc />
-		public ReadOnlyCollection<ICell> Givens { get { return this.givens.AsReadOnly(); } }
+		public ReadOnlyCollection<ICell> Givens { get { return this.cells.Where(x=>x.IsGiven).Select(x=>(ICell)x).ToList().AsReadOnly(); } }
 
 		/// <summary>
 		/// Loaded solvetechniques.
@@ -128,7 +128,7 @@ namespace DE.Onnen.Sudoku
 		private void Init()
 		{
 			this.cells = new Cell[Consts.DimensionSquare * Consts.DimensionSquare];
-			this.givens = new List<ICell>();
+			//this.givens = new List<ICell>();
 			this.history = new List<SudokuHistoryItem>();
 			this.solvePercentBase = Math.Pow(Consts.DimensionSquare, 3.0);
 			for (int i = 0; i < Consts.DimensionSquare * Consts.DimensionSquare; i++)
@@ -137,11 +137,11 @@ namespace DE.Onnen.Sudoku
 				cells[i].PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(Cell_PropertyChanged);
 			}
 
-			Cell[][][] fieldcontainer;
-			fieldcontainer = new Cell[3][][];
-			fieldcontainer[ROW_CONTAINERTYPE] = new Cell[Consts.DimensionSquare][]; // Row
-			fieldcontainer[COL_CONTAINERTYPE] = new Cell[Consts.DimensionSquare][]; // Col
-			fieldcontainer[BLOCK_CONTAINERTYPE] = new Cell[Consts.DimensionSquare][]; // Block
+			ICell[][][] fieldcontainer;
+			fieldcontainer = new ICell[3][][];
+			fieldcontainer[ROW_CONTAINERTYPE] = new ICell[Consts.DimensionSquare][]; // Row
+			fieldcontainer[COL_CONTAINERTYPE] = new ICell[Consts.DimensionSquare][]; // Col
+			fieldcontainer[BLOCK_CONTAINERTYPE] = new ICell[Consts.DimensionSquare][]; // Block
 
 			for (int containerIdx = 0; containerIdx < Consts.DimensionSquare; containerIdx++)
 			{
@@ -241,7 +241,8 @@ namespace DE.Onnen.Sudoku
 			this.cells[cellID].SetDigit(digitToSet, sudokuResult);
 			if (sudokuResult.Successful)
 			{
-				this.givens.Add(this.cells[cellID]);
+				this.cells[cellID].IsGiven = true;
+				//this.givens.Add(this.cells[cellID]);
 				if (withSolve)
 				{
 					this.Solve(sudokuResult);
@@ -379,7 +380,7 @@ namespace DE.Onnen.Sudoku
 		/// </summary>
 		public void Clear()
 		{
-			this.givens.Clear();
+			//this.givens.Clear();
 			this.history.Clear();
 			base.Clear();
 			//for (int i = 0; i < Consts.DimensionSquare * Consts.DimensionSquare; i++)

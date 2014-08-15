@@ -235,5 +235,12 @@ namespace DE.Onnen.Sudoku
 				return retInt.AsReadOnly();
 			}
 		}
+
+		/// <inheritdoc />
+		public bool IsGiven
+		{
+			get;
+			set;
+		}
 	}
 }

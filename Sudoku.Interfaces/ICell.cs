@@ -13,6 +13,14 @@ namespace DE.Onnen.Sudoku
 	public interface ICell : ICellBase, INotifyPropertyChanged
 	{
 		/// <summary>
+		/// This Cell (Digit) is a given Digit.
+		/// </summary>
+		/// <remarks>
+		/// Digit was set by user and not by solving.
+		/// </remarks>
+		bool IsGiven { get; set; }
+
+		/// <summary>
 		/// A list of every candidate.
 		/// </summary>
 		/// <remarks>

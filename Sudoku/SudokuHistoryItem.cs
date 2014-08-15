@@ -40,7 +40,7 @@ namespace DE.Onnen.Sudoku
 		/// <param name="board">Current board</param>
 		/// <param name="cell">Last changed Cell</param>
 		/// <param name="sudokuResult"></param>
-		public SudokuHistoryItem(Board board, Cell cell, SudokuLog sudokuResult)
+		public SudokuHistoryItem(IBoard board, ICell cell, SudokuLog sudokuResult)
 		{
 			this.BoardInt = Board.CreateSimpleBoard(board);
 			if (cell == null)

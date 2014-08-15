@@ -1,0 +1,114 @@
+﻿@model DE.Onnen.Sudoku.IBoard
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h2>Index</h2>
+
+@{System.Text.StringBuilder sb = new System.Text.StringBuilder("<table border=2>");
+sb.Append(System.Environment.NewLine);
+string strBoard = Model.ToString();
+for (int boxy = 0; boxy < 3; boxy++)
+{
+	sb.Append(System.Environment.NewLine);
+	sb.Append("<tr>");
+	for (int boxx = 0; boxx < 3; boxx++)
+	{
+
+		int boxid = (boxy*3) + boxx;
+		sb.Append(System.Environment.NewLine);
+		sb.Append("\t<td id=\"sudokuboxID_");
+		sb.Append(boxid);
+		sb.Append("\" class=\"sudokuBox");
+		sb.Append((boxid % 2 == 0) ? "Odd" : "Even");
+		sb.Append("\" >");
+		DE.Onnen.Sudoku.IHouse house = Model.GetHouse(DE.Onnen.Sudoku.HouseType.Box, boxid);
+		sb.Append(System.Environment.NewLine);
+		sb.Append("\t\t<table border=1>");
+		int icell = 0;
+		foreach (DE.Onnen.Sudoku.ICell cell in house)
+		{
+			if (icell % 3 == 0)
+			{
+				if (icell > 1)
+				{
+					sb.Append(System.Environment.NewLine);
+					sb.Append("\t\t</tr>");
+				}
+				sb.Append(System.Environment.NewLine);
+				sb.Append("\t\t<tr>");
+			}
+			sb.Append(System.Environment.NewLine);
+			sb.Append("\t\t\t<td id=\"sudokuCellID_");
+			sb.Append(cell.ID);
+			sb.Append("\" class=\"sudokuCell\">");
+			if (cell.Digit > 0)
+			{
+				sb.Append(cell.Digit);
+			}
+			else
+			{
+				sb.Append(System.Environment.NewLine);
+				sb.Append("\t\t\t\t<table>");
+				IReadOnlyCollection<int> candidates = cell.Candidates;
+				int currentCadidate = 0;
+				for (int candy = 0; candy < 3; candy++)
+				{
+					sb.Append(System.Environment.NewLine);
+					sb.Append("\t\t\t\t<tr>");
+					for (int candx = 0; candx < 3; candx++)
+					{
+						sb.Append(System.Environment.NewLine);
+						sb.Append("\t\t\t\t\t<td id=\"sudokuCandidate_");
+						sb.Append(cell.ID);
+						sb.Append("_");
+						sb.Append(++currentCadidate);
+						sb.Append("\">");
+						if (candidates.Contains(currentCadidate))
+						{
+							System.Text.StringBuilder newBoard = new System.Text.StringBuilder(strBoard);
+							newBoard[cell.ID] = currentCadidate.ToString()[0];
+							//sb.Append(Html.ActionLink(currentCadidate.ToString(), "Sudoku", new {newBoard.ToString()},null));
+							string s = newBoard.ToString();
+							sb.Append(Html.ActionLink(currentCadidate.ToString(), "Index", "Sudoku", new { s }, null));
+						}
+						else
+						{
+							sb.Append("&nbsp;");
+						}
+						sb.Append("</td>");
+					}
+					sb.Append(System.Environment.NewLine);
+					sb.Append("\t\t\t\t<tr>");
+				}
+				sb.Append(System.Environment.NewLine);
+				sb.Append("\t\t\t\t</table>");
+			
+			}
+			sb.Append(System.Environment.NewLine);
+			sb.Append("\t\t\t</td>");
+
+			icell++;
+		}
+		sb.Append(System.Environment.NewLine);
+		sb.Append("\t\t</tr>");
+		sb.Append(System.Environment.NewLine);
+		sb.Append("\t\t</table>");
+		sb.Append(System.Environment.NewLine);
+		sb.Append("\t</td>");
+	}
+	sb.Append(System.Environment.NewLine);
+	sb.Append("</tr>");
+}
+sb.Append(System.Environment.NewLine);
+sb.Append("</table>");
+sb.Append(System.Environment.NewLine);
+}
+
+
+<div>@Html.Raw(sb.ToString())</div>
+
