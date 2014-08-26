@@ -75,7 +75,7 @@
     <AssemblyOriginatorKeyFile>onnen.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>brain.ico</ApplicationIcon>

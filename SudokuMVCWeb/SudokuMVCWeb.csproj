@@ -236,6 +236,18 @@
       <Project>{08b2350d-6a42-4716-9850-8f44ad8900a6}</Project>
       <Name>SudokuExtensions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SudokuSolveTechniqueDTQ\SolveTechniqueNakedPTQ.csproj">
+      <Project>{1f0608dc-2ca9-4afb-92a4-a68cf37a8db2}</Project>
+      <Name>SolveTechniqueNakedPTQ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SudokuSolveTechniqueHiddenDTQ\SolveTechniqueHiddenPTQ.csproj">
+      <Project>{a07c29dc-badc-4d80-9542-d7588d2903de}</Project>
+      <Name>SolveTechniqueHiddenPTQ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SudokuSolveTechniqueLockedCandidates\SolveTechniqueLockedCandidates.csproj">
+      <Project>{44bd4e5d-6ee6-4a96-b55a-38342c9c5465}</Project>
+      <Name>SolveTechniqueLockedCandidates</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sudoku\Sudoku.csproj">
       <Project>{815d8134-6309-4b05-9046-b84332a2e3d7}</Project>
       <Name>Sudoku</Name>
