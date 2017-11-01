@@ -9,10 +9,10 @@ namespace DE.Onnen.Sudoku.SudokuConsole
 			//Chapter1 chapter1 = new Chapter1();
 			//chapter1.Excample1();
 			//chapter1.Excample2();
-			//Chapter3 chapter3 = new Chapter3();
-			//chapter3.ReadFromFile();
-			Chapter2 chapter2 = new Chapter2();
-			chapter2.Excample1();
+			Chapter3 chapter3 = new Chapter3();
+			chapter3.ReadFromFile();
+			//Chapter2 chapter2 = new Chapter2();
+			//chapter2.Excample1();
 			Console.ReadKey();
 		}
 

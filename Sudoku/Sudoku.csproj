@@ -72,7 +72,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>onnen.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
@@ -96,8 +97,6 @@
     <Compile Include="SudokuSolveTechniqueLoader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="onnen.snk" />
-    <None Include="onnenpublickey.snk" />
     <None Include="Properties\app.manifest" />
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +121,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SolveTechnics\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="brain.ico" />
   </ItemGroup>

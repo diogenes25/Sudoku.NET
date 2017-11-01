@@ -30,9 +30,9 @@ namespace DE.Onnen.Sudoku
 				throw new ArgumentNullException("fileName", "the parameter filename cannot be null");
 			}
 
-			Assembly solvetechnic = Assembly.LoadFrom(fileName);
+			Assembly solvetechnique = Assembly.LoadFrom(fileName);
 			string typeName = typeof(ASolveTechnique).ToString();
-			Type[] types = solvetechnic.GetTypes();
+			Type[] types = solvetechnique.GetTypes();
 			List<Type> mytype = new List<Type>();
 			bool typeFound = false;
 			foreach (Type t in types)

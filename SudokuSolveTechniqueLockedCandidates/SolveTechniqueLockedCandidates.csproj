@@ -59,7 +59,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy SolveTechniqueLockedCandidates.dll ..\..\..\SudokuWpf\bin\Debug\SolveTechniques</PostBuildEvent>
+    <PostBuildEvent>copy SolveTechniqueLockedCandidates.dll ..\..\..\Sudoku\SolveTechniques</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

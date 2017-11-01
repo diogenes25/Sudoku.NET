@@ -8,12 +8,12 @@ namespace DE.Onnen.Sudoku.SudokuConsole
 		public void ReadFromFile()
 		{
 			//IList<string> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\top95.txt");
-			//IList<string> boards = SudokuHelper.ReadBoardFromFile(@"..\..\..\SudokuTest\TestData\sudoku.txt");
-			IList<string> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\HardestDatabase110626.txt"); // http://forum.enjoysudoku.com/the-hardest-sudokus-new-thread-t6539.html
+			IList<string> boards = SudokuHelper.ReadBoardFromFile(@"..\..\..\SudokuTest\TestData\sudoku.txt");
+			//IList<string> boards = SudokuHelper.ReadBoardFromFileTop(@"..\..\..\SudokuTest\TestData\HardestDatabase110626.txt"); // http://forum.enjoysudoku.com/the-hardest-sudokus-new-thread-t6539.html
 			//IList<string> boards = SudokuHelper.ReadBoardFromFile(@"..\..\..\SudokuTest\TestData\Simple.txt");
 
 			Console.WriteLine(boards[0]);
-			IBoard board = new Board("..\\..\\..\\Sudoku\\SolveTechnics\\");
+			IBoard board = new Board("..\\..\\..\\Sudoku\\SolveTechniques\\");
 			int[] emh = new int[3];
 			DateTime totalStartTime = DateTime.Now;
 			foreach (string line in boards)

@@ -124,7 +124,7 @@ namespace DE.Onnen.Sudoku
 		public Board(string filePath)
 		{
 			Init();
-			LoadSolveTechnics(filePath);
+			LoadSolveTechniques(filePath);
 		}
 
 		private void Init()
@@ -468,7 +468,7 @@ namespace DE.Onnen.Sudoku
 
 		#endregion ICloneable Members
 
-		private void LoadSolveTechnics(string filePath)
+		private void LoadSolveTechniques(string filePath)
 		{
 			//"d:\\Develop\\SolveTechniques"
 			if (String.IsNullOrWhiteSpace(filePath))
@@ -478,7 +478,7 @@ namespace DE.Onnen.Sudoku
 			foreach (string file in files)
 			{
 				ASolveTechnique st = SudokuSolveTechniqueLoader.LoadSolveTechnic(file, this);
-				solveTechniques.Add(st);
+				this.solveTechniques.Add(st);
 				st.SetBoard(this);
 			}
 		}
