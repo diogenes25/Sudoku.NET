@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku", "Sudoku\Sudoku.csproj", "{815D8134-6309-4B05-9046-B84332A2E3D7}"
 EndProject
@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Sudoku.vsmdi = Sudoku.vsmdi
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuWpf", "SudokuWpf\SudokuWpf.csproj", "{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.Interfaces", "Sudoku.Interfaces\Sudoku.Interfaces.csproj", "{6F9BD1D8-1883-4479-850B-518593FF6FAC}"
 EndProject
@@ -33,15 +31,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveTechniqueNakedPTQ", "S
 		{815D8134-6309-4B05-9046-B84332A2E3D7} = {815D8134-6309-4B05-9046-B84332A2E3D7}
 	EndProjectSection
 EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "SudokuDocumentation", "SudokuDocumentation\SudokuDocumentation.shfbproj", "{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuConsole", "SudokuConsole\SudokuConsole.csproj", "{6D61E64A-7848-4804-826A-A2EB507ED59D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuExtensions", "SudokuExtensions\SudokuExtensions.csproj", "{08B2350D-6A42-4716-9850-8F44AD8900A6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuWeb", "SudokuWeb\SudokuWeb.csproj", "{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuTS", "SudokuTS\SudokuTS.csproj", "{4CA063B8-2D3D-4826-85EC-326219FEC7EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{2E7CA16F-53ED-4940-B70A-20886B7F44A5}"
 	ProjectSection(SolutionItems) = preProject
@@ -54,8 +46,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configura
 		PublishScripts\Configurations\SudokuMVCWeb-WAWS-dev.json = PublishScripts\Configurations\SudokuMVCWeb-WAWS-dev.json
 		PublishScripts\Configurations\WebApplication1-WAWS-dev.json = PublishScripts\Configurations\WebApplication1-WAWS-dev.json
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuMVCWeb", "SudokuMVCWeb\SudokuMVCWeb.csproj", "{176F4710-8F26-4A77-9392-E16F79E1FC92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,17 +78,6 @@ Global
 		{A7B9DB95-B681-4174-BE22-7FAC6F6B2E59}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{A7B9DB95-B681-4174-BE22-7FAC6F6B2E59}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A7B9DB95-B681-4174-BE22-7FAC6F6B2E59}.Release|x86.ActiveCfg = Release|Any CPU
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Debug|Any CPU.Build.0 = Debug|x86
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Debug|x86.ActiveCfg = Debug|x86
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Debug|x86.Build.0 = Debug|x86
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Release|Any CPU.ActiveCfg = Release|x86
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Release|Mixed Platforms.Build.0 = Release|x86
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Release|x86.ActiveCfg = Release|x86
-		{0DEAC510-11D4-47F2-A4AE-2EA87C13F3EF}.Release|x86.Build.0 = Release|x86
 		{6F9BD1D8-1883-4479-850B-518593FF6FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6F9BD1D8-1883-4479-850B-518593FF6FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F9BD1D8-1883-4479-850B-518593FF6FAC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -139,14 +118,6 @@ Global
 		{1F0608DC-2CA9-4AFB-92A4-A68CF37A8DB2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1F0608DC-2CA9-4AFB-92A4-A68CF37A8DB2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1F0608DC-2CA9-4AFB-92A4-A68CF37A8DB2}.Release|x86.ActiveCfg = Release|Any CPU
-		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{EDC1028A-9FBC-42AB-A3C1-63BCA2853512}.Release|x86.ActiveCfg = Release|Any CPU
 		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Debug|Any CPU.Build.0 = Debug|x86
 		{6D61E64A-7848-4804-826A-A2EB507ED59D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
@@ -168,42 +139,15 @@ Global
 		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{08B2350D-6A42-4716-9850-8F44AD8900A6}.Release|x86.ActiveCfg = Release|Any CPU
-		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{CDBC7FEB-B395-4749-8F32-CA5B03F0488F}.Release|x86.ActiveCfg = Release|Any CPU
-		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{4CA063B8-2D3D-4826-85EC-326219FEC7EF}.Release|x86.ActiveCfg = Release|Any CPU
-		{176F4710-8F26-4A77-9392-E16F79E1FC92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{176F4710-8F26-4A77-9392-E16F79E1FC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{176F4710-8F26-4A77-9392-E16F79E1FC92}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{176F4710-8F26-4A77-9392-E16F79E1FC92}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{176F4710-8F26-4A77-9392-E16F79E1FC92}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{176F4710-8F26-4A77-9392-E16F79E1FC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{176F4710-8F26-4A77-9392-E16F79E1FC92}.Release|Any CPU.Build.0 = Release|Any CPU
-		{176F4710-8F26-4A77-9392-E16F79E1FC92}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{176F4710-8F26-4A77-9392-E16F79E1FC92}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{176F4710-8F26-4A77-9392-E16F79E1FC92}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F4434940-47BF-4B84-A582-119E264BB5D6} = {2E7CA16F-53ED-4940-B70A-20886B7F44A5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B91533BB-CD13-46BE-976C-9D17EB579E91}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Sudoku.vsmdi
